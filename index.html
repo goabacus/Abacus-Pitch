@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abacus Pitch Deck</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            height: 100%;
+            background: linear-gradient(150deg, #f6f9fc 0%, #ffffff 100%);
+            color: #1a1f36;
+            overflow: hidden;
+        }
+
+        .presentation-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(10, 37, 64, 0.08);
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .header-logo {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #635bff, #8b5cf6);
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .header-divider {
+            width: 1px;
+            height: 24px;
+            background: rgba(10, 37, 64, 0.1);
+        }
+
+        .header-title {
+            font-weight: 600;
+            color: #0a2540;
+            font-size: 0.95rem;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-hint {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #425466;
+            font-size: 0.85rem;
+        }
+
+        .key-hint {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+            padding: 0 6px;
+            background: #f6f9fc;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #425466;
+        }
+
+        .slide-counter {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #635bff;
+            background: rgba(99, 91, 255, 0.1);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+        }
+
+        .presentation-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            padding-top: 61px; /* Header height + border */
+        }
+
+        .slide {
+            position: absolute;
+            top: 61px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 61px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+/* Navigation Buttons */
+.nav-buttons {
+    position: fixed;
+    bottom: 5rem; /* Ensure it's above the footer */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 1000; /* High z-index to stay on top of other elements */
+}
+
+.nav-button {
+    background: #ffffff;
+    color: #635bff;
+    border: 1px solid rgba(99, 91, 255, 0.2);
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    z-index: 1001; /* Higher than other content */
+}
+
+.nav-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    background: rgba(99, 91, 255, 0.05);
+}
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Progress bar */
+        .progress-track {
+            position: fixed;
+            top: 61px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(99, 91, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #635bff, #8b5cf6);
+            transition: width 0.3s ease;
+            border-radius: 0 1px 1px 0;
+        }
+
+        /* Slide-specific styles */
+        .slide h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #0a2540;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .slide p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            color: #425466;
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background: linear-gradient(to right, #635bff, #7a73ff);
+            color: white;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+            transform: translateY(-1px);
+        }
+
+        .gradient-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(to right, #635bff, #7a73ff);
+            z-index: 10;
+        }
+
+        .slide-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Additional styles for slide 2 */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.feature {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 30px 60px -12px rgba(50,50,93,.25), 0 18px 36px -18px rgba(0,0,0,.3);
+}
+
+.feature h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #0a2540;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #425466;
+    line-height: 1.5;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    color: #425466;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Styles for slide 3 - Demo */
+.demo-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.demo-image {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    overflow: hidden;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.demo-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.user-profile {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.user-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #0a2540;
+}
+
+.user-info p {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: #425466;
+}
+
+.demo-steps {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    padding: 1.5rem;
+}
+
+.demo-step {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.demo-step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    background: linear-gradient(135deg, #635bff, #7a73ff);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    font-size: 1rem;
+    color: #425466;
+    line-height: 1.6;
+}
+
+.step-content strong {
+    color: #0a2540;
+    font-weight: 600;
+}
+
+/* Styles for slide 4 - Abacus Bot */
+#slide4 .slide4-main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+#slide4 .slide4-demo-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    overflow: hidden;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+#slide4 .slide4-demo-header {
+    background: linear-gradient(145deg, #0a2540, #1a365d);
+    color: white;
+    padding: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#slide4 .slide4-demo-content {
+    flex-grow: 1;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#slide4 .slide4-video-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+#slide4 .slide4-indexer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#slide4 .slide4-data-source {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#slide4 .slide4-source-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #635bff, #8b5cf6);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#slide4 .slide4-source-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#slide4 .slide4-bot-features {
+    background: linear-gradient(145deg, #0a2540, #1a365d);
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: white;
+}
+
+#slide4 .slide4-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#slide4 .slide4-check-icon {
+    color: #32a852;
+}
+
+#slide4 .slide4-update-badge {
+    background: rgba(99,91,255,0.1);
+    color: #635bff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Styles for Slide 5 - AbacusOS */
+#slide5 .slide5-content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+#slide5 .slide5-os-showcase {
+    background: linear-gradient(145deg, #0a2540, #1a365d);
+    border-radius: 16px;
+    padding: 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#slide5 .slide5-os-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #635bff, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#slide5 .slide5-os-tagline {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+#slide5 .slide5-os-visual {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #635bff, #8b5cf6);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgba(99,91,255,0.2);
+}
+
+#slide5 .slide5-os-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+#slide5 .slide5-feature {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+#slide5 .slide5-feature-icon {
+    background: linear-gradient(45deg, #635bff, #8b5cf6);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+#slide5 .slide5-feature-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0a2540;
+    margin: 0 0 0.5rem 0;
+}
+
+#slide5 .slide5-feature-content p {
+    font-size: 0.95rem;
+    color: #425466;
+    line-height: 1.5;
+    margin: 0;
+}
+
+#slide5 .slide5-compliance-badges {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+#slide5 .slide5-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+#slide5 .slide5-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #8792a2;
+    margin-top: 1rem;
+}
+
+#slide5 .slide5-logo {
+    width: 24px;
+    height: 24px;
+    background-color: #635bff;
+    border-radius: 50%;
+}
+
+
+#slide6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure it takes full viewport height */
+    width: 100%; /* Full width of the viewport */
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+#slide6 .slide6-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center; /* Align items vertically in the grid */
+}
+
+#slide6 h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0a2540;
+    text-align: center;
+}
+
+#slide6 .slide6-subtitle {
+    font-size: 1.1rem;
+    color: #425466;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+#slide6 .slide6-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+#slide6 .slide6-demo-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    overflow: hidden;
+    height: 100%;
+}
+
+#slide6 .slide6-demo-header {
+    background: linear-gradient(145deg, #0a2540, #1a365d);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+#slide6 .slide6-header-icon {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(45deg, #635bff, #8b5cf6);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+#slide6 .slide6-demo-content {
+    aspect-ratio: 16 / 9;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+}
+
+#slide6 .slide6-workflow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#slide6 .slide6-stage-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    padding: 1.25rem;
+}
+
+#slide6 .slide6-stage-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+#slide6 .slide6-stage-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(45deg, #635bff, #8b5cf6);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+}
+
+#slide6 .slide6-stage-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0a2540;
+}
+
+#slide6 .slide6-stage-content {
+    color: #425466;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+#slide6 .slide6-improvements {
+    background: linear-gradient(145deg, #0a2540, #1a365d);
+    border-radius: 12px;
+    padding: 1.25rem;
+    color: white;
+    text-align: center;
+}
+
+#slide6 .slide6-improvements-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+#slide6 .slide6-improvements-content {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#slide6 .slide6-improvement-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+#slide6 .slide6-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #8792a2;
+}
+
+#slide6 .slide6-logo {
+    width: 24px;
+    height: 24px;
+    background-color: #635bff;
+    border-radius: 50%;
+}
+
+
+
+    .slide7-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #0a2540;
+        text-align: center;
+    }
+
+    .slide7-model-container {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .slide7-pricing-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        text-align: center;
+        flex: 1;
+        max-width: 400px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .slide7-pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .slide7-pricing-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #425466;
+        margin-bottom: 1rem;
+    }
+
+    .slide7-pricing-amount {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #635bff;
+        margin-bottom: 1rem;
+    }
+
+    .slide7-pricing-description {
+        font-size: 1rem;
+        color: #425466;
+        line-height: 1.5;
+    }
+
+    .slide7-footer {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #8792a2;
+    }
+
+    .slide7-logo {
+        width: 24px;
+        height: 24px;
+        background-color: #635bff;
+        border-radius: 50%;
+    }
+
+    .slide8-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #0a2540;
+        text-align: center;
+    }
+
+    .slide8-chart-container {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+        padding: 2rem;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .slide8-chart {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        height: 300px;
+        margin-top: 2rem;
+    }
+
+    .slide8-bar {
+        width: 60px;
+        background: linear-gradient(to top, #635bff, #8b5cf6);
+        border-radius: 4px 4px 0 0;
+        position: relative;
+        transition: height 1s ease-in-out;
+    }
+
+    .slide8-bar-label {
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        font-size: 0.9rem;
+        color: #425466;
+    }
+
+    .slide8-bar-value {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #0a2540;
+    }
+
+    .slide8-footer {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #8792a2;
+    }
+
+    .slide8-logo {
+        width: 30px;
+        height: 30px;
+        background-color: #635bff;
+        border-radius: 50%;
+    }
+
+    .slide9-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #0a2540;
+        text-align: center;
+    }
+
+    .slide9-content-container {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .slide9-customer-count {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #635bff;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .slide9-logo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .slide9-logo-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .slide9-logo-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .slide9-logo-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .slide9-testimonial {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        font-style: italic;
+        color: #425466;
+        text-align: center;
+        position: relative;
+    }
+
+    .slide9-testimonial::before {
+        content: '"';
+        font-size: 4rem;
+        color: #635bff;
+        position: absolute;
+        top: -1rem;
+        left: 1rem;
+        opacity: 0.2;
+    }
+
+    .slide9-testimonial-author {
+        margin-top: 1rem;
+        font-style: normal;
+        font-weight: 600;
+        color: #0a2540;
+    }
+
+    .slide9-footer {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #8792a2;
+    }
+
+    .slide9-logo {
+        width: 24px;
+        height: 24px;
+        background-color: #635bff;
+        border-radius: 50%;
+    }
+
+
+
+    .slide10-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #0a2540;
+        text-align: center;
+    }
+
+    .slide10-content-container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .slide10-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    .slide10-table th, .slide10-table td {
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .slide10-table th {
+        font-weight: 600;
+        color: #0a2540;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+    }
+
+    .slide10-table td:first-child {
+        text-align: left;
+        font-weight: 500;
+        color: #0a2540;
+    }
+
+    .slide10-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .slide10-check {
+        color: #32a852;
+        font-size: 1.5rem;
+    }
+
+    .slide10-x {
+        color: #d23f31;
+        font-size: 1.5rem;
+    }
+
+    .slide10-footer {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #8792a2;
+    }
+
+    .slide10-logo {
+        width: 24px;
+        height: 24px;
+        background-color: #635bff;
+        border-radius: 50%;
+    }
+
+    .slide10-highlight {
+        background-color: #f6f9fc;
+    }
+
+    .slide10-feature-description {
+        font-size: 0.85rem;
+        color: #425466;
+        margin-top: 0.25rem;
+    }
+
+    .slide11-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #0a2540;
+        text-align: center;
+    }
+
+    .slide11-content-container {
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .slide11-partnerships {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .slide11-partnership-item {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .slide11-partnership-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .slide11-partnership-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #635bff;
+    }
+
+    .slide11-partnership-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #0a2540;
+        margin-bottom: 0.5rem;
+    }
+
+    .slide11-partnership-description {
+        font-size: 0.9rem;
+        color: #425466;
+        line-height: 1.4;
+    }
+
+    .slide11-partnership-cost {
+        font-size: 0.9rem;
+        color: #635bff;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+
+    .slide11-strategies {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .slide11-strategy-item {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .slide11-strategy-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #635bff;
+    }
+
+    .slide11-strategy-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #0a2540;
+        margin-bottom: 0.5rem;
+    }
+
+    .slide11-strategy-description {
+        font-size: 0.8rem;
+        color: #425466;
+        line-height: 1.4;
+    }
+
+    .slide11-initiative {
+        background: linear-gradient(45deg, #635bff, #8b5cf6);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+    }
+
+    .slide11-initiative-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .slide11-initiative-description {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .slide11-footer {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #8792a2;
+    }
+
+    .slide11-logo {
+        width: 24px;
+        height: 24px;
+        background-color: #635bff;
+        border-radius: 50%;
+    }
+
+
+    .slide12-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #0a2540;
+        text-align: center;
+    }
+
+    .slide12-roadmap {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+    }
+
+    .slide12-milestone {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .slide12-milestone:last-child {
+        margin-bottom: 0;
+    }
+
+    .slide12-milestone::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 100px;
+        width: 2px;
+        height: calc(100% + 2rem);
+        background: #635bff;
+    }
+
+    .slide12-milestone:last-child::before {
+        display: none;
+    }
+
+    .slide12-year {
+        flex: 0 0 100px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #635bff;
+        text-align: right;
+        padding-right: 2rem;
+    }
+
+    .slide12-content {
+        flex: 1;
+        padding-left: 2rem;
+    }
+
+    .slide12-revenue {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #0a2540;
+        margin-bottom: 0.5rem;
+    }
+
+    .slide12-details {
+        font-size: 1.1rem;
+        color: #425466;
+        line-height: 1.5;
+    }
+
+    .slide12-footer {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #8792a2;
+    }
+    
+
+    .slide12-logo {
+        width: 24px;
+        height: 24px;
+        background-color: #635bff;
+        border-radius: 50%;
+    }
+
+
+    .slide12-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #0a2540;
+        text-align: center;
+    }
+
+    .slide12-subtitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #0a2540;
+        text-align: center;
+    }
+
+    .slide12-content-container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .slide12-team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .slide12-team-member {
+        text-align: center;
+        padding: 1.5rem;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .slide12-team-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .slide12-member-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        background-color: #635bff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: white;
+        font-weight: 600;
+    }
+
+    .slide12-member-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #0a2540;
+        margin-bottom: 0.5rem;
+    }
+
+    .slide12-member-title {
+        font-size: 1rem;
+        color: #425466;
+        margin-bottom: 0.5rem;
+    }
+
+    .slide12-footer {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-size: 0.8rem;
+        color: #8792a2;
+    }
+
+    .slide12-logo {
+        width: 24px;
+        height: 24px;
+        background-color: #635bff;
+        border-radius: 50%;
+    }
+
+
+    .slide14-logo {
+        width: 150px;
+        height: 150px;
+        background-color: #635bff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+
+    .slide14-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #0a2540;
+    }
+
+    .slide14-tagline {
+        font-size: 1.5rem;
+        color: #425466;
+        max-width: 600px;
+        margin-bottom: 2rem;
+    }
+
+    .slide14-cta {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #635bff;
+    }
+
+    .slide14-footer {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #8792a2;
+    }
+
+    .slide14-footer-logo {
+        width: 30px;
+        height: 30px;
+        background-color: #635bff;
+        border-radius: 50%;
+    }
+/* Footer CSS for Slide 1 */
+.slide1-footer {
+    position: fixed;
+    bottom: 0; /* Align footer to the bottom */
+    left: 0;
+    right: 0;
+    width: 100%; /* Full width footer */
+    background-color: #0a2540; /* Optional background for visibility */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #f0f0f0;
+    z-index: 100;
+}
+
+/* Styling the footer logo */
+.slide1-footer-logo {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Page number span styling */
+#pageNumber {
+    font-weight: 500;
+    color: #ffffff;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="presentation-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="header-logo">A</div>
+                <div class="header-divider"></div>
+                <div class="header-title">Product Overview</div>
+            </div>
+            <div class="header-right">
+                <div class="nav-hint">
+                    <span class="key-hint">←</span>
+                    <span class="key-hint">→</span>
+                    to navigate
+                </div>
+                <div class="slide-counter" id="slideCount">1 of 6</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-track">
+        <div id="progress" class="progress-bar"></div>
+    </div>
+
+    <div class="presentation-container">
+        <!-- Slide 1 -->
+        <div id="slide1" class="slide">
+            <div class="gradient-bg"></div>
+            <div class="slide-content">
+                <h1>Abacus</h1>
+                <p>Enterprise Virtual Assistant for Regulated Industries</p>
+                <a href="#" class="cta-button">Get started</a>
+            </div>
+        
+            <div class="slide1-footer">
+                <div class="slide1-footer-logo"></div>
+                <span>Abacus</span>
+                <span>www.goabacus.co</span>
+                <span>@HeyAbacus</span>
+                <span id="pageNumber">1 / 14</span> <!-- Page number span -->
+            </div>
+        </div>
+
+        <!-- Add other slides here -->
+        <div id="slide2" class="slide">
+            <!-- Content for slide 2 -->
+         
+                <div class="slide-content">
+                    <h1>AI-Powered Solutions for Regulated Industries</h1>
+                    <p class="subtitle">Abacus delivers secure, intelligent virtual assistance tailored for banks, credit unions, and insurance companies.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <h2>Smart Chat Interface</h2>
+                            <p>Engage users with our AI-powered conversational platform.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Automatic Data Integration</h2>
+                            <p>Seamlessly index thousands of data sources in real-time.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Abacus Studio</h2>
+                            <p>Refine and manage your AI assistant with powerful tools.</p>
+                        </div>
+                        <div class="feature">
+                            <h2>Secure On-Premise Deployment</h2>
+                            <p>Maintain data integrity with our local LLM infrastructure.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide1-footer">
+                    <div class="slide1-footer-logo"></div>
+                    <span>Abacus</span>
+                    <span>www.goabacus.co</span>
+                    <span>@HeyAbacus</span>
+                    <span id="pageNumber">2 / 14</span> <!-- Page number span -->
+                </div>
+            </div>
+     
+
+            <div id="slide3" class="slide">
+                <div class="slide-content">
+                    <h1>Abacus in Action</h1>
+                    <div class="demo-container">
+                        <div class="demo-image">
+                            NEED TO DO: Roy - put the demo video here, and lets make some edits prior
+                        </div>
+                        <div class="demo-content">
+                            <div class="user-profile">
+                                <div class="user-photo">JD</div>
+                                <div class="user-info">
+                                    <h3>Jim Eisert</h3>
+                                    <p>Director Learning and Development, CCU</p>
+                                </div>
+                            </div>
+                            <div class="demo-steps">
+                                <div class="demo-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <strong>Identify the need:</strong> Jim, a compliance officer at CCU, requires quick access to regulatory information for a new financial product.
+                                    </div>
+                                </div>
+                                <div class="demo-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <strong>Use Abacus:</strong> Jim opens Abacus and inquires about compliance requirements for their new high-yield savings account.
+                                    </div>
+                                </div>
+                                <div class="demo-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <strong>Instant results:</strong> Abacus scans thousands of documents, delivering a concise summary in seconds.
+                                    </div>
+                                </div>
+                                <div class="demo-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <strong>Share and save:</strong> Jim shares the information with his team, reducing research time by 75% and minimizing compliance risks.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide1-footer">
+                    <div class="slide1-footer-logo"></div>
+                    <span>Abacus</span>
+                    <span>www.goabacus.co</span>
+                    <span>@HeyAbacus</span>
+                    <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+                </div>
+            </div>
+
+            <div id="slide4" class="slide">
+                <div class="slide-content">
+                    <h1>Abacus Bot</h1>
+                    <p class="subtitle">Intelligent Enterprise Knowledge Indexer that connects to your existing data sources—no consolidation required.</p>
+            
+                    <div class="slide4-main-content">
+                        <div class="slide4-demo-container">
+                            <div class="slide4-demo-header">
+                                <span class="slide4-source-icon" style="width: 24px; height: 24px; font-size: 0.9rem;">🤖</span>
+                                Abacus Bot in Action
+                            </div>
+                            <div class="slide4-demo-content">
+                                <div class="slide4-video-placeholder">
+                                    [Demo Video Placeholder]
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="slide4-indexer-info">
+                            <div class="slide4-data-source">
+                                <div class="slide4-source-icon">📑</div>
+                                <div class="slide4-source-text">SharePoint Policies</div>
+                            </div>
+                            <div class="slide4-data-source">
+                                <div class="slide4-source-icon">📚</div>
+                                <div class="slide4-source-text">Training Materials</div>
+                            </div>
+                            <div class="slide4-data-source">
+                                <div class="slide4-source-icon">📋</div>
+                                <div class="slide4-source-text">Client Manuals</div>
+                            </div>
+            
+                            <div class="slide4-bot-features">
+                                <div class="slide4-feature-item">
+                                    <span class="slide4-check-icon">✓</span>
+                                    <span>Daily Automated Updates</span>
+                                </div>
+                                <div class="slide4-feature-item">
+                                    <span class="slide4-check-icon">✓</span>
+                                    <span>Role-Based Filtering</span>
+                                </div>
+                                <div class="slide4-feature-item">
+                                    <span class="slide4-check-icon">✓</span>
+                                    <span>Multi-Source Integration</span>
+                                </div>
+                                <div class="slide4-update-badge">
+                                    <span>⚡</span>
+                                    Updates Every 24 Hours
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide1-footer">
+                    <div class="slide1-footer-logo"></div>
+                    <span>Abacus</span>
+                    <span>www.goabacus.co</span>
+                    <span>@HeyAbacus</span>
+                    <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+                </div>
+            </div>
+
+            <div id="slide5" class="slide">
+                <div class="slide5-content-container">
+                    <div class="slide5-os-showcase">
+                        <div class="slide5-os-visual">AOS</div>
+                        <div class="slide5-os-logo">AbacusOS</div>
+                        <div class="slide5-os-tagline">Secure On-Premise LLM Operating System</div>
+                        <div class="slide5-compliance-badges">
+                            <span class="slide5-badge">GDPR</span>
+                            <span class="slide5-badge">HIPAA</span>
+                            <span class="slide5-badge">FINRA</span>
+                        </div>
+                    </div>
+            
+                    <div class="slide5-os-features">
+                        <div class="slide5-feature">
+                            <div class="slide5-feature-icon">🔐</div>
+                            <div class="slide5-feature-content">
+                                <h3>Private LLM Deployment</h3>
+                                <p>Run our proprietary models entirely within your infrastructure, ensuring complete data sovereignty.</p>
+                            </div>
+                        </div>
+                        <div class="slide5-feature">
+                            <div class="slide5-feature-icon">🎯</div>
+                            <div class="slide5-feature-content">
+                                <h3>Industry-Specific Models</h3>
+                                <p>Built on proprietary datasets since 2018, refined specifically for financial institutions.</p>
+                            </div>
+                        </div>
+                        <div class="slide5-feature">
+                            <div class="slide5-feature-icon">⚡</div>
+                            <div class="slide5-feature-content">
+                                <h3>Real-Time Updates</h3>
+                                <p>Automatic compliance and model updates within your secure network environment.</p>
+                            </div>
+                        </div>
+                        <div class="slide5-feature">
+                            <div class="slide5-feature-icon">🛠️</div>
+                            <div class="slide5-feature-content">
+                                <h3>Custom Model Training</h3>
+                                <p>Tailor models to your specific needs without external dependencies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide1-footer">
+                    <div class="slide1-footer-logo"></div>
+                    <span>Abacus</span>
+                    <span>www.goabacus.co</span>
+                    <span>@HeyAbacus</span>
+                    <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+                </div>
+            </div>
+
+            <div id="slide6" class="slide">
+                <h1>Abacus Studio</h1>
+                <p class="slide6-subtitle">A collaborative hub for continuous improvement and knowledge refinement</p>
+            
+                <div class="slide6-content-grid">
+                    <div class="slide6-demo-container">
+                        <div class="slide6-demo-header">
+                            <div class="slide6-header-icon">▶️</div>
+                            <div>Abacus Studio Demo</div>
+                        </div>
+                        <div class="slide6-demo-content">
+                            [Video Demo Embed Here]
+                        </div>
+                    </div>
+            
+                    <div class="slide6-workflow-container">
+                        <div class="slide6-stage-card">
+                            <div class="slide6-stage-header">
+                                <div class="slide6-stage-icon">👥</div>
+                                <div class="slide6-stage-title">Employees Submit Feedback</div>
+                            </div>
+                            <div class="slide6-stage-content">
+                                Report incorrect or outdated information through tickets
+                            </div>
+                        </div>
+            
+                        <div class="slide6-stage-card">
+                            <div class="slide6-stage-header">
+                                <div class="slide6-stage-icon">👨‍💼</div>
+                                <div class="slide6-stage-title">Content Keepers Review</div>
+                            </div>
+                            <div class="slide6-stage-content">
+                                Experts update documents and redirect to correct content
+                            </div>
+                        </div>
+            
+                        <div class="slide6-stage-card">
+                            <div class="slide6-stage-header">
+                                <div class="slide6-stage-icon">🤖</div>
+                                <div class="slide6-stage-title">Instant Learning</div>
+                            </div>
+                            <div class="slide6-stage-content">
+                                Updates are immediately available to all users
+                            </div>
+                        </div>
+            
+                        <div class="slide6-improvements">
+                            <div class="slide6-improvements-title">Continuous Improvement Benefits</div>
+                            <div class="slide6-improvements-content">
+                                <div class="slide6-improvement-item">
+                                    <span>✓</span>
+                                    <span>Always Accurate</span>
+                                </div>
+                                <div class="slide6-improvement-item">
+                                    <span>✓</span>
+                                    <span>Constantly Updated</span>
+                                </div>
+                                <div class="slide6-improvement-item">
+                                    <span>✓</span>
+                                    <span>Policy Aligned</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="slide1-footer">
+                    <div class="slide1-footer-logo"></div>
+                    <span>Abacus</span>
+                    <span>www.goabacus.co</span>
+                    <span>@HeyAbacus</span>
+                    <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+                </div>
+            </div>
+    </div>
+
+
+    <div id="slide7" class="slide">
+        <h1 class="slide7-title">Our Business Model</h1>
+        <div class="slide7-model-container">
+            <div class="slide7-pricing-card">
+                <div class="slide7-pricing-title">Monthly Subscription</div>
+                <div class="slide7-pricing-amount">$10K - $20K</div>
+                <div class="slide7-pricing-description">
+                    Per month, based on client's asset size
+                </div>
+            </div>
+            <div class="slide7-pricing-card">
+                <div class="slide7-pricing-title">One-Time Installation</div>
+                <div class="slide7-pricing-amount">$250K - $350K</div>
+                <div class="slide7-pricing-description">
+                    Initial setup and integration fee
+                </div>
+            </div>
+        </div>
+    
+        <div class="slide1-footer">
+            <div class="slide1-footer-logo"></div>
+            <span>Abacus</span>
+            <span>www.goabacus.co</span>
+            <span>@HeyAbacus</span>
+            <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+        </div>
+    </div>
+    
+    <div id="slide8" class="slide">
+        <h1 class="slide8-title">Our Traction</h1>
+        <div class="slide8-chart-container">
+            <div class="slide8-chart">
+                <div class="slide8-bar" style="height: 20%;">
+                    <div class="slide8-bar-label">Jan</div>
+                    <div class="slide8-bar-value">$20K</div>
+                </div>
+                <div class="slide8-bar" style="height: 40%;">
+                    <div class="slide8-bar-label">Feb</div>
+                    <div class="slide8-bar-value">$40K</div>
+                </div>
+                <div class="slide8-bar" style="height: 60%;">
+                    <div class="slide8-bar-label">Mar</div>
+                    <div class="slide8-bar-value">$60K</div>
+                </div>
+                <div class="slide8-bar" style="height: 80%;">
+                    <div class="slide8-bar-label">Apr</div>
+                    <div class="slide8-bar-value">$80K</div>
+                </div>
+                <div class="slide8-bar" style="height: 100%;">
+                    <div class="slide8-bar-label">May</div>
+                    <div class="slide8-bar-value">$93K</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="slide1-footer">
+            <div class="slide1-footer-logo"></div>
+            <span>Abacus</span>
+            <span>www.goabacus.co</span>
+            <span>@HeyAbacus</span>
+            <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+        </div>
+    </div>
+
+    <div id="slide9" class="slide">
+        <h1 class="slide9-title">Our Customers</h1>
+        <div class="slide9-content-container">
+            <div class="slide9-customer-count">Trusted by Leading Financial Institutions</div>
+            <div class="slide9-logo-grid">
+                <div class="slide9-logo-container">
+                    <img src="https://cdn.prod.website-files.com/6499dbc7bfa009a9d8aaf5c0/649bb1acbab9b8283e21ce67_logo_synchrony_dark.svg" alt="Synchrony">
+                </div>
+                <div class="slide9-logo-container">
+                    <img src="https://assets-global.website-files.com/6499dbc7bfa009a9d8aaf5c0/649a2ae583b41facdbe78ce1_Pulse_(EFT_network)_logo.svg-p-500.png" alt="Pulse">
+                </div>
+                <div class="slide9-logo-container">
+                    <img src="https://assets-global.website-files.com/6499dbc7bfa009a9d8aaf5c0/649a2aaaed83f26f735c9867_2560px-Esurance.svg-p-500.png" alt="Esurance">
+                </div>
+                <div class="slide9-logo-container">
+                    <img src="https://www.myconsumers.org/images/default-source/default-album/logo-2x.svg?sfvrsn=c2c47e7b_12" alt="Consumers Credit Union">
+                </div>
+                <div class="slide9-logo-container">
+                    <img src="https://www.alliantcreditunion.org/assets/dist/images/logo.png" alt="Alliant Credit Union">
+                </div>
+            </div>
+            <div class="slide9-testimonial">
+                "Abacus has revolutionized our compliance process, saving us hundreds of hours each month."
+                <div class="slide9-testimonial-author">
+                    - Jim Eisert, Director of Learning and Development, CCU
+                </div>
+            </div>
+        </div>
+        <div class="slide1-footer">
+            <div class="slide1-footer-logo"></div>
+            <span>Abacus</span>
+            <span>www.goabacus.co</span>
+            <span>@HeyAbacus</span>
+            <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+        </div>
+    </div>
+
+    <div id="slide10" class="slide">
+        <h1 class="slide10-title">Competitive Advantage</h1>
+        <div class="slide10-content-container">
+            <table class="slide10-table">
+                <tr>
+                    <th>Feature</th>
+                    <th class="slide10-highlight">Abacus</th>
+                    <th>Amelia</th>
+                    <th>interface.ai</th>
+                    <th>posh.ai</th>
+                    <th>senso ai</th>
+                </tr>
+                <tr>
+                    <td>
+                        AI-Powered Compliance
+                        <div class="slide10-feature-description">Advanced AI for regulatory adherence</div>
+                    </td>
+                    <td class="slide10-highlight"><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-x">✗</span></td>
+                    <td><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-x">✗</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        Auto-updating Data Index
+                        <div class="slide10-feature-description">Real-time data integration and updates</div>
+                    </td>
+                    <td class="slide10-highlight"><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-x">✗</span></td>
+                    <td><span class="slide10-x">✗</span></td>
+                    <td><span class="slide10-x">✗</span></td>
+                    <td><span class="slide10-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        On-Premise Deployment
+                        <div class="slide10-feature-description">Secure local installation option</div>
+                    </td>
+                    <td class="slide10-highlight"><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-x">✗</span></td>
+                    <td><span class="slide10-x">✗</span></td>
+                    <td><span class="slide10-x">✗</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        Customizable Responses
+                        <div class="slide10-feature-description">Tailored AI responses for each client</div>
+                    </td>
+                    <td class="slide10-highlight"><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-x">✗</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        Financial Industry Focus
+                        <div class="slide10-feature-description">Specialized in banking and insurance</div>
+                    </td>
+                    <td class="slide10-highlight"><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-x">✗</span></td>
+                    <td><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-check">✓</span></td>
+                    <td><span class="slide10-check">✓</span></td>
+                </tr>
+            </table>
+        </div>
+    
+        <div class="slide1-footer">
+            <div class="slide1-footer-logo"></div>
+            <span>Abacus</span>
+            <span>www.goabacus.co</span>
+            <span>@HeyAbacus</span>
+            <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+        </div>
+    </div>
+    <div class="nav-buttons">
+        <button id="prevBtn" class="nav-button">Previous</button>
+        <button id="nextBtn" class="nav-button">Next</button>
+    </div>
+
+    <div id="slide11" class="slide">
+        <h1 class="slide11-title">Go-to-Market Strategy</h1>
+        <div class="slide11-content-container">
+            <div class="slide11-partnerships">
+                <div class="slide11-partnership-item">
+                    <div class="slide11-partnership-icon">🤝</div>
+                    <div class="slide11-partnership-title">CU2.0 Partnership</div>
+                    <div class="slide11-partnership-description">Collaboration for enhanced market penetration and industry insights.</div>
+                    <div class="slide11-partnership-cost">Annual Investment: $50,000</div>
+                </div>
+                <div class="slide11-partnership-item">
+                    <div class="slide11-partnership-icon">🔬</div>
+                    <div class="slide11-partnership-title">Filene Research Institute</div>
+                    <div class="slide11-partnership-description">Cutting-edge research and development in the credit union space.</div>
+                    <div class="slide11-partnership-cost">Annual Investment: $30,000</div>
+                </div>
+                <div class="slide11-partnership-item">
+                    <div class="slide11-partnership-icon">🏛️</div>
+                    <div class="slide11-partnership-title">CUNA Partnership</div>
+                    <div class="slide11-partnership-description">Strategic alliance with the Credit Union National Association for industry-wide reach.</div>
+                    <div class="slide11-partnership-cost">Annual Investment: $40,000</div>
+                </div>
+            </div>
+            <div class="slide11-strategies">
+                <div class="slide11-strategy-item">
+                    <div class="slide11-strategy-icon">🎯</div>
+                    <div class="slide11-strategy-title">Targeted Outreach</div>
+                    <div class="slide11-strategy-description">Direct engagement with C-suite executives in regulated industries.</div>
+                </div>
+                <div class="slide11-strategy-item">
+                    <div class="slide11-strategy-icon">💡</div>
+                    <div class="slide11-strategy-title">Thought Leadership</div>
+                    <div class="slide11-strategy-description">Publish insights and host webinars, leveraging partnership knowledge.</div>
+                </div>
+            </div>
+            <div class="slide11-initiative">
+                <div class="slide11-initiative-title">Credit Union AI Safety Commission</div>
+                <div class="slide11-initiative-description">Establishing a dedicated commission to ensure safe and ethical AI implementation in the credit union sector, positioning Abacus as a leader in responsible AI adoption.</div>
+            </div>
+        </div>
+    
+        <div class="slide1-footer">
+            <div class="slide1-footer-logo"></div>
+            <span>Abacus</span>
+            <span>www.goabacus.co</span>
+            <span>@HeyAbacus</span>
+            <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+        </div>
+    </div>
+
+
+    <div id="slide12" class="slide">
+        <h1 class="slide12-title">Roadmap to Growth</h1>
+        <div class="slide12-roadmap">
+            <div class="slide12-milestone">
+                <div class="slide12-year">2024</div>
+                <div class="slide12-content">
+                    <div class="slide12-revenue">$1.2M ARR</div>
+                    <div class="slide12-details">Achieve $100K MRR, focus on credit union sector</div>
+                </div>
+            </div>
+            <div class="slide12-milestone">
+                <div class="slide12-year">2025</div>
+                <div class="slide12-content">
+                    <div class="slide12-revenue">$3.6M ARR</div>
+                    <div class="slide12-details">Expand to regional banks, triple client base</div>
+                </div>
+            </div>
+            <div class="slide12-milestone">
+                <div class="slide12-year">2026</div>
+                <div class="slide12-content">
+                    <div class="slide12-revenue">$10M ARR</div>
+                    <div class="slide12-details">Enter insurance industry, launch new AI models</div>
+                </div>
+            </div>
+            <div class="slide12-milestone">
+                <div class="slide12-year">2027</div>
+                <div class="slide12-content">
+                    <div class="slide12-revenue">$30M ARR</div>
+                    <div class="slide12-details">International expansion, focus on EMEA market</div>
+                </div>
+            </div>
+            <div class="slide12-milestone">
+                <div class="slide12-year">2028</div>
+                <div class="slide12-content">
+                    <div class="slide12-revenue">$100M ARR</div>
+                    <div class="slide12-details">Global market leadership in regulated AI solutions</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide1-footer">
+            <div class="slide1-footer-logo"></div>
+            <span>Abacus</span>
+            <span>www.goabacus.co</span>
+            <span>@HeyAbacus</span>
+            <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+        </div>
+    </div>
+
+
+    <div id="slide12" class="slide">
+        <h1 class="slide12-title">Our Team</h1>
+        <div class="slide12-content-container">
+            <h2 class="slide12-subtitle">Founders</h2>
+            <div class="slide12-team-grid">
+                <div class="slide12-team-member">
+                    <div class="slide12-member-photo">DM</div>
+                    <div class="slide12-member-name">David Moscatelli</div>
+                    <div class="slide12-member-title">CEO & Co-founder</div>
+                </div>
+                <div class="slide12-team-member">
+                    <div class="slide12-member-photo">LG</div>
+                    <div class="slide12-member-name">Lisa Gillespie</div>
+                    <div class="slide12-member-title">CTO & Co-founder</div>
+                </div>
+            </div>
+    
+            <h2 class="slide12-subtitle">Development Team</h2>
+            <div class="slide12-team-grid">
+                <div class="slide12-team-member">
+                    <div class="slide12-member-photo">RM</div>
+                    <div class="slide12-member-name">Roy Matsunaga</div>
+                    <div class="slide12-member-title">Cognitive Engineering</div>
+                </div>
+                <div class="slide12-team-member">
+                    <div class="slide12-member-photo">SK</div>
+                    <div class="slide12-member-name">Shubham Kashik</div>
+                    <div class="slide12-member-title">Offshore Developer</div>
+                </div>
+                <div class="slide12-team-member">
+                    <div class="slide12-member-photo">DB</div>
+                    <div class="slide12-member-name">Dhyey Brundon</div>
+                    <div class="slide12-member-title">Offshore Developer</div>
+                </div>
+                <div class="slide12-team-member">
+                    <div class="slide12-member-photo">SK</div>
+                    <div class="slide12-member-name">Sai Kappulinik</div>
+                    <div class="slide12-member-title">Offshore Developer</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="slide1-footer">
+            <div class="slide1-footer-logo"></div>
+            <span>Abacus</span>
+            <span>www.goabacus.co</span>
+            <span>@HeyAbacus</span>
+            <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+        </div>
+    </div>
+
+
+    <div id="slide14" class="slide">
+        <div class="slide14-logo">A</div>
+        <h1 class="slide14-title">Abacus</h1>
+        <p class="slide14-tagline">Empowering regulated industries with intelligent AI solutions</p>
+        <p class="slide14-cta">Let's revolutionize compliance together</p>
+    
+        <div class="slide1-footer">
+            <div class="slide1-footer-logo"></div>
+            <span>Abacus</span>
+            <span>www.goabacus.co</span>
+            <span>@HeyAbacus</span>
+            <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progress = document.getElementById('progress');
+        const slideCount = document.getElementById('slideCount');
+        let currentSlide = 0;
+
+        function updateProgress() {
+            const percentage = ((currentSlide + 1) / slides.length) * 100;
+            progress.style.width = `${percentage}%`;
+            slideCount.textContent = `${currentSlide + 1} of ${slides.length}`;
+        }
+
+        function updateButtons() {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            updateButtons();
+            updateProgress();
+        }
+
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) {
+                showSlide(currentSlide + 1);
+            }
+            if (e.key === 'ArrowLeft' && currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Initialize first slide
+        showSlide(0);
+    </script>
+</body>
+</html>

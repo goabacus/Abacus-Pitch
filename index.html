@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
     <title>Abacus Pitch Deck</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -111,12 +113,12 @@
             width: 100vw;
             height: 100vh;
             overflow: hidden;
-            padding-top: 61px; /* Header height + border */
+            padding-top: 20px; /* Header height + border */
         }
 
         .slide {
             position: absolute;
-            top: 61px;
+            top: 0px;
             left: 0;
             width: 100%;
             height: calc(100% - 61px);
@@ -127,7 +129,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 1rem;
             box-sizing: border-box;
         }
 
@@ -306,7 +308,8 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
     overflow: hidden;
-    height: 400px;
+    min-height: 100%;
+    min-width: 100%
     display: flex;
     justify-content: center;
     align-items: center;
@@ -397,118 +400,7 @@
     font-weight: 600;
 }
 
-/* Styles for slide 4 - Abacus Bot */
-#slide4 .slide4-main-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    width: 100%;
-}
 
-#slide4 .slide4-demo-container {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    overflow: hidden;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-}
-
-#slide4 .slide4-demo-header {
-    background: linear-gradient(145deg, #0a2540, #1a365d);
-    color: white;
-    padding: 1rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-#slide4 .slide4-demo-content {
-    flex-grow: 1;
-    background: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-
-#slide4 .slide4-video-placeholder {
-    width: 100%;
-    height: 100%;
-    background: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #666;
-    font-size: 1.1rem;
-}
-
-#slide4 .slide4-indexer-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-#slide4 .slide4-data-source {
-    background: white;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-#slide4 .slide4-source-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(45deg, #635bff, #8b5cf6);
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.2rem;
-}
-
-#slide4 .slide4-source-text {
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-#slide4 .slide4-bot-features {
-    background: linear-gradient(145deg, #0a2540, #1a365d);
-    border-radius: 12px;
-    padding: 1.5rem;
-    color: white;
-}
-
-#slide4 .slide4-feature-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-}
-
-#slide4 .slide4-check-icon {
-    color: #32a852;
-}
-
-#slide4 .slide4-update-badge {
-    background: rgba(99,91,255,0.1);
-    color: #635bff;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-}
 
 /* Styles for Slide 5 - AbacusOS */
 #slide5 .slide5-content-container {
@@ -1523,6 +1415,569 @@
     font-weight: 500;
     color: #ffffff;
 }
+/* Base styles with Apple-like aesthetic */
+#slide4.slide {
+    background: linear-gradient(150deg, #f7f7f7 0%, #ffffff 100%);
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle ambient background */
+#slide4::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center,
+        rgba(99, 91, 255, 0.03) 0%,
+        rgba(99, 91, 255, 0.01) 25%,
+        rgba(255, 255, 255, 0) 50%);
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#slide4 .slide-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Premium Header */
+#slide4 .slide4-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#slide4 h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+#slide4 .subtitle {
+    font-size: 1.3rem;
+    color: #86868b;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Layout */
+#slide4 .slide4-demo-layout {
+    display: grid;
+    grid-template-columns: 68% 32%;
+    gap: 2rem;
+    width: 95%
+}
+
+/* Main Demo Area */
+#slide4 .slide4-main-demo {
+    background: linear-gradient(145deg, #ffffff 0%, #f5f5f7 100%);
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+#slide4 .slide4-demo-container {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+}
+
+/* Browser Header */
+#slide4 .slide4-demo-header {
+    background: #f5f5f7;
+    border-bottom: 1px solid #e5e5e7;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#slide4 .slide4-browser-controls {
+    display: flex;
+    gap: 8px;
+    padding-right: 16px;
+    border-right: 1px solid #e5e5e7;
+}
+
+#slide4 .browser-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+#slide4 .browser-dot:hover {
+    transform: scale(1.1);
+}
+
+#slide4 .dot-red { background: #ff5f57; }
+#slide4 .dot-yellow { background: #ffbd2e; }
+#slide4 .dot-green { background: #28c941; }
+
+/* Demo Tabs */
+#slide4 .slide4-demo-tabs {
+    display: flex;
+    gap: 1.5rem;
+}
+
+#slide4 .slide4-tab {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #86868b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#slide4 .slide4-tab:hover {
+    color: #1d1d1f;
+}
+
+#slide4 .slide4-tab.active {
+    background: rgba(99, 91, 255, 0.08);
+    color: #635bff;
+}
+
+/* Important: Fixed video container */
+#slide4 .slide4-demo-content {
+    flex-grow: 1;
+    position: relative;
+    background: #ffffff;
+    height: 100%; /* Ensure full height */
+}
+
+#slide4 .slide4-demo-content iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover; /* Ensure video fills container */
+}
+
+/* Status Bar */
+#slide4 .slide4-status-bar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}
+
+#slide4 .status-item {
+    background: rgba(255,255,255,0.95);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #1d1d1f;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+#slide4 .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+#slide4 .status-dot.green {
+    background: #30D158;
+}
+
+#slide4 .status-dot.pulse {
+    background: #635bff;
+    animation: pulse 2s infinite;
+}
+
+/* Metrics Panel */
+#slide4 .slide4-metrics-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#slide4 .metric-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+#slide4 .metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+#slide4 .metric-icon {
+    font-size: 1.8rem;
+}
+
+#slide4 .metric-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #635bff;
+}
+
+#slide4 .metric-label {
+    font-size: 0.9rem;
+    color: #86868b;
+}
+
+/* Data Sources */
+#slide4 .slide4-data-sources {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    margin-bottom: 1rem;
+}
+
+#slide4 .source-header {
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+#slide4 .source-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#slide4 .source-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f5f5f7;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+#slide4 .source-item:hover {
+    background: #f0f0f2;
+    transform: translateX(4px);
+}
+
+#slide4 .source-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #635bff, #8b5cf6);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#slide4 .source-name {
+    font-weight: 500;
+    color: #1d1d1f;
+}
+
+#slide4 .source-stats {
+    margin-top: 0.3rem;
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #86868b;
+}
+
+#slide4 .status {
+    color: #30D158;
+}
+
+/* Activity Panel */
+#slide4 .slide4-activity-panel {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    flex-grow: 1;
+}
+
+#slide4 .activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    color: #1d1d1f;
+}
+
+#slide4 .activity-indicator {
+    width: 8px;
+    height: 8px;
+    background: #30D158;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+#slide4 .activity-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#slide4 .activity-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.8rem;
+    background: #f5f5f7;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+#slide4 .activity-item:hover {
+    transform: translateX(4px);
+    background: #f0f0f2;
+}
+
+#slide4 .time {
+    font-size: 0.8rem;
+    color: #86868b;
+}
+
+#slide4 .event {
+    color: #1d1d1f;
+}
+
+/* Footer */
+#slide4 .slide1-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1d1d1f;
+    font-size: 0.8rem;
+    z-index: 1000;
+    border-top: 1px solid #e5e5e7;
+}
+
+#slide4 .slide1-footer-logo {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #635bff, #8b5cf6);
+    border-radius: 50%;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(99, 91, 255, 0.4);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(99, 91, 255, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(99, 91, 255, 0);
+    }
+}
+
+
+.demo-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.demo-image iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    border: 0;
+}
+
+.browser-frame {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.browser-header {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.browser-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.control.red {
+    background-color: #ff5f56;
+}
+
+.control.yellow {
+    background-color: #ffbd2e;
+}
+
+.control.green {
+    background-color: #27c93f;
+}
+
+.browser-address-bar {
+    flex-grow: 1;
+    margin-left: 12px;
+}
+
+.browser-address-bar input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+}
+
+.demo-container {
+    width: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.browser-frame {
+    width: 80%; /* Adjust the width as needed (e.g., 80% of parent) */
+    max-width: 1200px; /* Ensure it doesn't get too large on wide screens */
+    height: 600px; /* Adjust the height as needed */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.browser-header {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.browser-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.control.red {
+    background-color: #ff5f56;
+}
+
+.control.yellow {
+    background-color: #ffbd2e;
+}
+
+.control.green {
+    background-color: #27c93f;
+}
+
+.browser-address-bar {
+    flex-grow: 1;
+    margin-left: 12px;
+}
+
+.browser-address-bar input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+}
+
+.demo-image {
+    position: relative;
+    min-width: 100%;
+    height: calc(100% - 40px); /* Adjust for the browser header */
+    overflow: hidden;
+}
+
+.demo-image iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.vp-center {
+    display: flex;
+ 
+    justify-content: left !important; 
+    min-width: 100% !important;
+}
+
     </style>
 </head>
 <body>
@@ -1557,7 +2012,6 @@
             <div class="slide-content">
                 <h1>Abacus</h1>
                 <p>Enterprise Virtual Assistant for Regulated Industries</p>
-                <a href="#" class="cta-button">Get started</a>
             </div>
         
             <div class="slide1-footer">
@@ -1604,47 +2058,181 @@
                     <span id="pageNumber">2 / 14</span> <!-- Page number span -->
                 </div>
             </div>
-     
+            <div id="slide4" class="slide">
+                <div class="slide-content">
+                    <div class="slide4-header">
+                        <h1>Abacus Bot In Action</h1>
+                        <p class="subtitle">
+                            Watch how our AI assistant transforms complex queries into instant, accurate responses
+                        </p>
+                    </div>
+        
+                    <div class="slide4-demo-layout">
+                        <div class="slide4-main-demo">
+                            <div class="slide4-demo-container">
+                                <div class="slide4-demo-header">
+                                    <div class="slide4-browser-controls">
+                                        <div class="browser-dot dot-red"></div>
+                                        <div class="browser-dot dot-yellow"></div>
+                                        <div class="browser-dot dot-green"></div>
+                                    </div>
+                                    <div class="slide4-demo-tabs">
+                                        <div class="slide4-tab active">Live Demo</div>
+                                        <div class="slide4-tab">Knowledge Base</div>
+                                        <div class="slide4-tab">Analytics</div>
+                                    </div>
+                                </div>
+                                <div class="slide4-demo-content">
+                                    <div class="slide4-status-bar">
+                                        <div class="status-item">
+                                            <div class="status-dot green"></div>
+                                            System Ready
+                                        </div>
+                                        <div class="status-item">
+                                            <div class="status-dot pulse"></div>
+                                            Processing Real-Time Updates
+                                        </div>
+                                    </div>
+                                    <iframe 
+                                        src="https://player.vimeo.com/video/1022980249?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&background=1" 
+                                        frameborder="0" 
+                                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                        title="AbacusBot">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="slide4-sidebar">
+                         
+        
+                            <div class="slide4-data-sources">
+                                <div class="source-header">Active Data Sources</div>
+                                <div class="source-grid">
+                                    <div class="source-item">
+                                        <div class="source-icon">📑</div>
+                                        <div class="source-info">
+                                            <div class="source-name">SharePoint</div>
+                                            <div class="source-stats">
+                                                <span class="stat">12.5K Docs</span>
+                                                <span class="status">Live</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="source-item">
+                                        <div class="source-icon">📚</div>
+                                        <div class="source-info">
+                                            <div class="source-name">Training DB</div>
+                                            <div class="source-stats">
+                                                <span class="stat">8.2K Docs</span>
+                                                <span class="status">Syncing</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="source-item">
+                                        <div class="source-icon">🗄️</div>
+                                        <div class="source-info">
+                                            <div class="source-name">Policy Hub</div>
+                                            <div class="source-stats">
+                                                <span class="stat">3.4K Docs</span>
+                                                <span class="status">Live</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="slide4-activity-panel">
+                                <div class="activity-header">
+                                    <span>Live Activity</span>
+                                    <div class="activity-indicator"></div>
+                                </div>
+                                <div class="activity-feed">
+                                    <div class="activity-item">
+                                        <span class="time">Just now</span>
+                                        <span class="event">New policy indexed: Credit Card Compliance</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="time">2m ago</span>
+                                        <span class="event">Training materials updated</span>
+                                    </div>
+                                    <div class="activity-item">
+                                        <span class="time">5m ago</span>
+                                        <span class="event">Knowledge base optimization complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="slide1-footer">
+                    <div class="slide1-footer-logo"></div>
+                    <span>Abacus</span>
+                    <span>www.goabacus.co</span>
+                    <span>@HeyAbacus</span>
+                    <span id="pageNumber">4 / 14</span>
+                </div>
+            </div>
+
+            
+
 
             <div id="slide3" class="slide">
                 <div class="slide-content">
-                    <h1>Abacus in Action</h1>
+                    <h1>AbacusOS in Action</h1>
                     <div class="demo-container">
-                        <div class="demo-image">
-                            NEED TO DO: Roy - put the demo video here, and lets make some edits prior
-                        </div>
-                        <div class="demo-content">
-                            <div class="user-profile">
-                                <div class="user-photo">JD</div>
-                                <div class="user-info">
-                                    <h3>Jim Eisert</h3>
-                                    <p>Director Learning and Development, CCU</p>
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-controls">
+                                    <span class="control red"></span>
+                                    <span class="control yellow"></span>
+                                    <span class="control green"></span>
+                                </div>
+                                <div class="browser-address-bar">
+                                    <input type="text" value="AbacusOS" readonly />
                                 </div>
                             </div>
-                            <div class="demo-steps">
-                                <div class="demo-step">
-                                    <div class="step-number">1</div>
-                                    <div class="step-content">
-                                        <strong>Identify the need:</strong> Jim, a compliance officer at CCU, requires quick access to regulatory information for a new financial product.
-                                    </div>
+                            <div class="demo-image">
+                                <iframe 
+                                    src="https://player.vimeo.com/video/1023083569?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&background=1" 
+                                    frameborder="0" 
+                                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                    title="AbacusBot"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-content">
+                        <div class="user-profile">
+                            <div class="user-photo">JD</div>
+                            <div class="user-info">
+                                <h3>Jim Eisert</h3>
+                                <p>Director Learning and Development, CCU</p>
+                            </div>
+                        </div>
+                        <div class="demo-steps">
+                            <div class="demo-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <strong>Identify the need:</strong> Jim, a compliance officer at CCU, requires quick access to the pto policy.
                                 </div>
-                                <div class="demo-step">
-                                    <div class="step-number">2</div>
-                                    <div class="step-content">
-                                        <strong>Use Abacus:</strong> Jim opens Abacus and inquires about compliance requirements for their new high-yield savings account.
-                                    </div>
+                            </div>
+                            <div class="demo-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <strong>Use Abacus:</strong> Jim opens Abacus and inquires about the pto policy.
                                 </div>
-                                <div class="demo-step">
-                                    <div class="step-number">3</div>
-                                    <div class="step-content">
-                                        <strong>Instant results:</strong> Abacus scans thousands of documents, delivering a concise summary in seconds.
-                                    </div>
+                            </div>
+                            <div class="demo-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <strong>Instant results:</strong> Abacus scans thousands of documents, delivering a concise summary in seconds.
                                 </div>
-                                <div class="demo-step">
-                                    <div class="step-number">4</div>
-                                    <div class="step-content">
-                                        <strong>Share and save:</strong> Jim shares the information with his team, reducing research time by 75% and minimizing compliance risks.
-                                    </div>
+                            </div>
+                            <div class="demo-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <strong>Share and save:</strong> Jim shares the information with his team, reducing research time by 75% and minimizing compliance risks.
                                 </div>
                             </div>
                         </div>
@@ -1655,72 +2243,11 @@
                     <span>Abacus</span>
                     <span>www.goabacus.co</span>
                     <span>@HeyAbacus</span>
-                    <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+                    <span id="pageNumber">1 / 10</span>
                 </div>
             </div>
-
-            <div id="slide4" class="slide">
-                <div class="slide-content">
-                    <h1>Abacus Bot</h1>
-                    <p class="subtitle">Intelligent Enterprise Knowledge Indexer that connects to your existing data sources—no consolidation required.</p>
             
-                    <div class="slide4-main-content">
-                        <div class="slide4-demo-container">
-                            <div class="slide4-demo-header">
-                                <span class="slide4-source-icon" style="width: 24px; height: 24px; font-size: 0.9rem;">🤖</span>
-                                Abacus Bot in Action
-                            </div>
-                            <div class="slide4-demo-content">
-                                <div class="slide4-video-placeholder">
-                                    [Demo Video Placeholder]
-                                </div>
-                            </div>
-                        </div>
             
-                        <div class="slide4-indexer-info">
-                            <div class="slide4-data-source">
-                                <div class="slide4-source-icon">📑</div>
-                                <div class="slide4-source-text">SharePoint Policies</div>
-                            </div>
-                            <div class="slide4-data-source">
-                                <div class="slide4-source-icon">📚</div>
-                                <div class="slide4-source-text">Training Materials</div>
-                            </div>
-                            <div class="slide4-data-source">
-                                <div class="slide4-source-icon">📋</div>
-                                <div class="slide4-source-text">Client Manuals</div>
-                            </div>
-            
-                            <div class="slide4-bot-features">
-                                <div class="slide4-feature-item">
-                                    <span class="slide4-check-icon">✓</span>
-                                    <span>Daily Automated Updates</span>
-                                </div>
-                                <div class="slide4-feature-item">
-                                    <span class="slide4-check-icon">✓</span>
-                                    <span>Role-Based Filtering</span>
-                                </div>
-                                <div class="slide4-feature-item">
-                                    <span class="slide4-check-icon">✓</span>
-                                    <span>Multi-Source Integration</span>
-                                </div>
-                                <div class="slide4-update-badge">
-                                    <span>⚡</span>
-                                    Updates Every 24 Hours
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide1-footer">
-                    <div class="slide1-footer-logo"></div>
-                    <span>Abacus</span>
-                    <span>www.goabacus.co</span>
-                    <span>@HeyAbacus</span>
-                    <span id="pageNumber">1 / 10</span> <!-- Page number span -->
-                </div>
-            </div>
-
             <div id="slide5" class="slide">
                 <div class="slide5-content-container">
                     <div class="slide5-os-showcase">
@@ -1885,15 +2412,15 @@
             <div class="slide8-chart">
                 <div class="slide8-bar" style="height: 20%;">
                     <div class="slide8-bar-label">Jan</div>
-                    <div class="slide8-bar-value">$20K</div>
+                    <div class="slide8-bar-value">$50K</div>
                 </div>
                 <div class="slide8-bar" style="height: 40%;">
                     <div class="slide8-bar-label">Feb</div>
-                    <div class="slide8-bar-value">$40K</div>
+                    <div class="slide8-bar-value">$60K</div>
                 </div>
                 <div class="slide8-bar" style="height: 60%;">
                     <div class="slide8-bar-label">Mar</div>
-                    <div class="slide8-bar-value">$60K</div>
+                    <div class="slide8-bar-value">$70K</div>
                 </div>
                 <div class="slide8-bar" style="height: 80%;">
                     <div class="slide8-bar-label">Apr</div>
@@ -2090,30 +2617,30 @@
         <h1 class="slide12-title">Roadmap to Growth</h1>
         <div class="slide12-roadmap">
             <div class="slide12-milestone">
-                <div class="slide12-year">2024</div>
+                <div class="slide12-year">2025</div>
                 <div class="slide12-content">
                     <div class="slide12-revenue">$1.2M ARR</div>
                     <div class="slide12-details">Achieve $100K MRR, focus on credit union sector</div>
                 </div>
             </div>
             <div class="slide12-milestone">
-                <div class="slide12-year">2025</div>
+                <div class="slide12-year">2026</div>
                 <div class="slide12-content">
-                    <div class="slide12-revenue">$3.6M ARR</div>
+                    <div class="slide12-revenue">$3M ARR</div>
                     <div class="slide12-details">Expand to regional banks, triple client base</div>
                 </div>
             </div>
             <div class="slide12-milestone">
-                <div class="slide12-year">2026</div>
+                <div class="slide12-year">2028</div>
                 <div class="slide12-content">
                     <div class="slide12-revenue">$10M ARR</div>
                     <div class="slide12-details">Enter insurance industry, launch new AI models</div>
                 </div>
             </div>
             <div class="slide12-milestone">
-                <div class="slide12-year">2027</div>
+                <div class="slide12-year">2032</div>
                 <div class="slide12-content">
-                    <div class="slide12-revenue">$30M ARR</div>
+                    <div class="slide12-revenue">$100M ARR</div>
                     <div class="slide12-details">International expansion, focus on EMEA market</div>
                 </div>
             </div>

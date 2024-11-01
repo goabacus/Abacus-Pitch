@@ -544,6 +544,7 @@
     width: 100%;
     max-width: 1200px;
     align-items: center; /* Align items vertically in the grid */
+    max-height: 550px;
 }
 
 #slide6 h1 {
@@ -573,8 +574,8 @@
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    overflow: hidden;
-    height: 100%;
+
+    height: 400px;
 }
 
 #slide6 .slide6-demo-header {
@@ -604,6 +605,8 @@
     justify-content: center;
     align-items: center;
     color: #666;
+    height: 100%;
+    width: 100%;
 }
 
 #slide6 .slide6-workflow-container {
@@ -1264,7 +1267,7 @@
         background: white;
         border-radius: 12px;
         box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-        padding: 2rem;
+        margin-top: 48px; 
         width: 100%;
         max-width: 1000px;
     }
@@ -1978,6 +1981,1726 @@
     min-width: 100% !important;
 }
 
+
+.slide12-team-member {
+    text-align: center;
+    margin: 20px;
+}
+
+.slide12-member-photo {
+    width: 120px; /* Set the size of the circular image container */
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.slide12-member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide12-member-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.slide12-member-title {
+    font-size: 1em;
+    color: gray;
+    margin-top: 5px;
+}
+
+
+/* Subtitle styling */
+.slide12-subtitle {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Team grid layout */
+.slide12-team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Team member styling */
+.slide12-team-member {
+    text-align: center;
+    width: 150px;
+}
+
+/* Circular photo styling */
+.slide12-member-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    overflow: hidden;
+}
+
+/* Image inside circular container */
+.slide12-member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Name and title styling */
+.slide12-member-name {
+    font-size: 1.2
+
+}
+
+/* Team member styling */
+.slide12-team-member {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Circular main photo styling */
+.slide12-member-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.slide12-member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Name and title styling */
+.slide12-member-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.slide12-member-title {
+    font-size: 1em;
+    color: gray;
+    margin-top: 5px;
+}
+
+/* Container for logos */
+.slide12-member-logos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Circular logos styling */
+.slide12-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.slide12-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#slide3 .slide-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+#slide3 h1 {
+   height: 0px;
+}
+
+/* Main Layout */
+#slide3 .demo-container {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 2rem;
+    flex-grow: 1;
+    width: 100%;
+    max-height: 550px;
+}
+
+/* Browser Frame */
+#slide3 .browser-frame {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#slide3 .browser-header {
+    background: #f5f5f7;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e5e7;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#slide3 .browser-controls {
+    display: flex;
+    gap: 8px;
+    padding-right: 16px;
+    border-right: 1px solid #e5e5e7;
+}
+
+#slide3 .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+#slide3 .control:hover {
+    transform: scale(1.1);
+}
+
+#slide3 .control.red { background: #ff5f57; }
+#slide3 .control.yellow { background: #ffbd2e; }
+#slide3 .control.green { background: #28c941; }
+
+#slide3 .browser-address-bar {
+    flex-grow: 1;
+}
+
+#slide3 .browser-address-bar input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #e5e5e7;
+    background: #ffffff;
+    color: #1d1d1f;
+    font-size: 0.9rem;
+}
+
+#slide3 .demo-image {
+    flex-grow: 1;
+    position: relative;
+    background: #ffffff;
+    height: 100%;
+}
+
+#slide3 .demo-image iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Live Demo Badge */
+#slide3 .demo-image::before {
+    content: "Live Demo";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255,255,255,0.95);
+    color: #635bff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#slide3 .demo-image::after {
+    content: "";
+    position: absolute;
+    top: 1.4rem;
+    right: 1.8rem;
+    width: 8px;
+    height: 8px;
+    background: #635bff;
+    border-radius: 50%;
+    z-index: 11;
+    animation: pulse 2s infinite;
+}
+
+/* Case Study Section */
+#slide3 .demo-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#slide3 .user-profile {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 20px;
+    padding: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border: 1px solid rgba(99, 91, 255, 0.1);
+    position: relative;
+
+}
+
+#slide3 .user-profile::before {
+    content: 'CASE STUDY';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #635bff;
+    background: rgba(99, 91, 255, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+}
+
+#slide3 .user-photo {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #635bff, #8b5cf6);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    box-shadow: 0 8px 16px rgba(99, 91, 255, 0.2);
+}
+
+#slide3 .user-info {
+    flex-grow: 1;
+}
+
+#slide3 .user-info h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #1d1d1f;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+#slide3 .user-info p {
+    margin: 0;
+    color: #635bff;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+#slide3 .user-metrics {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+#slide3 .metric {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+#slide3 .metric-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+#slide3 .metric-label {
+    font-size: 0.8rem;
+    color: #86868b;
+}
+
+/* Demo Steps */
+#slide3 .demo-steps {
+    background: white;
+    border-radius: 20px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+#slide3 .demo-steps-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+#slide3 .demo-steps-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+#slide3 .time-saved {
+    background: rgba(48, 209, 88, 0.1);
+    color: #28c941;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+#slide3 .demo-step {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1rem;
+    background: #f8f9fc;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+#slide3 .demo-step:hover {
+    transform: translateX(4px);
+    background: #f5f6fa;
+    border-color: rgba(99, 91, 255, 0.1);
+}
+
+#slide3 .step-number {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #635bff, #8b5cf6);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(99, 91, 255, 0.2);
+}
+
+#slide3 .step-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+#slide3 .step-title {
+    color: #1d1d1f;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+#slide3 .step-description {
+    color: #636366;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+#slide3 .step-result {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #635bff;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Footer */
+#slide3 .slide1-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1d1d1f;
+    font-size: 0.8rem;
+    z-index: 1000;
+    border-top: 1px solid #e5e5e7;
+}
+
+#slide3 .slide1-footer-logo {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #635bff, #8b5cf6);
+    border-radius: 50%;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(99, 91, 255, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(99, 91, 255, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(99, 91, 255, 0);
+    }
+}
+/* Base styles */
+#slide3.slide {
+    background: linear-gradient(150deg, #f7f7f7 0%, #ffffff 100%);
+    height: 100vh;
+
+   
+}
+
+/* Full-width and full-height iframe */
+.slide4-demo-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Ensure the container itself also takes the full size */
+.slide4-demo-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.slide4-demo-container {
+    width: 100%;
+    height: 100%;
+}
+
+.slide4-main-demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensures the main container and all its child elements take the full available size */
+#slide6, .slide6-content-grid, .slide6-demo-container, .slide6-demo-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure iframe is full width and height */
+.slide6-demo-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Adjust layout for grid and spacing */
+.slide6-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    height: 100%;
+}
+
+.slide6-demo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.slide6-workflow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/* Make slide6 section take full viewport height */
+#slide6 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Adjust as needed */
+    box-sizing: border-box;
+}
+
+/* Content grid adjustments to take full height */
+.slide6-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    flex: 1;
+    height: 100%;
+}
+
+/* Demo container should take up full height within the grid */
+.slide6-demo-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Demo content and iframe should take full height and width */
+.slide6-demo-content {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.slide6-demo-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Workflow container adjustments */
+.slide6-workflow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+/* Set #slide6 to fill remaining viewport space, accounting for header */
+#slide6 {
+    width: 100%;
+    height: calc(100vh - 60); /* Replace <HEADER_HEIGHT> with your actual header height */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Grid layout within #slide6 */
+.slide6-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    flex: 1;
+    height: 100%;
+}
+
+/* Set the demo container to fill available space */
+.slide6-demo-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Allow iframe to take full available height */
+.slide6-demo-content {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide6-demo-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Styling for workflow container */
+.slide6-workflow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+/* Set #slide6 to take up the full viewport height minus the header */
+#slide6 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - <HEADER_HEIGHT>px); /* Replace <HEADER_HEIGHT> with the height of your header */
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* Set content grid to fill available space */
+.slide6-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+/* Demo container taking full height */
+.slide6-demo-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Adjust iframe container to fill more space */
+.slide6-demo-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide6-demo-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Workflow container adjustments */
+.slide6-workflow-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.player, .fallback {
+
+    height: 600px !important;
+}
+
+.header-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain; /* Ensures the image maintains aspect ratio */
+}
+
+.slide1-footer-logo {
+    width: 30px; /* Adjust to desired circle size */
+    height: 30px; /* Make sure height and width are the same for a perfect circle */
+    background-color: #f0f0f0; /* Adjust background color as needed */
+    border-radius: 50%; /* Makes the div a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the image within the circle */
+}
+
+.slide1-footer-logo img {
+    width: 20px; /* Adjust image size as needed */
+    height: 20px;
+}
+
+.intro-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    z-index: 1000;
+    animation: fadeOut 0.5s ease-out 3s forwards;
+}
+
+.intro-text-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transform: translateY(-10%);
+}
+
+.meet {
+    font-size: 6rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: translateX(0);
+    animation: 
+        fadeIn 0.5s ease-out 0.3s forwards,
+        slideLeft 0.5s ease-out 2.5s forwards;
+}
+
+.intro-text {
+    font-size: 6rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: translateX(0);
+    animation: 
+        fadeIn 0.5s ease-out 0.3s forwards,
+        slideRight 0.5s ease-out 2.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to { 
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+}
+
+@keyframes slideRight {
+    from { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to { 
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+@keyframes fadeOut {
+    from { 
+        opacity: 1;
+        visibility: visible;
+    }
+    to { 
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+#slide1 {
+    background: white;
+}
+
+#slide1 .slide-content {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 3.5s forwards;
+}
+
+/* Dashboard Styles */
+.dashboard-slide {
+    background: white;
+    padding: 2rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: calc(100vh - 180px);
+}
+
+.title-section {
+    margin-bottom: 2rem;
+}
+
+.dashboard-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1f36;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+/* Clients Section */
+.clients-section {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(99, 91, 255, 0.1);
+    margin-bottom: 1rem;
+}
+
+.clients-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1f36;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.enterprise-badge {
+    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.client-logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.client-logo {
+    height: 40px;
+    width: auto;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.client-logo:hover {
+    opacity: 1;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* Metrics Section */
+.metrics-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.kpi-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.kpi-value {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.kpi-label {
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.metric-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.metric-value {
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0.5rem 0;
+}
+
+.metric-trend {
+    font-size: 0.9rem;
+    color: #10B981;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.metric-trend.positive::before {
+    content: '↑';
+}
+
+/* Side Panel */
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.info-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1f36;
+    margin-bottom: 1rem;
+}
+
+.key-highlight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.key-highlight:last-child {
+    border-bottom: none;
+}
+
+.highlight-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.highlight-value {
+    font-weight: 600;
+    color: #1a1f36;
+}
+
+.team-size {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.team-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Pipeline Section */
+.pipeline-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.pipeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.pipeline-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1f36;
+}
+
+.pipeline-badge {
+    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.pipeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pipeline-item:last-child {
+    border-bottom: none;
+}
+
+.pipeline-status {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.status-discussion {
+    background: rgba(99, 91, 255, 0.1);
+    color: #635bff;
+}
+
+#slide2 {
+    margin-top:40px;
+    background: white;
+    padding: 2rem 4rem;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Top Client Section */
+.top-clients {
+    margin-bottom: 3rem;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 24px;
+    padding: 2rem 3rem;
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4rem;
+    align-items: center;
+}
+
+.client-logo {
+    max-height: 45px;
+    width: auto;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.client-logo:hover {
+    opacity: 1;
+}
+
+/* Main Metrics Section */
+.metrics-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    height: calc(100vh - 250px);
+}
+
+/* Primary Metrics */
+.primary-metrics {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 2rem;
+}
+
+.key-numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.key-metric {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 24px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.key-metric .value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.key-metric .label {
+    font-size: 1.1rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Secondary Metrics */
+.secondary-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    align-content: start;
+}
+
+.metric-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.metric-card .value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a1f36;
+    margin-bottom: 0.25rem;
+}
+
+.metric-card .label {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Side Panel */
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-section {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.info-section h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1f36;
+    margin-bottom: 1.5rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.info-value {
+    font-weight: 600;
+    color: #1a1f36;
+}
+
+/* Pipeline Section */
+.pipeline-section {
+    margin-top: auto;
+}
+
+.pipeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.pipeline-badge {
+    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.pipeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+
+.stage-badge {
+    background: rgba(99, 91, 255, 0.1);
+    color: #635bff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.team-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.dashboard-slide {
+    background: white;
+    padding: 2rem;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.update-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.last-updated {
+    color: #6b7280;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #10B981;
+    font-size: 0.9rem;
+}
+
+.live-indicator::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #10B981;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    height: calc(100vh - 140px);
+}
+
+/* Primary Metrics Section */
+.primary-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.key-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.metric-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid rgba(99, 91, 255, 0.1);
+    position: relative;
+}
+
+.metric-card.highlight {
+    background: linear-gradient(145deg, #f8f9fc 0%, #f0f7ff 100%);
+    border: 1px solid rgba(99, 91, 255, 0.2);
+}
+
+.metric-value {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    font-size: 1rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.metric-trend {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.trend-up {
+    color: #10B981;
+}
+
+.trend-down {
+    color: #EF4444;
+}
+
+/* Client Section */
+.client-section {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1f36;
+}
+
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.client-logo {
+    max-height: 35px;
+    width: auto;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+/* Pipeline Section */
+.pipeline-section {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.pipeline-deals {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.deal-card {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.deal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.deal-name {
+    font-weight: 600;
+    color: #1a1f36;
+}
+
+.deal-stage {
+    font-size: 0.9rem;
+    color: #635bff;
+}
+
+.deal-value {
+    font-weight: 600;
+    color: #1a1f36;
+}
+
+.deal-probability {
+    background: rgba(99, 91, 255, 0.1);
+    color: #635bff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Side Section */
+.side-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-label {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1f36;
+}
+
+.growth-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.growth-card {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+
+.slide-preview-panel {
+    position: fixed;
+    right: -300px;
+    top: 61px;
+    width: 300px;
+    height: calc(100vh - 61px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    border-left: 1px solid rgba(10, 37, 64, 0.08);
+    transition: right 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.slide-preview-panel.open {
+    right: 0;
+}
+
+.preview-toggle {
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    background: linear-gradient(135deg, #635bff, #8b5cf6);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(99, 91, 255, 0.2);
+}
+
+.preview-toggle:hover {
+    transform: scale(1.1);
+}
+
+.preview-toggle.open {
+    right: 320px;
+    transform: rotate(180deg);
+}
+
+.preview-toggle.open:hover {
+    transform: rotate(180deg) scale(1.1);
+}
+
+.preview-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(10, 37, 64, 0.08);
+}
+
+.preview-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0a2540;
+}
+
+.preview-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(99, 91, 255, 0.1);
+}
+
+.preview-item:hover {
+    background: rgba(99, 91, 255, 0.05);
+    transform: translateX(-5px);
+}
+
+.preview-item.active {
+    background: rgba(99, 91, 255, 0.1);
+    border-color: rgba(99, 91, 255, 0.3);
+}
+
+.preview-thumbnail {
+    width: 80px;
+    height: 45px;
+    background: #f8f9fc;
+    border-radius: 4px;
+    margin-right: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid rgba(10, 37, 64, 0.08);
+}
+
+.preview-thumbnail canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-info {
+    flex: 1;
+}
+
+.preview-slide-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0a2540;
+    margin-bottom: 4px;
+}
+
+.preview-slide-number {
+    font-size: 12px;
+    color: #635bff;
+}
+
+.preview-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.preview-list::-webkit-scrollbar-track {
+    background: #f8f9fc;
+}
+
+.preview-list::-webkit-scrollbar-thumb {
+    background: rgba(99, 91, 255, 0.2);
+    border-radius: 3px;
+}
+
+.preview-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 91, 255, 0.3);
+}
     </style>
 </head>
 <body>
@@ -1985,7 +3708,7 @@
     <div class="presentation-header">
         <div class="header-content">
             <div class="header-left">
-                <div class="header-logo">A</div>
+                <div class="header-logo"><img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg"></div>
                 <div class="header-divider"></div>
                 <div class="header-title">Product Overview</div>
             </div>
@@ -2007,19 +3730,196 @@
 
     <div class="presentation-container">
         <!-- Slide 1 -->
-        <div id="slide1" class="slide">
-            <div class="gradient-bg"></div>
-            <div class="slide-content">
-                <h1>Abacus</h1>
-                <p>Enterprise Virtual Assistant for Regulated Industries</p>
-            </div>
-        
-            <div class="slide1-footer">
-                <div class="slide1-footer-logo"></div>
-                <span>Abacus</span>
-                <span>www.goabacus.co</span>
-                <span>@HeyAbacus</span>
-                <span id="pageNumber">1 / 14</span> <!-- Page number span -->
+<!-- Modify Slide 1 HTML -->
+<div id="slide1" class="slide">
+    <div class="intro-animation">
+        <div class="intro-text-container">
+            <div class="meet gradient-text">Meet</div>
+            <div class="intro-text gradient-text">Abacus</div>
+        </div>
+    </div>
+
+    <div class="ambient-gradient ambient-1"></div>
+    <div class="ambient-gradient ambient-2"></div>
+    <div class="slide-content">
+        <div class="header-logo">
+            <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon" style="width: 60px; height: 60px;">
+        </div>
+        <h1>Abacus</h1>
+        <p>Enterprise Virtual Assistant for Regulated Industries</p>
+    </div>
+    
+    <div class="slide1-footer">
+        <div class="slide1-footer-logo">
+            <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon" style="width: 20px; height: 20px;">
+        </div>
+        <span>Abacus</span>
+        <span>www.goabacus.co</span>
+        <span>@HeyAbacus</span>
+        <span id="pageNumber">1 / 14</span> <!-- Page number span -->
+    </div>
+    
+        </div>
+
+        <div id="slide2" class="slide">
+            <div class="dashboard-slide">
+                <div class="dashboard-header">
+                    <div class="update-info">
+                        <div class="last-updated">Last Updated: October 31, 2024 9:00 AM CST</div>
+                        <div class="live-indicator">Live Data</div>
+                    </div>
+                </div>
+            
+                <div class="dashboard-grid">
+                    <div class="primary-section">
+                        <div class="key-metrics">
+                            <div class="metric-card highlight">
+                                <div class="metric-value">$112K</div>
+                                <div class="metric-label">Monthly Revenue</div>
+                                <div class="metric-trend trend-up">↑ 32% MoM</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">$600K</div>
+                                <div class="metric-label">Cash Position</div>
+                                <div class="metric-trend">12 Month Runway</div>
+                            </div>
+                            <div class="metric-card highlight">
+                                <div class="metric-value">$1.3M</div>
+                                <div class="metric-label">ARR</div>
+                                <div class="metric-trend trend-up">↑ 45% YoY</div>
+                            </div>
+                        </div>
+            
+                        <div class="client-section">
+                            <div class="section-header">
+                                <div class="section-title">Enterprise Clients</div>
+                                <div class="client-count">5 Major Institutions</div>
+                            </div>
+                            <div class="client-grid">
+                                <img class="client-logo" src="https://cdn.prod.website-files.com/6499dbc7bfa009a9d8aaf5c0/649bb1acbab9b8283e21ce67_logo_synchrony_dark.svg" alt="Synchrony">
+                                <img class="client-logo" src="https://assets-global.website-files.com/6499dbc7bfa009a9d8aaf5c0/649a2ae583b41facdbe78ce1_Pulse_(EFT_network)_logo.svg-p-500.png" alt="Pulse">
+                                <img class="client-logo" src="https://assets-global.website-files.com/6499dbc7bfa009a9d8aaf5c0/649a2aaaed83f26f735c9867_2560px-Esurance.svg-p-500.png" alt="Esurance">
+                                <img class="client-logo" src="https://www.myconsumers.org/images/default-source/default-album/logo-2x.svg?sfvrsn=c2c47e7b_12" alt="Consumers Credit Union">
+                                <img class="client-logo" src="https://www.alliantcreditunion.org/assets/dist/images/logo.png" alt="Alliant Credit Union">
+                            </div>
+                        </div>
+            
+                        <div class="pipeline-section">
+                            <div class="section-header">
+                                <div class="section-title">Active Pipeline</div>
+                                <div class="pipeline-value">$2.4M Potential ARR</div>
+                            </div>
+                            <div class="pipeline-deals">
+                                <div class="deal-card">
+                                    <div class="deal-info">
+                                        <div class="deal-name">Major Credit Union</div>
+                                        <div class="deal-stage">Late Stage - Security Review</div>
+                                    </div>
+                                    <div class="deal-value">$800K ARR</div>
+                                    <div class="deal-probability">90% Probability</div>
+                                </div>
+                                <div class="deal-card">
+                                    <div class="deal-info">
+                                        <div class="deal-name">Regional Bank</div>
+                                        <div class="deal-stage">Technical Review</div>
+                                    </div>
+                                    <div class="deal-value">$600K ARR</div>
+                                    <div class="deal-probability">70% Probability</div>
+                                </div>
+                                <div class="deal-card">
+                                    <div class="deal-info">
+                                        <div class="deal-name">Insurance Provider</div>
+                                        <div class="deal-stage">Contract Phase</div>
+                                    </div>
+                                    <div class="deal-value">$500K ARR</div>
+                                    <div class="deal-probability">80% Probability</div>
+                                </div>
+                                <div class="deal-card">
+                                    <div class="deal-info">
+                                        <div class="deal-name">National Bank</div>
+                                        <div class="deal-stage">Security Review</div>
+                                    </div>
+                                    <div class="deal-value">$500K ARR</div>
+                                    <div class="deal-probability">60% Probability</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="side-section">
+                        <div class="info-card">
+                            <div class="section-header">
+                                <div class="section-title">Company Overview</div>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="info-label">Team Size</div>
+                                    <div class="info-value">5 People</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Founded</div>
+                                    <div class="info-value">2018</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Location</div>
+                                    <div class="info-value">Chicago, IL</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Total Funding</div>
+                                    <div class="info-value">$1.2M</div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="info-card">
+                            <div class="section-header">
+                                <div class="section-title">Key Performance Metrics</div>
+                            </div>
+                            <div class="growth-metrics">
+                                <div class="growth-card">
+                                    <div class="info-label">Gross Margin</div>
+                                    <div class="info-value">82%</div>
+                                </div>
+                                <div class="growth-card">
+                                    <div class="info-label">CAC</div>
+                                    <div class="info-value">$2.8K</div>
+                                </div>
+                                <div class="growth-card">
+                                    <div class="info-label">LTV</div>
+                                    <div class="info-value">$85K</div>
+                                </div>
+                                <div class="growth-card">
+                                    <div class="info-label">Retention</div>
+                                    <div class="info-value">96%</div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="info-card">
+                            <div class="section-header">
+                                <div class="section-title">Market Opportunity</div>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="info-label">TAM</div>
+                                    <div class="info-value">$8.2B</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Market Growth</div>
+                                    <div class="info-value">32% YoY</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Target Customers</div>
+                                    <div class="info-value">2,500+</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Current Share</div>
+                                    <div class="info-value">0.2%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -2034,11 +3934,11 @@
                     <div class="features">
                         <div class="feature">
                             <h2>Smart Chat Interface</h2>
-                            <p>Engage users with our AI-powered conversational platform.</p>
+                            <p>Desktop App, Mobile App, SharePoint, MSTeams, and Call Center Integrations</p>
                         </div>
                         <div class="feature">
                             <h2>Automatic Data Integration</h2>
-                            <p>Seamlessly index thousands of data sources in real-time.</p>
+                            <p>Seamlessly index hundreds of data sources in real-time.</p>
                         </div>
                         <div class="feature">
                             <h2>Abacus Studio</h2>
@@ -2177,11 +4077,11 @@
 
             
 
-
             <div id="slide3" class="slide">
                 <div class="slide-content">
-                    <h1>AbacusOS in Action</h1>
+                  
                     <div class="demo-container">
+                        <!-- Browser Demo Section -->
                         <div class="browser-frame">
                             <div class="browser-header">
                                 <div class="browser-controls">
@@ -2190,7 +4090,7 @@
                                     <span class="control green"></span>
                                 </div>
                                 <div class="browser-address-bar">
-                                    <input type="text" value="AbacusOS" readonly />
+                                    <input type="text" value="AbacusOS Demo" readonly />
                                 </div>
                             </div>
                             <div class="demo-image">
@@ -2198,55 +4098,73 @@
                                     src="https://player.vimeo.com/video/1023083569?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&background=1" 
                                     frameborder="0" 
                                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                                    title="AbacusBot"></iframe>
+                                    title="AbacusOS">
+                                </iframe>
                             </div>
                         </div>
-                    </div>
-                    <div class="demo-content">
-                        <div class="user-profile">
-                            <div class="user-photo">JD</div>
-                            <div class="user-info">
-                                <h3>Jim Eisert</h3>
-                                <p>Director Learning and Development, CCU</p>
-                            </div>
-                        </div>
-                        <div class="demo-steps">
-                            <div class="demo-step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <strong>Identify the need:</strong> Jim, a compliance officer at CCU, requires quick access to the pto policy.
+            
+                        <!-- Case Study Section -->
+                        <div class="demo-content">
+                            <div class="user-profile">
+                                <div class="user-photo">JE</div>
+                                <div class="user-info">
+                                    <h3>Jim Eisert</h3>
+                                    <p>Director Learning and Development, CCU</p>
+                                    <div class="user-metrics">
+                                        <div class="metric">
+                                            <div class="metric-value">75%</div>
+                                            <div class="metric-label">Time Saved</div>
+                                        </div>
+                                        <div class="metric">
+                                            <div class="metric-value">100+</div>
+                                            <div class="metric-label">Queries/Month</div>
+                                        </div>
+                                        <div class="metric">
+                                            <div class="metric-value">5,000+</div>
+                                            <div class="metric-label">Docs Accessed</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="demo-step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <strong>Use Abacus:</strong> Jim opens Abacus and inquires about the pto policy.
+            
+                            <div class="demo-steps">
+                                <div class="demo-steps-header">
+                                    <div class="demo-steps-title">Process Overview</div>
+                                    <div class="time-saved">
+                                        <span>⚡</span>
+                                        4x Faster Resolution
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="demo-step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <strong>Instant results:</strong> Abacus scans thousands of documents, delivering a concise summary in seconds.
+                                
+                                <div class="demo-step">
+                                 
+                                    <div class="step-content">
+                                        <div class="step-title">Challenge Identified</div>
+                                        <div class="step-description">
+                                            Jim needs immediate access to PTO policy details for a time-sensitive employee request.
+                                        </div>
+                                        <div class="step-result">
+                                            <span>🎯</span> Previous process took 45+ minutes
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="demo-step">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <strong>Share and save:</strong> Jim shares the information with his team, reducing research time by 75% and minimizing compliance risks.
-                                </div>
+            
+                             
+            
+                              
                             </div>
                         </div>
                     </div>
                 </div>
+            
                 <div class="slide1-footer">
                     <div class="slide1-footer-logo"></div>
                     <span>Abacus</span>
                     <span>www.goabacus.co</span>
                     <span>@HeyAbacus</span>
-                    <span id="pageNumber">1 / 10</span>
+                    <span id="pageNumber">3 / 14</span>
                 </div>
             </div>
-            
             
             <div id="slide5" class="slide">
                 <div class="slide5-content-container">
@@ -2312,7 +4230,13 @@
                             <div>Abacus Studio Demo</div>
                         </div>
                         <div class="slide6-demo-content">
-                            [Video Demo Embed Here]
+                            <iframe 
+                            src="https://player.vimeo.com/video/1025162043?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&background=1" 
+                            frameborder="0" 
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                            title="AbacusOS">
+                        </iframe>
+                 
                         </div>
                     </div>
             
@@ -2407,7 +4331,7 @@
     </div>
     
     <div id="slide8" class="slide">
-        <h1 class="slide8-title">Our Traction</h1>
+        <h1 class="slide8-title">Our Traction (Monthly Revenue)</h1>
         <div class="slide8-chart-container">
             <div class="slide8-chart">
                 <div class="slide8-bar" style="height: 20%;">
@@ -2662,42 +4586,56 @@
     </div>
 
 
-    <div id="slide12" class="slide">
-        <h1 class="slide12-title">Our Team</h1>
-        <div class="slide12-content-container">
+    <div id="slide12" class="slide">        <div class="slide12-content-container">
             <h2 class="slide12-subtitle">Founders</h2>
             <div class="slide12-team-grid">
-                <div class="slide12-team-member">
-                    <div class="slide12-member-photo">DM</div>
-                    <div class="slide12-member-name">David Moscatelli</div>
-                    <div class="slide12-member-title">CEO & Co-founder</div>
-                </div>
-                <div class="slide12-team-member">
-                    <div class="slide12-member-photo">LG</div>
-                    <div class="slide12-member-name">Lisa Gillespie</div>
-                    <div class="slide12-member-title">CTO & Co-founder</div>
-                </div>
-            </div>
+    <!-- David's Profile -->
+    <div class="slide12-team-member">
+        <div class="slide12-member-photo">
+            <img src="https://assets-global.website-files.com/6499dbc7bfa009a9d8aaf5c0/649a08c22bb8d4e83fcd1d97_My%20Headshot-p-500.png" alt="David Moscatelli">
+        </div>
+        <div class="slide12-member-name">David Moscatelli</div>
+        <div class="slide12-member-title">CEO & Co-founder</div>
+        <div class="slide12-member-logos">
+            <div class="slide12-logo"><img src="data:image/png;base64,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" alt="Deloitte"></div>
+            <div class="slide12-logo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEX////5xQD29vb5wgD5ySb+8tP6yzz85rH71m/5wAD++e3+8tXw8PD6+vr978/5yCn//PT/+/L60Vr85av702Nw75fAAAABwUlEQVR4nO3dwU7jMBSG0TSdwnRoSxnm/Z91doSFBZZ7DfzV+ba+kn2UbLKwspzW++60nJf77rys332Eya2E8RHmR5gfYX6E+RHmR5gfYX6E+RHmR5gfYX6E+RHmR5gfYX6E+RHmR5gfYX6E+RHmR5gfYX6E+RHmR1jX4dLq+rZ+ba4/3bzv1wl3+0bHw9v65dgaeL55368T/to12m/P6LBvDTzcvC9hXYSEoxHWRUg4GmFdhISjEdbVFm5fT4SjEdZFSDgaYV2EhKMR1kVIOBphXYSEoxHWRUg4GmFdhISjEdZFSDgaYV2EhKMR1kVIOBphXYQ/Xnj90+plG/hM+PT80OjvzQcrE762LoQc/20DnwlnVSZ8bL5kv7cBwlkRdkdIOC3C7ggJp0XYHSHhtAi7IyScFmF3hITTIuyOkHBahN0REk6LsDtCwmkRdkdIOC3C7ggJp0XYHSHhtAi7IyScFmF3hITTIuzu9djq3X2LXXPgUrP7B/nPTH6E+RHmR5gfYX6E+RHmR5gfYX6E+RHmR5gfYX6E+RHmR5gfYX6E+RHmR5gfYX6E+RHmR5gfYX6E+a3L+buPMLnzclrvu9N/S4MsA2jXYpwAAAAASUVORK5CYII=" alt="Synchrony Bank"></div>
+            <div class="slide12-logo"><img src="data:image/png;base64,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" alt="MIT"></div>
+        </div>
+    </div>
+    
+    <!-- Lisa's Profile -->
+    <div class="slide12-team-member">
+        <div class="slide12-member-photo">
+            <img src="https://cdn.prod.website-files.com/6499dbc7bfa009a9d8aaf5c0/649baf1cff773e5bd0dd28c5_Lisa-Gillespie-1000x560-300x260.jpg" alt="Lisa Gillespie">
+        </div>
+        <div class="slide12-member-name">Lisa Gillespie</div>
+        <div class="slide12-member-title">CTO & Co-founder</div>
+        <div class="slide12-member-logos">
+            <div class="slide12-logo"><img src="data:image/png;base64,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" alt="Notre Dame"></div>
+            <div class="slide12-logo"><img src="data:image/jpeg;base64,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" alt="Arthur Anderson"></div>
+        </div>
+    </div>
+</div>
     
             <h2 class="slide12-subtitle">Development Team</h2>
             <div class="slide12-team-grid">
                 <div class="slide12-team-member">
-                    <div class="slide12-member-photo">RM</div>
+                    <div class="slide12-member-photo"><img src="https://media.licdn.com/dms/image/v2/D4E03AQHLqLxi53yzCg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1677164316675?e=2147483647&v=beta&t=cnx0vgoL7AozrHjiIZKto19s2zfaVWS1THOoYJrFTy8"></div>
                     <div class="slide12-member-name">Roy Matsunaga</div>
                     <div class="slide12-member-title">Cognitive Engineering</div>
                 </div>
                 <div class="slide12-team-member">
-                    <div class="slide12-member-photo">SK</div>
+                    <div class="slide12-member-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-xASHjpn7yXSAvE4AVF3MB7yAji8Evs8WCA&s"></div>
                     <div class="slide12-member-name">Shubham Kashik</div>
                     <div class="slide12-member-title">Offshore Developer</div>
                 </div>
                 <div class="slide12-team-member">
-                    <div class="slide12-member-photo">DB</div>
+                    <div class="slide12-member-photo"><img src="https://media.licdn.com/dms/image/v2/D5603AQGCvfT5fA1Saw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721052756443?e=2147483647&v=beta&t=6D6a3rnVLGVYGc6fmuNNfaek2wa3W-TXU6z-6K5kG_I"></div>
                     <div class="slide12-member-name">Dhyey Brundon</div>
                     <div class="slide12-member-title">Offshore Developer</div>
                 </div>
                 <div class="slide12-team-member">
-                    <div class="slide12-member-photo">SK</div>
+                    <div class="slide12-member-photo"><img src="https://media.licdn.com/dms/image/v2/D5603AQFresrhPL2ZhQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725458361824?e=2147483647&v=beta&t=LavD-KQU7-GUT2ySmhaIMpgQU-n1KoGeXxAesYWqIUw"></div>
                     <div class="slide12-member-name">Sai Kappulinik</div>
                     <div class="slide12-member-title">Offshore Developer</div>
                 </div>
@@ -2726,6 +4664,22 @@
             <span>www.goabacus.co</span>
             <span>@HeyAbacus</span>
             <span id="pageNumber">1 / 10</span> <!-- Page number span -->
+        </div>
+    </div>
+
+
+    <div class="preview-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </div>
+    
+    <div class="slide-preview-panel">
+        <div class="preview-header">
+            <div class="preview-title">Slide Overview</div>
+        </div>
+        <div class="preview-list">
+            <!-- Preview items will be dynamically inserted here -->
         </div>
     </div>
 
@@ -2770,6 +4724,116 @@
 
         // Initialize first slide
         showSlide(0);
+
+
+        const slideTitles = [
+    "Meet Abacus",
+    "Company Overview",
+    "Live Demo",
+    "Bot in Action",
+    "AbacusOS",
+    "Abacus Studio",
+    "Business Model",
+    "Growth & Traction",
+    "Our Customers",
+    "Competitive Edge",
+    "Go-to-Market",
+    "Future Roadmap",
+    "Our Team",
+    "Contact Us"
+];
+
+function initializePreviewPanel() {
+    const previewList = document.querySelector('.preview-list');
+    const slides = document.querySelectorAll('.slide');
+    
+    slides.forEach((slide, index) => {
+        const previewItem = document.createElement('div');
+        previewItem.className = 'preview-item';
+        previewItem.setAttribute('data-slide', index);
+        
+        const thumbnail = document.createElement('div');
+        thumbnail.className = 'preview-thumbnail';
+        
+        // Create canvas for thumbnail
+        const canvas = document.createElement('canvas');
+        thumbnail.appendChild(canvas);
+        
+        const info = document.createElement('div');
+        info.className = 'preview-info';
+        
+        const title = document.createElement('div');
+        title.className = 'preview-slide-title';
+        title.textContent = slideTitles[index] || `Slide ${index + 1}`;
+        
+        const number = document.createElement('div');
+        number.className = 'preview-slide-number';
+        number.textContent = `${index + 1} / ${slides.length}`;
+        
+        info.appendChild(title);
+        info.appendChild(number);
+        
+        previewItem.appendChild(thumbnail);
+        previewItem.appendChild(info);
+        previewList.appendChild(previewItem);
+        
+        // Generate thumbnail
+        generateThumbnail(slide, canvas);
+        
+        // Add click handler
+        previewItem.addEventListener('click', () => {
+            showSlide(index);
+            updatePreviewPanel();
+        });
+    });
+}
+
+function generateThumbnail(slide, canvas) {
+    const ctx = canvas.getContext('2d');
+    canvas.width = 160;
+    canvas.height = 90;
+    
+    // Draw background
+    ctx.fillStyle = '#f8f9fc';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw simplified representation
+    ctx.fillStyle = '#635bff';
+    ctx.globalAlpha = 0.1;
+    ctx.fillRect(10, 20, canvas.width - 20, 10);
+    ctx.fillRect(10, 40, canvas.width - 40, 10);
+    ctx.fillRect(10, 60, canvas.width - 30, 10);
+    ctx.globalAlpha = 1;
+}
+
+function updatePreviewPanel() {
+    const previewItems = document.querySelectorAll('.preview-item');
+    previewItems.forEach((item, index) => {
+        item.classList.toggle('active', index === currentSlide);
+    });
+}
+
+// Toggle panel visibility
+const toggleButton = document.querySelector('.preview-toggle');
+const previewPanel = document.querySelector('.slide-preview-panel');
+
+toggleButton.addEventListener('click', () => {
+    previewPanel.classList.toggle('open');
+    toggleButton.classList.toggle('open');
+});
+
+// Initialize panel after DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initializePreviewPanel();
+    updatePreviewPanel();
+});
+
+// Update preview panel when slides change
+const originalShowSlide = window.showSlide;
+window.showSlide = function(n) {
+    originalShowSlide(n);
+    updatePreviewPanel();
+};
     </script>
 </body>
 </html>

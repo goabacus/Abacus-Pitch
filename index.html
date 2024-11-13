@@ -3701,6 +3701,184 @@
 .preview-list::-webkit-scrollbar-thumb:hover {
     background: rgba(99, 91, 255, 0.3);
 }
+
+
+#jim-case-slide {
+        background: linear-gradient(150deg, #f7f7f7 0%, #ffffff 100%);
+        height: calc(100vh - 120px);
+        margin-top: 60px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ambient-gradient {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at center,
+            rgba(99, 91, 255, 0.03) 0%,
+            rgba(99, 91, 255, 0.01) 25%,
+            rgba(255, 255, 255, 0) 50%);
+        animation: rotate 30s linear infinite;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .slide-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slide-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .slide-header h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+        color: #86868b;
+        line-height: 1.6;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .profile-section {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .profile-card {
+        background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+        border-radius: 24px;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+        border: 1px solid rgba(99, 91, 255, 0.1);
+    }
+
+    .profile-photo {
+        width: 90px;
+        height: 90px;
+        background: linear-gradient(135deg, #635bff, #8b5cf6);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 600;
+        box-shadow: 0 8px 16px rgba(99, 91, 255, 0.2);
+    }
+
+    .profile-info {
+        flex: 1;
+    }
+
+    .company-logo {
+        height: 35px;
+        width: auto;
+        margin-bottom: 1rem;
+    }
+
+    .profile-meta {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .stat {
+        color: #635bff;
+        font-weight: 500;
+    }
+
+    .pain-points {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .pain-point-card {
+        background: white;
+        border-radius: 20px;
+        padding: 1.5rem;
+        text-align: center;
+        border: 1px solid rgba(99, 91, 255, 0.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        transition: transform 0.2s ease;
+    }
+
+    .pain-point-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .pain-point-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .pain-point-card h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1d1d1f;
+        margin-bottom: 0.5rem;
+    }
+
+    .pain-point-card p {
+        font-size: 1rem;
+        color: #86868b;
+        line-height: 1.4;
+    }
+
+    .next-demo {
+        margin-top: auto;
+        padding-top: 2rem;
+    }
+
+    .demo-preview {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #635bff;
+        font-weight: 500;
+    }
+
+    .preview-arrow {
+        font-size: 1.5rem;
+        animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(10px); }
+    }
     </style>
 </head>
 <body>
@@ -3761,105 +3939,521 @@
     
         </div>
 
-        <div id="slide2" class="slide">
-            <div class="dashboard-slide">
-                <div class="dashboard-header">
-                    <div class="update-info">
-                        <div class="last-updated">Last Updated: October 31, 2024 9:00 AM CST</div>
-                        <div class="live-indicator">Live Data</div>
+
+
+
+
+        <div id="abbi-intro-slide" class="slide">
+            <div class="abbi-intro-container">
+                <!-- Main Content Section -->
+                <div class="abbi-intro-content">
+                    <div class="abbi-intro-left">
+                        <div class="abbi-intro-header">
+                            <h1>AI Solutions for <br><span class="gradient-text">Regulated Industries</span></h1>
+                            <p class="abbi-intro-subtitle">Transforming how banks, credit unions, and insurance companies access and utilize enterprise knowledge</p>
+                        </div>
+        
+                        <div class="abbi-metrics">
+                            <div class="metric-item">
+                                <div class="metric-value">96%</div>
+                                <div class="metric-label">Customer Retention</div>
+                            </div>
+                            <div class="metric-divider"></div>
+                            <div class="metric-item">
+                                <div class="metric-value">$98K</div>
+                                <div class="metric-label">MRR</div>
+                            </div>
+                            <div class="metric-divider"></div>
+                            <div class="metric-item">
+                                <div class="metric-value">8</div>
+                                <div class="metric-label">Enterprise Clients</div>
+                            </div>
+                        </div>
+        
+                        <div class="abbi-clients">
+                            <div class="clients-label">Trusted by Leading Financial Institutions</div>
+                            <div class="client-logos">
+                                <img src="https://cdn.prod.website-files.com/6499dbc7bfa009a9d8aaf5c0/649bb1acbab9b8283e21ce67_logo_synchrony_dark.svg" alt="Synchrony" class="client-logo">
+                                <img src="https://assets-global.website-files.com/6499dbc7bfa009a9d8aaf5c0/649a2ae583b41facdbe78ce1_Pulse_(EFT_network)_logo.svg-p-500.png" alt="Pulse" class="client-logo">
+                                <img src="https://www.myconsumers.org/images/default-source/default-album/logo-2x.svg?sfvrsn=c2c47e7b_12" alt="CCU" class="client-logo">
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="abbi-intro-right">
+                        <div class="feature-cards">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔒</div>
+                                <div class="feature-content">
+                                    <h3>Compliance First</h3>
+                                    <p>Built specifically for highly regulated environments with on-premise deployment</p>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⚡</div>
+                                <div class="feature-content">
+                                    <h3>Real-Time Access</h3>
+                                    <p>Instant answers from your entire knowledge base, policies, and procedures</p>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔄</div>
+                                <div class="feature-content">
+                                    <h3>Auto-Updating</h3>
+                                    <p>Continuously syncs with enterprise systems to maintain accuracy</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            
-                <div class="dashboard-grid">
-                    <div class="primary-section">
-                        <div class="key-metrics">
+        
+                <div class="slide1-footer">
+                    <div class="slide1-footer-logo">
+                        <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon">
+                    </div>
+                    <span>Abacus</span>
+                    <span>www.goabacus.co</span>
+                    <span>@HeyAbacus</span>
+                    <span id="pageNumber">2 / 14</span>
+                </div>
+            </div>
+        
+            <style>
+                #abbi-intro-slide {
+                    background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+                    height: calc(100vh - 120px);
+                    margin-top: 60px;
+                    margin-bottom: 60px;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                    overflow: hidden;
+                    position: relative;
+                }
+        
+                .abbi-intro-container {
+                    max-width: 1400px;
+                    height: 100%;
+                    margin: 0 auto;
+                    padding: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                }
+        
+                .abbi-intro-content {
+                    display: flex;
+                    gap: 4rem;
+                    flex: 1;
+                    padding: 2rem 0;
+                }
+        
+                .abbi-intro-left {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3rem;
+                }
+        
+                .abbi-intro-right {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                }
+        
+                .abbi-intro-header h1 {
+                    font-size: 3.5rem;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    margin: 0 0 1.5rem 0;
+                    color: #1d1d1f;
+                }
+        
+                .gradient-text {
+                    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+        
+                .abbi-intro-subtitle {
+                    font-size: 1.25rem;
+                    color: #86868b;
+                    max-width: 600px;
+                    margin: 0;
+                    line-height: 1.6;
+                }
+        
+                .abbi-metrics {
+                    display: flex;
+                    align-items: center;
+                    gap: 3rem;
+                    padding: 2rem 0;
+                }
+        
+                .metric-item {
+                    text-align: left;
+                }
+        
+                .metric-value {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: #635bff;
+                    margin-bottom: 0.5rem;
+                }
+        
+                .metric-label {
+                    font-size: 1rem;
+                    color: #86868b;
+                    font-weight: 500;
+                }
+        
+                .metric-divider {
+                    width: 1px;
+                    height: 50px;
+                    background: rgba(0, 0, 0, 0.1);
+                }
+        
+                .abbi-clients {
+                    margin-top: auto;
+                }
+        
+                .clients-label {
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    color: #86868b;
+                    margin-bottom: 1.5rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                }
+        
+                .client-logos {
+                    display: flex;
+                    align-items: center;
+                    gap: 3rem;
+                }
+        
+                .client-logo {
+                    height: 30px;
+                    opacity: 0.7;
+                    transition: opacity 0.3s ease;
+                }
+        
+                .client-logo:hover {
+                    opacity: 1;
+                }
+        
+                .feature-cards {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    width: 100%;
+                }
+        
+                .feature-card {
+                    background: white;
+                    border-radius: 20px;
+                    padding: 1.5rem;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1.5rem;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+                }
+        
+                .feature-card:hover {
+                    transform: translateX(8px);
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+                }
+        
+                .feature-icon {
+                    font-size: 1.5rem;
+                    background: linear-gradient(135deg, #635bff08 0%, #8b5cf608 100%);
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                }
+        
+                .feature-content h3 {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: #1d1d1f;
+                    margin: 0 0 0.5rem 0;
+                }
+        
+                .feature-content p {
+                    font-size: 0.95rem;
+                    color: #86868b;
+                    margin: 0;
+                    line-height: 1.5;
+                }
+        
+                .slide1-footer {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: rgba(255, 255, 255, 0.9);
+                    backdrop-filter: blur(10px);
+                    padding: 1rem 2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 0.8rem;
+                    color: #1d1d1f;
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+                    z-index: 100;
+                }
+        
+                .slide1-footer-logo {
+                    width: 30px;
+                    height: 30px;
+                }
+        
+                .slide1-footer-logo img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+        
+                @media (max-width: 1200px) {
+                    .abbi-intro-content {
+                        gap: 2rem;
+                    }
+        
+                    .abbi-intro-header h1 {
+                        font-size: 3rem;
+                    }
+                }
+        
+                @media (max-width: 900px) {
+                    .abbi-intro-content {
+                        flex-direction: column;
+                        gap: 3rem;
+                    }
+        
+                    .abbi-metrics {
+                        gap: 2rem;
+                    }
+        
+                    .client-logos {
+                        gap: 2rem;
+                    }
+        
+                    .abbi-intro-header h1 {
+                        font-size: 2.5rem;
+                    }
+                }
+        
+                @media (max-width: 640px) {
+                    .abbi-intro-container {
+                        padding: 1rem;
+                    }
+        
+                    .abbi-intro-header h1 {
+                        font-size: 2rem;
+                    }
+        
+                    .abbi-intro-subtitle {
+                        font-size: 1rem;
+                    }
+        
+                    .abbi-metrics {
+                        flex-direction: column;
+                        gap: 1.5rem;
+                        align-items: flex-start;
+                    }
+        
+                    .metric-divider {
+                        display: none;
+                    }
+        
+                    .client-logos {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+        
+                    .feature-card {
+                        padding: 1rem;
+                    }
+                }
+
+                /* Update these styles in the previous code */
+
+.abbi-intro-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1.5rem 0;
+    color: #1d1d1f;
+}
+
+.abbi-intro-header h1 br {
+    display: none; /* Hide line break by default */
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap; /* Keep "Regulated Industries" together */
+}
+
+@media (max-width: 1200px) {
+    .abbi-intro-header h1 {
+        font-size: 3rem;
+    }
+    
+    .abbi-intro-header h1 br {
+        display: block; /* Show line break at this breakpoint */
+    }
+}
+
+@media (max-width: 900px) {
+    .abbi-intro-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .abbi-intro-header h1 {
+        font-size: 2.5rem;
+        /* Adjust line height for better spacing */
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 640px) {
+    .abbi-intro-container {
+        padding: 1rem;
+    }
+
+    .abbi-intro-header h1 {
+        font-size: 2rem;
+        /* Allow text to wrap naturally */
+        white-space: normal;
+    }
+
+    .gradient-text {
+        white-space: normal; /* Allow text to wrap on smallest screens */
+    }
+
+    .abbi-intro-subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .abbi-intro-header h1 {
+        font-size: 1.75rem;
+    }
+}
+            </style>
+        </div>
+
+        <div id="slide2" class="slide">
+            <div class="dashboard-container">
+                <!-- Header Section -->
+                <div class="dashboard-header">
+                    <h1>Company Overview</h1>
+                    <div class="update-info">
+                        <div class="last-updated">
+                            <span class="dot pulse"></span>
+                            Live Data • Last Updated October 31, 2024
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Main Grid Layout -->
+                <div class="metrics-grid">
+                    <!-- Key Metrics Cards -->
+                    <div class="metrics-section">
+                        <div class="metrics-row">
                             <div class="metric-card highlight">
-                                <div class="metric-value">$112K</div>
-                                <div class="metric-label">Monthly Revenue</div>
-                                <div class="metric-trend trend-up">↑ 32% MoM</div>
+                                <div class="metric-content">
+                                    <div class="metric-value">$98K</div>
+                                    <div class="metric-label">Monthly Revenue</div>
+                                    <div class="metric-trend positive">
+                                        <span class="trend-arrow">↑</span>
+                                        20% MoM
+                                    </div>
+                                </div>
+                                <div class="metric-background"></div>
                             </div>
+                            
                             <div class="metric-card">
-                                <div class="metric-value">$600K</div>
-                                <div class="metric-label">Cash Position</div>
-                                <div class="metric-trend">12 Month Runway</div>
+                                <div class="metric-content">
+                                    <div class="metric-value">$600K</div>
+                                    <div class="metric-label">Cash Position</div>
+                                    <div class="metric-trend neutral">12 Month Runway</div>
+                                </div>
+                                <div class="metric-background"></div>
                             </div>
+                            
                             <div class="metric-card highlight">
-                                <div class="metric-value">$1.3M</div>
-                                <div class="metric-label">ARR</div>
-                                <div class="metric-trend trend-up">↑ 45% YoY</div>
+                                <div class="metric-content">
+                                    <div class="metric-value">$1M</div>
+                                    <div class="metric-label">ARR</div>
+                                    <div class="metric-trend positive">
+                                        <span class="trend-arrow">↑</span>
+                                        45% YoY
+                                    </div>
+                                </div>
+                                <div class="metric-background"></div>
                             </div>
                         </div>
-            
-                        <div class="client-section">
+        
+                        <!-- Clients Section -->
+                        <div class="clients-section">
                             <div class="section-header">
-                                <div class="section-title">Enterprise Clients</div>
-                                <div class="client-count">5 Major Institutions</div>
+                                <h2>Enterprise Clients</h2>
+                                <span class="client-count">8 Major Institutions</span>
                             </div>
-                            <div class="client-grid">
-                                <img class="client-logo" src="https://cdn.prod.website-files.com/6499dbc7bfa009a9d8aaf5c0/649bb1acbab9b8283e21ce67_logo_synchrony_dark.svg" alt="Synchrony">
-                                <img class="client-logo" src="https://assets-global.website-files.com/6499dbc7bfa009a9d8aaf5c0/649a2ae583b41facdbe78ce1_Pulse_(EFT_network)_logo.svg-p-500.png" alt="Pulse">
-                                <img class="client-logo" src="https://assets-global.website-files.com/6499dbc7bfa009a9d8aaf5c0/649a2aaaed83f26f735c9867_2560px-Esurance.svg-p-500.png" alt="Esurance">
-                                <img class="client-logo" src="https://www.myconsumers.org/images/default-source/default-album/logo-2x.svg?sfvrsn=c2c47e7b_12" alt="Consumers Credit Union">
-                                <img class="client-logo" src="https://www.alliantcreditunion.org/assets/dist/images/logo.png" alt="Alliant Credit Union">
+                            <div class="client-logos">
+                                <img src="https://cdn.prod.website-files.com/6499dbc7bfa009a9d8aaf5c0/649bb1acbab9b8283e21ce67_logo_synchrony_dark.svg" alt="Synchrony">
+                                <img src="https://assets-global.website-files.com/6499dbc7bfa009a9d8aaf5c0/649a2ae583b41facdbe78ce1_Pulse_(EFT_network)_logo.svg-p-500.png" alt="Pulse">
+                                <img src="https://assets-global.website-files.com/6499dbc7bfa009a9d8aaf5c0/649a2aaaed83f26f735c9867_2560px-Esurance.svg-p-500.png" alt="Esurance">
+                                <img src="https://www.myconsumers.org/images/default-source/default-album/logo-2x.svg?sfvrsn=c2c47e7b_12" alt="CCU">
+                                <img src="https://www.alliantcreditunion.org/assets/dist/images/logo.png" alt="Alliant">
                             </div>
                         </div>
-            
+        
+                        <!-- Pipeline Section -->
                         <div class="pipeline-section">
                             <div class="section-header">
-                                <div class="section-title">Active Pipeline</div>
-                                <div class="pipeline-value">$2.4M Potential ARR</div>
+                                <h2>Active Pipeline</h2>
+                                <span class="pipeline-value">$2.4M Potential ARR</span>
                             </div>
                             <div class="pipeline-deals">
                                 <div class="deal-card">
-                                    <div class="deal-info">
-                                        <div class="deal-name">Major Credit Union</div>
-                                        <div class="deal-stage">Late Stage - Security Review</div>
+                                    <div class="deal-content">
+                                        <div class="deal-header">
+                                            <div class="deal-name">Major Credit Union</div>
+                                            <div class="deal-value">$800K ARR</div>
+                                        </div>
+                                        <div class="deal-details">
+                                            <div class="deal-stage">Late Stage - Security Review</div>
+                                            <div class="deal-probability">90% Probability</div>
+                                        </div>
                                     </div>
-                                    <div class="deal-value">$800K ARR</div>
-                                    <div class="deal-probability">90% Probability</div>
                                 </div>
-                                <div class="deal-card">
-                                    <div class="deal-info">
-                                        <div class="deal-name">Regional Bank</div>
-                                        <div class="deal-stage">Technical Review</div>
-                                    </div>
-                                    <div class="deal-value">$600K ARR</div>
-                                    <div class="deal-probability">70% Probability</div>
-                                </div>
-                                <div class="deal-card">
-                                    <div class="deal-info">
-                                        <div class="deal-name">Insurance Provider</div>
-                                        <div class="deal-stage">Contract Phase</div>
-                                    </div>
-                                    <div class="deal-value">$500K ARR</div>
-                                    <div class="deal-probability">80% Probability</div>
-                                </div>
-                                <div class="deal-card">
-                                    <div class="deal-info">
-                                        <div class="deal-name">National Bank</div>
-                                        <div class="deal-stage">Security Review</div>
-                                    </div>
-                                    <div class="deal-value">$500K ARR</div>
-                                    <div class="deal-probability">60% Probability</div>
-                                </div>
+                                <!-- Additional deal cards... -->
                             </div>
                         </div>
                     </div>
-            
-                    <div class="side-section">
+        
+                    <!-- Side Panel -->
+                    <div class="side-panel">
                         <div class="info-card">
-                            <div class="section-header">
-                                <div class="section-title">Company Overview</div>
-                            </div>
+                            <h3>Company Profile</h3>
                             <div class="info-grid">
                                 <div class="info-item">
                                     <div class="info-label">Team Size</div>
                                     <div class="info-value">5 People</div>
                                 </div>
-                                <div class="info-item">
-                                    <div class="info-label">Founded</div>
-                                    <div class="info-value">2018</div>
-                                </div>
+            
                                 <div class="info-item">
                                     <div class="info-label">Location</div>
                                     <div class="info-value">Chicago, IL</div>
@@ -3870,302 +4464,2310 @@
                                 </div>
                             </div>
                         </div>
-            
+        
                         <div class="info-card">
-                            <div class="section-header">
-                                <div class="section-title">Key Performance Metrics</div>
-                            </div>
-                            <div class="growth-metrics">
-                                <div class="growth-card">
-                                    <div class="info-label">Gross Margin</div>
-                                    <div class="info-value">82%</div>
+                            <h3>Key Metrics</h3>
+                            <div class="metrics-grid-small">
+                                <div class="metric-small">
+                                    <div class="metric-small-label">Average Contract Size</div>
+                                    <div class="metric-small-value">$250K</div>
                                 </div>
-                                <div class="growth-card">
-                                    <div class="info-label">CAC</div>
-                                    <div class="info-value">$2.8K</div>
+                                <div class="metric-small">
+                                    <div class="metric-small-label">Average Contract Length</div>
+                                    <div class="metric-small-value">4 Years</div>
                                 </div>
-                                <div class="growth-card">
-                                    <div class="info-label">LTV</div>
-                                    <div class="info-value">$85K</div>
+                                <div class="metric-small">
+                                    <div class="metric-small-label"></div>
+                                    <div class="metric-small-value"></div>
                                 </div>
-                                <div class="growth-card">
-                                    <div class="info-label">Retention</div>
-                                    <div class="info-value">96%</div>
-                                </div>
-                            </div>
-                        </div>
-            
-                        <div class="info-card">
-                            <div class="section-header">
-                                <div class="section-title">Market Opportunity</div>
-                            </div>
-                            <div class="info-grid">
-                                <div class="info-item">
-                                    <div class="info-label">TAM</div>
-                                    <div class="info-value">$8.2B</div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-label">Market Growth</div>
-                                    <div class="info-value">32% YoY</div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-label">Target Customers</div>
-                                    <div class="info-value">2,500+</div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-label">Current Share</div>
-                                    <div class="info-value">0.2%</div>
+                                <div class="metric-small">
+                                    <div class="metric-small-label">Retention</div>
+                                    <div class="metric-small-value">100%</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        
+            <style>
+                #slide2 {
+                    background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+                    min-height: 100vh;
+                    padding: 2rem;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                }
+        
+                .dashboard-container {
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    padding: 2rem;
+                }
+        
+                .dashboard-header {
+                    margin-bottom: 2rem;
+                }
+        
+                .dashboard-header h1 {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: #1d1d1f;
+                    margin-bottom: 1rem;
+                }
+        
+                .update-info {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    color: #86868b;
+                }
+        
+                .dot {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    margin-right: 0.5rem;
+                }
+        
+                .dot.pulse {
+                    background: #30d158;
+                    animation: pulse 2s infinite;
+                }
+        
+                .metrics-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 350px;
+                    gap: 2rem;
+                }
+        
+                .metrics-row {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1.5rem;
+                    margin-bottom: 2rem;
+                }
+        
+                .metric-card {
+                    background: white;
+                    border-radius: 20px;
+                    padding: 1.5rem;
+                    position: relative;
+                    overflow: hidden;
+                    transition: all 0.3s ease;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                }
+        
+                .metric-card:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                }
+        
+                .metric-card.highlight {
+                    background: linear-gradient(135deg, #635bff08 0%, #8b5cf608 100%);
+                    border: 1px solid rgba(99, 91, 255, 0.2);
+                }
+        
+                .metric-value {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: #1d1d1f;
+                    margin-bottom: 0.5rem;
+                }
+        
+                .metric-label {
+                    font-size: 1rem;
+                    color: #86868b;
+                    margin-bottom: 1rem;
+                }
+        
+                .metric-trend {
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+        
+                .metric-trend.positive {
+                    color: #30d158;
+                }
+        
+                .metric-trend.neutral {
+                    color: #86868b;
+                }
+        
+                .clients-section, .pipeline-section {
+                    background: white;
+                    border-radius: 20px;
+                    padding: 1.5rem;
+                    margin-bottom: 1.5rem;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                }
+        
+                .section-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 1.5rem;
+                }
+        
+                .section-header h2 {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: #1d1d1f;
+                }
+        
+                .client-logos {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    gap: 2rem;
+                    align-items: center;
+                }
+        
+                .client-logos img {
+                    max-height: 40px;
+                    width: auto;
+                    filter: grayscale(100%);
+                    opacity: 0.7;
+                    transition: all 0.3s ease;
+                }
+        
+                .client-logos img:hover {
+                    filter: grayscale(0%);
+                    opacity: 1;
+                }
+        
+                .deal-card {
+                    background: white;
+                    border-radius: 12px;
+                    padding: 1rem;
+                    margin-bottom: 1rem;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+                }
+        
+                .deal-card:hover {
+                    transform: translateX(4px);
+                    background: #f8f9fc;
+                }
+        
+                .deal-header {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 0.5rem;
+                }
+        
+                .deal-name {
+                    font-weight: 600;
+                    color: #1d1d1f;
+                }
+        
+                .deal-value {
+                    color: #635bff;
+                    font-weight: 500;
+                }
+        
+                .deal-details {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0.9rem;
+                    color: #86868b;
+                }
+        
+                .info-card {
+                    background: white;
+                    border-radius: 20px;
+                    padding: 1.5rem;
+                    margin-bottom: 1.5rem;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                }
+        
+                .info-card h3 {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: #1d1d1f;
+                    margin-bottom: 1.5rem;
+                }
+        
+                .info-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+                }
+        
+                .info-item {
+                    padding: 0.5rem;
+                }
+        
+                .info-label {
+                    font-size: 0.9rem;
+                    color: #86868b;
+                    margin-bottom: 0.25rem;
+                }
+        
+                .info-value {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    color: #1d1d1f;
+                }
+        
+                .metrics-grid-small {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1rem;
+                }
+        
+                .metric-small {
+                    padding: 1rem;
+                    background: #f8f9fc;
+                    border-radius: 12px;
+                    text-align: center;
+                }
+        
+                .metric-small-label {
+                    font-size: 0.9rem;
+                    color: #86868b;
+                    margin-bottom: 0.5rem;
+                }
+        
+                .metric-small-value {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: #1d1d1f;
+                }
+        
+                @keyframes pulse {
+                    0% {
+                        transform: scale(0.95);
+                        box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.7);
+                    }
+                    70% {
+                        transform: scale(1);
+                        box-shadow: 0 0 0 10px rgba(48, 209, 88, 0);
+                    }
+                    100% {
+                        transform: scale(0.95);
+                        box-shadow: 0 0 0 0 rgba(48, 209, 88, 0);
+                    }
+                }
+        
+                @media (max-width: 1200px) {
+                    .metrics-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .metrics-row {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    
+                    .client-logos {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+        
+                @media (max-width: 768px) {
+                    .metrics-row {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .client-logos {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    
+                    .deal-details {
+                        flex-direction: column;
+                        gap: 0.5rem;
+                    }
+                }
+        
+                @media (max-width: 480px) {
+                    .dashboard-container {
+                        padding: 1rem;
+                    }
+                    
+                    .client-logos {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .info-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                .pipeline-section {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for pipeline section */
+.pipeline-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.pipeline-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.pipeline-section::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.pipeline-section::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Updated metrics for side panel */
+.metrics-grid-small {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.metric-small {
+    padding: 1rem;
+    background: #f8f9fc;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.metric-small-label {
+    font-size: 0.9rem;
+    color: #86868b;
+    margin-bottom: 0.5rem;
+}
+
+.metric-small-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+            </style>
         </div>
 
-        <!-- Add other slides here -->
-        <div id="slide2" class="slide">
-            <!-- Content for slide 2 -->
-         
-                <div class="slide-content">
-                    <h1>AI-Powered Solutions for Regulated Industries</h1>
-                    <p class="subtitle">Abacus delivers secure, intelligent virtual assistance tailored for banks, credit unions, and insurance companies.</p>
-                    
-                    <div class="features">
-                        <div class="feature">
-                            <h2>Smart Chat Interface</h2>
-                            <p>Desktop App, Mobile App, SharePoint, MSTeams, and Call Center Integrations</p>
+        <div id="abbi-components-slide" class="slide">
+            <div class="abbi-components-container">
+                <div class="abbi-components-header">
+                    <h1>The Abbi Platform</h1>
+                    <p class="abbi-components-subtitle">Three powerful components working together to deliver intelligent enterprise assistance</p>
+                </div>
+        
+                <div class="abbi-components-grid">
+                    <!-- Indexer Card -->
+                    <div class="abbi-component-card">
+                        <div class="abbi-component-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <path d="M3.29 7L12 12l8.71-5M12 22V12"/>
+                            </svg>
                         </div>
-                        <div class="feature">
-                            <h2>Automatic Data Integration</h2>
-                            <p>Seamlessly index hundreds of data sources in real-time.</p>
+                        <h3>Universal Indexer</h3>
+                        <p class="abbi-component-description">Automatically connects and indexes data from hundreds of enterprise systems in real-time</p>
+                        <div class="abbi-component-features">
+                            <div class="abbi-feature">
+                                <span class="abbi-feature-icon">→</span>
+                                Real-time synchronization
+                            </div>
+                            <div class="abbi-feature">
+                                <span class="abbi-feature-icon">→</span>
+                                500+ pre-built integrations
+                            </div>
+                            <div class="abbi-feature">
+                                <span class="abbi-feature-icon">→</span>
+                                Secure & compliant access
+                            </div>
                         </div>
-                        <div class="feature">
-                            <h2>Abacus Studio</h2>
-                            <p>Refine and manage your AI assistant with powerful tools.</p>
+                    </div>
+        
+                    <!-- Abbi Assistant Card -->
+                    <div class="abbi-component-card featured">
+                        <div class="abbi-component-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                                <line x1="12" y1="13" x2="12" y2="15"/>
+                            </svg>
                         </div>
-                        <div class="feature">
-                            <h2>Secure On-Premise Deployment</h2>
-                            <p>Maintain data integrity with our local LLM infrastructure.</p>
+                        <h3>Abbi Assistant</h3>
+                        <p class="abbi-component-description">AI-powered virtual assistant that provides instant, accurate answers across your enterprise knowledge base</p>
+                        <div class="abbi-component-features">
+                            <div class="abbi-feature">
+                                <span class="abbi-feature-icon">→</span>
+                                Natural language understanding
+                            </div>
+                            <div class="abbi-feature">
+                                <span class="abbi-feature-icon">→</span>
+                                Context-aware responses
+                            </div>
+                            <div class="abbi-feature">
+                                <span class="abbi-feature-icon">→</span>
+                                Multi-platform support
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Abacus Studio Card -->
+                    <div class="abbi-component-card">
+                        <div class="abbi-component-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                        <h3>Abacus Studio</h3>
+                        <p class="abbi-component-description">Powerful platform for managing, training, and optimizing your AI assistant</p>
+                        <div class="abbi-component-features">
+                            <div class="abbi-feature">
+                                <span class="abbi-feature-icon">→</span>
+                                Custom training tools
+                            </div>
+                            <div class="abbi-feature">
+                                <span class="abbi-feature-icon">→</span>
+                                Performance analytics
+                            </div>
+                            <div class="abbi-feature">
+                                <span class="abbi-feature-icon">→</span>
+                                Continuous improvement
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="slide1-footer">
-                    <div class="slide1-footer-logo"></div>
-                    <span>Abacus</span>
-                    <span>www.goabacus.co</span>
-                    <span>@HeyAbacus</span>
-                    <span id="pageNumber">2 / 14</span> <!-- Page number span -->
-                </div>
-            </div>
-            <div id="slide4" class="slide">
-                <div class="slide-content">
-                    <div class="slide4-header">
-                        <h1>Abacus Bot In Action</h1>
-                        <p class="subtitle">
-                            Watch how our AI assistant transforms complex queries into instant, accurate responses
-                        </p>
-                    </div>
         
-                    <div class="slide4-demo-layout">
-                        <div class="slide4-main-demo">
-                            <div class="slide4-demo-container">
-                                <div class="slide4-demo-header">
-                                    <div class="slide4-browser-controls">
-                                        <div class="browser-dot dot-red"></div>
-                                        <div class="browser-dot dot-yellow"></div>
-                                        <div class="browser-dot dot-green"></div>
-                                    </div>
-                                    <div class="slide4-demo-tabs">
-                                        <div class="slide4-tab active">Live Demo</div>
-                                        <div class="slide4-tab">Knowledge Base</div>
-                                        <div class="slide4-tab">Analytics</div>
-                                    </div>
-                                </div>
-                                <div class="slide4-demo-content">
-                                    <div class="slide4-status-bar">
-                                        <div class="status-item">
-                                            <div class="status-dot green"></div>
-                                            System Ready
-                                        </div>
-                                        <div class="status-item">
-                                            <div class="status-dot pulse"></div>
-                                            Processing Real-Time Updates
-                                        </div>
-                                    </div>
-                                    <iframe 
-                                        src="https://player.vimeo.com/video/1022980249?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&background=1" 
-                                        frameborder="0" 
-                                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                                        title="AbacusBot">
-                                    </iframe>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="slide4-sidebar">
-                         
-        
-                            <div class="slide4-data-sources">
-                                <div class="source-header">Active Data Sources</div>
-                                <div class="source-grid">
-                                    <div class="source-item">
-                                        <div class="source-icon">📑</div>
-                                        <div class="source-info">
-                                            <div class="source-name">SharePoint</div>
-                                            <div class="source-stats">
-                                                <span class="stat">12.5K Docs</span>
-                                                <span class="status">Live</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="source-item">
-                                        <div class="source-icon">📚</div>
-                                        <div class="source-info">
-                                            <div class="source-name">Training DB</div>
-                                            <div class="source-stats">
-                                                <span class="stat">8.2K Docs</span>
-                                                <span class="status">Syncing</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="source-item">
-                                        <div class="source-icon">🗄️</div>
-                                        <div class="source-info">
-                                            <div class="source-name">Policy Hub</div>
-                                            <div class="source-stats">
-                                                <span class="stat">3.4K Docs</span>
-                                                <span class="status">Live</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="slide4-activity-panel">
-                                <div class="activity-header">
-                                    <span>Live Activity</span>
-                                    <div class="activity-indicator"></div>
-                                </div>
-                                <div class="activity-feed">
-                                    <div class="activity-item">
-                                        <span class="time">Just now</span>
-                                        <span class="event">New policy indexed: Credit Card Compliance</span>
-                                    </div>
-                                    <div class="activity-item">
-                                        <span class="time">2m ago</span>
-                                        <span class="event">Training materials updated</span>
-                                    </div>
-                                    <div class="activity-item">
-                                        <span class="time">5m ago</span>
-                                        <span class="event">Knowledge base optimization complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="abbi-workflow">
+                    <div class="abbi-workflow-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19"/>
+                        </svg>
                     </div>
                 </div>
         
                 <div class="slide1-footer">
-                    <div class="slide1-footer-logo"></div>
-                    <span>Abacus</span>
-                    <span>www.goabacus.co</span>
-                    <span>@HeyAbacus</span>
-                    <span id="pageNumber">4 / 14</span>
-                </div>
-            </div>
-
-            
-
-            <div id="slide3" class="slide">
-                <div class="slide-content">
-                  
-                    <div class="demo-container">
-                        <!-- Browser Demo Section -->
-                        <div class="browser-frame">
-                            <div class="browser-header">
-                                <div class="browser-controls">
-                                    <span class="control red"></span>
-                                    <span class="control yellow"></span>
-                                    <span class="control green"></span>
-                                </div>
-                                <div class="browser-address-bar">
-                                    <input type="text" value="AbacusOS Demo" readonly />
-                                </div>
-                            </div>
-                            <div class="demo-image">
-                                <iframe 
-                                    src="https://player.vimeo.com/video/1023083569?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&background=1" 
-                                    frameborder="0" 
-                                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                                    title="AbacusOS">
-                                </iframe>
-                            </div>
-                        </div>
-            
-                        <!-- Case Study Section -->
-                        <div class="demo-content">
-                            <div class="user-profile">
-                                <div class="user-photo">JE</div>
-                                <div class="user-info">
-                                    <h3>Jim Eisert</h3>
-                                    <p>Director Learning and Development, CCU</p>
-                                    <div class="user-metrics">
-                                        <div class="metric">
-                                            <div class="metric-value">75%</div>
-                                            <div class="metric-label">Time Saved</div>
-                                        </div>
-                                        <div class="metric">
-                                            <div class="metric-value">100+</div>
-                                            <div class="metric-label">Queries/Month</div>
-                                        </div>
-                                        <div class="metric">
-                                            <div class="metric-value">5,000+</div>
-                                            <div class="metric-label">Docs Accessed</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <div class="demo-steps">
-                                <div class="demo-steps-header">
-                                    <div class="demo-steps-title">Process Overview</div>
-                                    <div class="time-saved">
-                                        <span>⚡</span>
-                                        4x Faster Resolution
-                                    </div>
-                                </div>
-                                
-                                <div class="demo-step">
-                                 
-                                    <div class="step-content">
-                                        <div class="step-title">Challenge Identified</div>
-                                        <div class="step-description">
-                                            Jim needs immediate access to PTO policy details for a time-sensitive employee request.
-                                        </div>
-                                        <div class="step-result">
-                                            <span>🎯</span> Previous process took 45+ minutes
-                                        </div>
-                                    </div>
-                                </div>
-            
-                             
-            
-                              
-                            </div>
-                        </div>
+                    <div class="slide1-footer-logo">
+                        <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon">
                     </div>
-                </div>
-            
-                <div class="slide1-footer">
-                    <div class="slide1-footer-logo"></div>
                     <span>Abacus</span>
                     <span>www.goabacus.co</span>
                     <span>@HeyAbacus</span>
                     <span id="pageNumber">3 / 14</span>
                 </div>
             </div>
+        
+            <style>
+                #abbi-components-slide {
+                    background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+                    height: calc(100vh - 120px);
+                    margin-top: 60px;
+                    margin-bottom: 60px;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                    overflow: hidden;
+                }
+        
+                #abbi-components-slide .abbi-components-container {
+                    max-width: 1400px;
+                    height: 100%;
+                    margin: 0 auto;
+                    padding: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                }
+        
+                #abbi-components-slide .abbi-components-header {
+                    text-align: center;
+                    margin-bottom: 2rem;
+                }
+        
+                #abbi-components-slide .abbi-components-header h1 {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: #1d1d1f;
+                    margin: 0 0 1rem 0;
+                    background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+        
+                #abbi-components-slide .abbi-components-subtitle {
+                    font-size: 1.2rem;
+                    color: #86868b;
+                    margin: 0 auto;
+                    max-width: 600px;
+                }
+        
+                #abbi-components-slide .abbi-components-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 2rem;
+                    margin: auto 0;
+                    padding: 2rem 0;
+                }
+        
+                #abbi-components-slide .abbi-component-card {
+                    background: white;
+                    border-radius: 24px;
+                    padding: 2rem;
+                    text-align: left;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                    transition: all 0.3s ease;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    height: 100%;
+                }
+        
+                #abbi-components-slide .abbi-component-card:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+                }
+        
+                #abbi-components-slide .abbi-component-card.featured {
+                    background: linear-gradient(135deg, #635bff08 0%, #8b5cf608 100%);
+                    border: 1px solid rgba(99, 91, 255, 0.2);
+                }
+        
+                #abbi-components-slide .abbi-component-icon {
+                    width: 48px;
+                    height: 48px;
+                    background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    margin-bottom: 1rem;
+                }
+        
+                #abbi-components-slide .abbi-component-card h3 {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: #1d1d1f;
+                    margin: 0;
+                }
+        
+                #abbi-components-slide .abbi-component-description {
+                    font-size: 1rem;
+                    color: #86868b;
+                    line-height: 1.5;
+                    margin: 0;
+                    flex-grow: 1;
+                }
+        
+                #abbi-components-slide .abbi-component-features {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+                    margin-top: auto;
+                }
+        
+                #abbi-components-slide .abbi-feature {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    font-size: 0.9rem;
+                    color: #1d1d1f;
+                }
+        
+                #abbi-components-slide .abbi-feature-icon {
+                    color: #635bff;
+                    font-weight: 600;
+                }
+        
+                #abbi-components-slide .abbi-workflow {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: auto;
+                    margin-bottom: 3rem;
+                }
+        
+                #abbi-components-slide .abbi-workflow-arrow {
+                    color: #635bff;
+                    animation: abbi-bounce 1.5s infinite;
+                }
+        
+                @keyframes abbi-bounce {
+                    0%, 100% { transform: translateX(0); }
+                    50% { transform: translateX(10px); }
+                }
+        
+                #abbi-components-slide .slide1-footer {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: rgba(255, 255, 255, 0.9);
+                    backdrop-filter: blur(10px);
+                    padding: 1rem 2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 0.8rem;
+                    color: #1d1d1f;
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+                }
+        
+                #abbi-components-slide .slide1-footer-logo {
+                    width: 30px;
+                    height: 30px;
+                }
+        
+                #abbi-components-slide .slide1-footer-logo img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+        
+                @media (max-width: 1200px) {
+                    #abbi-components-slide .abbi-components-grid {
+                        gap: 1.5rem;
+                    }
+        
+                    #abbi-components-slide .abbi-component-card {
+                        padding: 1.5rem;
+                    }
+                }
+        
+                @media (max-width: 900px) {
+                    #abbi-components-slide .abbi-components-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+        
+                    #abbi-components-slide .abbi-components-header h1 {
+                        font-size: 2.5rem;
+                    }
+                }
+        
+                @media (max-width: 640px) {
+                    #abbi-components-slide .abbi-components-grid {
+                        grid-template-columns: 1fr;
+                        gap: 1rem;
+                    }
+        
+                    #abbi-components-slide .abbi-components-header h1 {
+                        font-size: 2rem;
+                    }
+        
+                    #abbi-components-slide .abbi-components-subtitle {
+                        font-size: 1rem;
+                    }
+        
+                    #abbi-components-slide .abbi-component-card {
+                        padding: 1.5rem;
+                    }
+                }
+            </style>
+        </div>
+
+
             
+            <div id="abbi-platform-slide" class="slide">
+                <div class="abbi-demo-container">
+                    <!-- Header Section -->
+                    <div class="abbi-demo-header">
+                        <h1>Abbi's Universal<br>Data Platform</h1>
+                        <p class="abbi-subtitle">Seamlessly indexes and connects enterprise data across your entire organization</p>
+                    </div>
+            
+                    <!-- Main Content Grid -->
+                    <div class="abbi-visualization">
+                        <!-- Data Sources Ring -->
+                        <div class="abbi-sources-ring">
+                            <div class="abbi-source-item">
+                                <div class="abbi-source-icon">
+                                    <img src="https://crystalpng.com/wp-content/uploads/2023/03/fiserv-logo.png" alt="Fiserv">
+                                </div>
+                            </div>
+                            <div class="abbi-source-item">
+                                <div class="abbi-source-icon">
+                                    <img src="https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/296654861_463878585743740_8611705562472804430_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=lPMdhWwYiDEQ7kNvgHG09T1&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=A1tfBmckw3vKfS6_KxtXNef&oh=00_AYC5cogCi4eaxLSx5HpVe3_EhN645Dg9admua5gUHwzl7A&oe=6739B1EE" alt="Symitar">
+                                </div>
+                            </div>
+                            <div class="abbi-source-item">
+                                <div class="abbi-source-icon">
+                                    <img src="https://www.salesforce.com/favicon.ico" alt="Salesforce">
+                                </div>
+                            </div>
+                            <div class="abbi-source-item">
+                                <div class="abbi-source-icon">
+                                    <img src="https://www.microsoft.com/favicon.ico" alt="SharePoint">
+                                </div>
+                            </div>
+                            <div class="abbi-source-item">
+                                <div class="abbi-source-icon">
+                                    <img src="https://assets.bizclikmedia.net/1336/537c4a6398a08668b40359af238e350a:686d82a564af70999fa4443183d043b7/my-2520post-2520-252819-2529-jpeg.webp" alt="DocuSign">
+                                </div>
+                            </div>
+                            <div class="abbi-source-item">
+                                <div class="abbi-source-icon">
+                                    <img src="https://assets.bizclikmedia.net/1336/920ff8caea98f4f91e4aa22b9df70deb:34434b4ccf1c7ad89bd9d6ad64ddb547/screenshot-117.webp" alt="DocuSign">
+                                </div>
+                            </div>
+                            <div class="abbi-source-item">
+                                <div class="abbi-source-icon">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/910px-SAP_2011_logo.svg.png" alt="DocuSign">
+                                </div>
+                            </div>
+                            <div class="abbi-source-item">
+                                <div class="abbi-source-icon">
+                                    <img src="https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/315731739_625465149375500_2780269735766926191_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=aBrfhhdmSscQ7kNvgGHQ3LU&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&_nc_gid=AqnbEw2qcn89WnumgIAqfcZ&oh=00_AYAhHntWIU5n1hx9JBu2CELvTovRxSSD6yeMqT7TBpGenQ&oe=6739AD0D" alt="DocuSign">
+                                </div>
+                            </div>
+                            <div class="abbi-source-item">
+                                <div class="abbi-source-icon">
+                                    <img src="https://www.webopedia.com/wp-content/uploads/1997/02/Webo.OracleProfile-1024x1024.png" alt="oracle">
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Central Demo -->
+                        <div class="abbi-central-demo">
+                            <div class="abbi-browser-frame">
+                                <div class="abbi-browser-header">
+                                    <div class="abbi-browser-controls">
+                                        <span class="abbi-control close"></span>
+                                        <span class="abbi-control minimize"></span>
+                                        <span class="abbi-control expand"></span>
+                                    </div>
+                                    <div class="abbi-tab">Live Demo</div>
+                                    <div class="abbi-status">
+                                        <span class="abbi-status-dot"></span>
+                                        Live
+                                    </div>
+                                </div>
+                                <div class="abbi-browser-content">
+                                    <iframe 
+                                        src="https://player.vimeo.com/video/1022980249?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&background=1" 
+                                        frameborder="0" 
+                                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                        title="Abbi Demo">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Stats Section -->
+                    <div class="abbi-stats">
+                        <div class="abbi-stat-card">
+                            <div class="abbi-stat-value">500+</div>
+                            <div class="abbi-stat-label">Enterprise Integrations</div>
+                            <div class="abbi-stat-desc">Pre-built connectors for major financial and enterprise systems</div>
+                        </div>
+                        <div class="abbi-stat-card">
+                            <div class="abbi-stat-value">Real-time</div>
+                            <div class="abbi-stat-label">Data Indexing</div>
+                            <div class="abbi-stat-desc">Continuous synchronization keeps information current</div>
+                        </div>
+                        <div class="abbi-stat-card">
+                            <div class="abbi-stat-value">99.9%</div>
+                            <div class="abbi-stat-label">Accuracy Rate</div>
+                            <div class="abbi-stat-desc">Enterprise-grade reliability and precision</div>
+                        </div>
+                    </div>
+            
+                    <!-- Footer -->
+                    <div class="slide1-footer">
+                        <div class="slide1-footer-logo">
+                            <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon">
+                        </div>
+                        <span>Abacus</span>
+                        <span>www.goabacus.co</span>
+                        <span>@HeyAbacus</span>
+                        <span id="pageNumber">4 / 14</span>
+                    </div>
+                </div>
+            
+                <style>
+                    #abbi-platform-slide {
+                        background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+                        height: calc(100vh - 120px);
+                        margin-top: 60px;
+                        margin-bottom: 60px;
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                        overflow: hidden;
+          
+                    }
+            
+                    #abbi-platform-slide .abbi-demo-container {
+                        max-width: 1400px;
+                        height: 100%;
+                        margin: 0 auto;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 2rem;
+                        padding-bottom: 4rem;
+                        box-sizing: border-box;
+                    }
+            
+                    #abbi-platform-slide .abbi-demo-header {
+                        text-align: center;
+                        margin-bottom: 1rem;
+                        padding-top: 1rem;
+                    }
+            
+                    #abbi-platform-slide .abbi-demo-header h1 {
+                        font-size: 3rem;
+                        font-weight: 700;
+                        color: #1d1d1f;
+                        margin: 0 0 1rem 0;
+                        line-height: 1.2;
+                        background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+            
+                    #abbi-platform-slide .abbi-subtitle {
+                        font-size: 1.2rem;
+                        color: #86868b;
+                        margin: 0 auto;
+                        max-width: 600px;
+                    }
+            
+                    #abbi-platform-slide .abbi-visualization {
+                        position: relative;
+                        flex: 1;
+                        min-height: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 1rem 0;
+                        padding-bottom: 2rem;
+                    }
+            
+                    #abbi-platform-slide .abbi-sources-ring {
+                        position: absolute;
+                        width: 700px;
+                        height: 700px;
+                        border: 2px dashed rgba(99, 91, 255, 0.1);
+                        border-radius: 50%;
+                        animation: abbi-rotate 60s linear infinite;
+                    }
+            
+                    #abbi-platform-slide .abbi-source-item {
+                        position: absolute;
+                        width: 60px;
+                        height: 60px;
+                    }
+            
+                    #abbi-platform-slide .abbi-source-item:nth-child(1) {
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+            
+                    #abbi-platform-slide .abbi-source-item:nth-child(2) {
+                        top: 50%;
+                        right: 0;
+                        transform: translate(50%, -50%);
+                    }
+            
+                    #abbi-platform-slide .abbi-source-item:nth-child(3) {
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%, 50%);
+                    }
+            
+                    #abbi-platform-slide .abbi-source-item:nth-child(4) {
+                        top: 50%;
+                        left: 0;
+                        transform: translate(-50%, -50%);
+                    }
+            
+                    #abbi-platform-slide .abbi-source-item:nth-child(5) {
+                        top: 15%;
+                        left: 15%;
+                    }
+
+                    #abbi-platform-slide .abbi-source-item:nth-child(6) {
+                        top: 0;
+                        right: 40%;
+                        transform: translate(-50%, -50%);
+                    }
+
+            
+                    #abbi-platform-slide .abbi-source-icon {
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        border-radius: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                        cursor: pointer;
+                        transition: transform 0.3s ease;
+                    }
+            
+                    #abbi-platform-slide .abbi-source-icon:hover {
+                        transform: scale(1.1);
+                    }
+            
+                    #abbi-platform-slide .abbi-source-icon img {
+                        width: 60%;
+                        height: 60%;
+                        object-fit: contain;
+                    }
+            
+                    #abbi-platform-slide .abbi-central-demo {
+                        position: relative;
+                        width: 800px;
+                        height: 500px;
+                        z-index: 10;
+                    }
+            
+                    #abbi-platform-slide .abbi-browser-frame {
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                        display: flex;
+                        flex-direction: column;
+                    }
+            
+                    #abbi-platform-slide .abbi-browser-header {
+                        display: flex;
+                        align-items: center;
+                        padding: 0.75rem;
+                        background: #f5f5f7;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                    }
+            
+                    #abbi-platform-slide .abbi-browser-controls {
+                        display: flex;
+                        gap: 8px;
+                        margin-right: 16px;
+                    }
+            
+                    #abbi-platform-slide .abbi-control {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                    }
+            
+                    #abbi-platform-slide .abbi-control.close { background: #ff5f57; }
+                    #abbi-platform-slide .abbi-control.minimize { background: #febc2e; }
+                    #abbi-platform-slide .abbi-control.expand { background: #28c940; }
+            
+                    #abbi-platform-slide .abbi-tab {
+                        background: #e5e5ea;
+                        padding: 4px 12px;
+                        border-radius: 6px;
+                        font-size: 0.9rem;
+                        color: #1d1d1f;
+                    }
+            
+                    #abbi-platform-slide .abbi-status {
+                        margin-left: auto;
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        color: #28c940;
+                        font-size: 0.9rem;
+                    }
+            
+                    #abbi-platform-slide .abbi-status-dot {
+                        width: 8px;
+                        height: 8px;
+                        background: currentColor;
+                        border-radius: 50%;
+                        animation: abbi-pulse 2s infinite;
+                    }
+            
+                    #abbi-platform-slide .abbi-browser-content {
+                        flex: 1;
+                        position: relative;
+                    }
+            
+                    #abbi-platform-slide .abbi-browser-content iframe {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                    }
+            
+                    #abbi-platform-slide .abbi-stats {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 2rem;
+                        margin-top: auto;
+                        padding: 1rem 0;
+                        margin-bottom: 1rem;
+                    }
+            
+                    #abbi-platform-slide .abbi-stat-card {
+                        background: white;
+                        border-radius: 16px;
+                        padding: 1.5rem;
+                        text-align: center;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                        transition: transform 0.3s ease;
+                    }
+            
+                    #abbi-platform-slide .abbi-stat-card:hover {
+                        transform: translateY(-4px);
+                    }
+            
+                    #abbi-platform-slide .abbi-stat-value {
+                        font-size: 2.5rem;
+                        font-weight: 700;
+                        color: #635bff;
+                        margin-bottom: 0.5rem;
+                    }
+            
+                    #abbi-platform-slide .abbi-stat-label {
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        color: #1d1d1f;
+                        margin-bottom: 0.5rem;
+                    }
+            
+                    #abbi-platform-slide .abbi-stat-desc {
+                        font-size: 0.9rem;
+                        color: #86868b;
+                        line-height: 1.4;
+                    }
+            
+                    #abbi-platform-slide .slide1-footer {
+                        position: fixed;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background: rgba(255, 255, 255, 0.9);
+                        backdrop-filter: blur(10px);
+                        padding: 1rem 2rem;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 0.8rem;
+                        color: #1d1d1f;
+                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                        z-index: 100;
+                    }
+            
+                    #abbi-platform-slide .slide1-footer-logo {
+                        width: 30px;
+                        height: 30px;
+                    }
+            
+                    #abbi-platform-slide .slide1-footer-logo img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+            
+                    @keyframes abbi-rotate {
+                        from { transform: rotate(0deg); }
+                        to { transform: rotate(360deg); }
+                    }
+            
+                    @keyframes abbi-pulse {
+                        0% {
+                            transform: scale(0.95);
+                            box-shadow: 0 0 0 0 rgba(40, 201, 64, 0.4);
+                        }
+                        70% {
+                            transform: scale(1);
+                            box-shadow: 0 0 0 10px rgba(40, 201, 64, 0);
+                        }
+                        100% {
+                            transform: scale(0.95);
+                            box-shadow: 0 0 0 0 rgba(40, 201, 64, 0);
+                        }
+                    }
+            
+                    @media (max-width: 1200px) {
+                        #abbi-platform-slide .abbi-sources-ring {
+                            width: 600px;
+                            height: 600px;
+                        }
+            
+                        #abbi-platform-slide .abbi-central-demo {
+                            width: 650px;
+                            height: 380px;
+                        }
+            
+                        #abbi-platform-slide .abbi-demo-header h1 {
+                            font-size: 2.5rem;
+                        }
+                    }
+
+                    @media (max-width: 900px) {
+            #abbi-platform-slide {
+                height: calc(100vh - 100px);
+                margin-top: 50px;
+            }
+
+            #abbi-platform-slide .abbi-sources-ring {
+                width: 500px;
+                height: 500px;
+            }
+
+            #abbi-platform-slide .abbi-central-demo {
+                width: 480px;
+                height: 280px;
+            }
+
+            #abbi-platform-slide .abbi-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            #abbi-platform-slide {
+                height: calc(100vh - 80px);
+                margin-top: 40px;
+            }
+
+            #abbi-platform-slide .abbi-sources-ring {
+                display: none;
+            }
+
+            #abbi-platform-slide .abbi-central-demo {
+                width: 100%;
+                height: 250px;
+            }
+
+            #abbi-platform-slide .abbi-stats {
+                grid-template-columns: 1fr;
+            }
+
+            #abbi-platform-slide .abbi-demo-header h1 {
+                font-size: 2rem;
+            }
+
+            #abbi-platform-slide .abbi-demo-container {
+                padding: 1rem;
+                padding-bottom: 3rem;
+            }
+        }
+    </style>
+</div>
+
+
+  
+            <!-- Add other slides here -->
+            <div id="slide3" class="slide">
+                <div class="case-study-container">
+                    <!-- Header Section -->
+                    <div class="header-section1">
+                        <h1>Meet Jim</h1>
+                        <p class="subtitle">Director of Learning & Development at Consumers Credit Union</p>
+                    </div>
+            
+                    <!-- Main Content Grid -->
+                    <div class="content-grid">
+                        <!-- Profile Section -->
+                        <div class="profile-card">
+                            <div class="profile-content">
+                                <div class="profile-header">
+                                    <div class="profile-avatar">
+                                        <img src="https://media.licdn.com/dms/image/v2/D5603AQFhd4eROsNh_g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698269958172?e=1736985600&v=beta&t=BDM9yFk1iChB_kNOwR-jRG3s3AkuA0ik8Mebc28uBXI" alt="Jim Eisert">
+                                    </div>
+                                    <div class="profile-info">
+                                        <img class="company-logo" src="https://www.myconsumers.org/images/default-source/default-album/logo-2x.svg?sfvrsn=c2c47e7b_12" alt="CCU Logo">
+                                        <div class="company-stats">
+                                            <div class="stat">
+                                                <span class="stat-value">420+</span>
+                                                <span class="stat-label">Employees</span>
+                                            </div>
+                                            <div class="stat-divider"></div>
+                                            <div class="stat">
+                                                <span class="stat-value">$2.1B</span>
+                                                <span class="stat-label">Assets</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Challenges Grid -->
+                        <div class="challenges-grid">
+                            <div class="challenge-card">
+                                <div class="challenge-icon">⏱️</div>
+                                <h3>45+ Minutes</h3>
+                                <p>Average time spent searching for policy answers</p>
+                                <div class="challenge-background"></div>
+                            </div>
+            
+                            <div class="challenge-card">
+                                <div class="challenge-icon">📚</div>
+                                <h3>5,000+ Documents</h3>
+                                <p>Scattered across multiple systems</p>
+                                <div class="challenge-background"></div>
+                            </div>
+            
+                            <div class="challenge-card">
+                                <div class="challenge-icon">🔄</div>
+                                <h3>Manual Process</h3>
+                                <p>No centralized knowledge solution</p>
+                                <div class="challenge-background"></div>
+                            </div>
+                        </div>
+            
+                        <!-- Next Demo Preview -->
+                        <div class="next-preview">
+                            <div class="preview-content">
+                                <span class="preview-label">Next: Watch how Abbi helps Jim</span>
+                                <div class="preview-arrow">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <style>
+                    #slide3 {
+                        background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+                        min-height: 100vh;
+                        padding: 2rem;
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        overflow-y: auto;
+                    }
+            
+                    .case-study-container {
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 2rem;
+                    }
+            
+                    .header-section1 {
+                        text-align: center;
+                        margin-bottom: 4rem;
+                    }
+            
+                    .header-section1 h1 {
+                        font-size: 3rem;
+                        font-weight: 700;
+                        color: #1d1d1f !important;
+                        margin-bottom: 5rem;
+                        background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+                        -webkit-background-clip: text;
+                    }
+            
+                    .subtitle {
+                        font-size: 1.25rem;
+                        color: #86868b;
+                        max-width: 600px;
+                        margin: 0 auto;
+                    }
+            
+                    .content-grid {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3rem;
+                    }
+            
+                    .profile-card {
+                        background: linear-gradient(145deg, #ffffff 0%, #f8f9fc 100%);
+                        border-radius: 24px;
+                        padding: 2rem;
+                        border: 1px solid rgba(99, 91, 255, 0.1);
+                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                        transition: all 0.3s ease;
+                    }
+            
+                    .profile-card:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    }
+            
+                    .profile-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 2rem;
+                    }
+            
+                    .profile-avatar {
+                        width: 80px;
+                        height: 80px;
+                        background: linear-gradient(135deg, #635bff, #8b5cf6);
+                        border-radius: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: white;
+                        font-size: 2rem;
+                        font-weight: 600;
+                        box-shadow: 0 8px 16px rgba(99, 91, 255, 0.2);
+                    }
+            
+                    .profile-info {
+                        flex: 1;
+                    }
+            
+                    .company-logo {
+                        height: 35px;
+                        width: auto;
+                        margin-bottom: 1rem;
+                    }
+            
+                    .company-stats {
+                        display: flex;
+                        align-items: center;
+                        gap: 2rem;
+                    }
+            
+                    .stat {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.25rem;
+                    }
+            
+                    .stat-value {
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        color: #635bff;
+                    }
+            
+                    .stat-label {
+                        font-size: 0.875rem;
+                        color: #86868b;
+                    }
+            
+                    .stat-divider {
+                        width: 1px;
+                        height: 24px;
+                        background: rgba(0, 0, 0, 0.1);
+                    }
+            
+                    .challenges-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 2rem;
+                    }
+            
+                    .challenge-card {
+                        background: white;
+                        border-radius: 20px;
+                        padding: 2rem;
+                        text-align: center;
+                        position: relative;
+                        overflow: hidden;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        transition: all 0.3s ease;
+                    }
+            
+                    .challenge-card:hover {
+                        transform: translateY(-4px);
+                        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                    }
+            
+                    .challenge-icon {
+                        font-size: 2.5rem;
+                        margin-bottom: 1rem;
+                    }
+            
+                    .challenge-card h3 {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        color: #1d1d1f;
+                        margin-bottom: 0.5rem;
+                    }
+            
+                    .challenge-card p {
+                        font-size: 1rem;
+                        color: #86868b;
+                        line-height: 1.5;
+                    }
+            
+                    .challenge-background {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: linear-gradient(135deg, rgba(99, 91, 255, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                    }
+            
+                    .challenge-card:hover .challenge-background {
+                        opacity: 1;
+                    }
+            
+                    .next-preview {
+                        margin-top: 2rem;
+                        text-align: center;
+                    }
+            
+                    .preview-content {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 1rem;
+                        color: #635bff;
+                        font-weight: 500;
+                        padding: 1rem 2rem;
+                        background: rgba(99, 91, 255, 0.1);
+                        border-radius: 100px;
+                        transition: all 0.3s ease;
+                    }
+            
+                    .preview-content:hover {
+                        transform: translateX(4px);
+                        background: rgba(99, 91, 255, 0.15);
+                    }
+            
+                    .preview-arrow {
+                        animation: bounce 1.5s infinite;
+                    }
+            
+                    @keyframes bounce {
+                        0%, 100% { transform: translateX(0); }
+                        50% { transform: translateX(8px); }
+                    }
+            
+                    @media (max-width: 1024px) {
+                        .challenges-grid {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+            
+                    @media (max-width: 768px) {
+                        .case-study-container {
+                            padding: 1rem;
+                        }
+            
+                        .header-section h1 {
+                            font-size: 2.5rem;
+                        }
+            
+                        .profile-header {
+                            flex-direction: column;
+                            text-align: center;
+                        }
+            
+                        .company-stats {
+                            justify-content: center;
+                        }
+            
+                        .challenges-grid {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+            
+                    @media (max-width: 480px) {
+                        .header-section h1 {
+                            font-size: 2rem;
+                        }
+            
+                        .subtitle {
+                            font-size: 1rem;
+                        }
+            
+                        .profile-avatar {
+                            width: 60px;
+                            height: 60px;
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    .profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(99, 91, 255, 0.2);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 480px) {
+    .profile-avatar {
+        width: 60px;
+        height: 60px;
+    }
+}
+                </style>
+            </div>
+
+
+            <div id="abbi-demo-slide" class="slide">
+                <div class="abbi-demo-container">
+                    <div class="demo-header">
+                        <h1>Abbi in Action</h1>
+                        <p class="demo-subtitle">Experience how Abbi transforms enterprise knowledge work</p>
+                    </div>
+            
+                    <div class="demo-stage">
+                        <div class="live-badge">
+                            <span class="pulse-dot"></span>
+                            Live Demo
+                        </div>
+                        
+                        <div class="demo-frame">
+                            <div class="frame-header">
+                                <div class="window-controls">
+                                    <span class="control"></span>
+                                    <span class="control"></span>
+                                    <span class="control"></span>
+                                </div>
+                            </div>
+                            <div class="frame-content">
+                                <iframe 
+                                    src="https://player.vimeo.com/video/1023083569?autoplay=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&background=1" 
+                                    frameborder="0" 
+                                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                    title="Abbi Demo"
+                                    style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0;"
+                                    width="100% !important"
+                                    height="100%">
+                                </iframe>
+                            </div>
+                        </div>
+            
+                        <div class="metrics-row">
+                            <div class="metric-card">
+                                <div class="metric-value">3s</div>
+                                <div class="metric-label">Average Response Time</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">500+</div>
+                                <div class="metric-label">Enterprise Integrations</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">99.9%</div>
+                                <div class="metric-label">Accuracy Rate</div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="slide1-footer">
+                        <div class="slide1-footer-logo">
+                            <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon">
+                        </div>
+                        <span>Abacus</span>
+                        <span>www.goabacus.co</span>
+                        <span>@HeyAbacus</span>
+                        <span id="pageNumber">4 / 14</span>
+                    </div>
+                </div>
+            
+                <style>
+                    #abbi-demo-slide {
+                        background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+                        height: calc(100vh - 120px);
+                        margin-top: 60px;
+                        margin-bottom: 60px;
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                        overflow: hidden;
+                    }
+            
+                    .abbi-demo-container {
+                        max-width: 1400px;
+                        height: 100%;
+                        margin: 0 auto;
+                        padding: 2rem;
+                        display: flex;
+                        flex-direction: column;
+                        box-sizing: border-box;
+                    }
+            
+                    .demo-header {
+                        text-align: center;
+                        margin-bottom: 2rem;
+                    }
+            
+                    .demo-header h1 {
+                        font-size: 3rem;
+                        font-weight: 700;
+                        background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        margin: 0 0 1rem 0;
+                    }
+            
+                    .demo-subtitle {
+                        font-size: 1.2rem;
+                        color: #86868b;
+                        max-width: 600px;
+                        margin: 0 auto;
+                    }
+            
+                    .demo-stage {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 2rem;
+                        position: relative;
+                        padding: 1rem;
+                    }
+            
+                    .live-badge {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        background: rgba(48, 209, 88, 0.1);
+                        color: #28c940;
+                        padding: 0.5rem 1rem;
+                        border-radius: 100px;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                    }
+            
+                    .pulse-dot {
+                        width: 8px;
+                        height: 8px;
+                        background: currentColor;
+                        border-radius: 50%;
+                        animation: pulse 2s infinite;
+                    }
+            
+                    .demo-frame {
+                        width: 90%;
+                        max-width: 1200px;
+                        background: white;
+                        border-radius: 20px;
+                        overflow: hidden;
+                        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                        height: 600px;
+                        display: flex;
+                        flex-direction: column;
+                    }
+            
+                    .frame-header {
+                        height: 40px;
+                        background: #f5f5f7;
+                        display: flex;
+                        align-items: center;
+                        padding: 0 1rem;
+                    }
+            
+                    .window-controls {
+                        display: flex;
+                        gap: 8px;
+                    }
+            
+                    .control {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background: #dee1e6;
+                    }
+            
+                    .frame-content {
+                        flex: 1;
+                        position: relative;
+                        background: #f8f9fc;
+                    }
+            
+                    .frame-content iframe {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                    }
+            
+                    .metrics-row {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 2rem;
+                        width: 90%;
+                        max-width: 1000px;
+                    }
+            
+                    .metric-card {
+                        background: white;
+                        border-radius: 16px;
+                        padding: 1.5rem;
+                        text-align: center;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                        transition: transform 0.3s ease;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                    }
+            
+                    .metric-card:hover {
+                        transform: translateY(-4px);
+                    }
+            
+                    .metric-value {
+                        font-size: 2rem;
+                        font-weight: 700;
+                        color: #635bff;
+                        margin-bottom: 0.5rem;
+                    }
+            
+                    .metric-label {
+                        font-size: 0.9rem;
+                        color: #86868b;
+                        line-height: 1.4;
+                    }
+            
+                    .slide1-footer {
+                        position: fixed;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background: rgba(255, 255, 255, 0.9);
+                        backdrop-filter: blur(10px);
+                        padding: 1rem 2rem;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 0.8rem;
+                        color: #1d1d1f;
+                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                        z-index: 100;
+                    }
+            
+                    .slide1-footer-logo {
+                        width: 30px;
+                        height: 30px;
+                    }
+            
+                    .slide1-footer-logo img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+            
+                    @keyframes pulse {
+                        0% {
+                            transform: scale(0.95);
+                            box-shadow: 0 0 0 0 rgba(40, 201, 64, 0.4);
+                        }
+                        70% {
+                            transform: scale(1);
+                            box-shadow: 0 0 0 10px rgba(40, 201, 64, 0);
+                        }
+                        100% {
+                            transform: scale(0.95);
+                            box-shadow: 0 0 0 0 rgba(40, 201, 64, 0);
+                        }
+                    }
+            
+                    @media (max-width: 1200px) {
+                        .demo-frame {
+                            height: 500px;
+                        }
+            
+                        .demo-header h1 {
+                            font-size: 2.5rem;
+                        }
+                    }
+            
+                    @media (max-width: 900px) {
+                        .demo-frame {
+                            height: 400px;
+                        }
+            
+                        .metrics-row {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+            
+                    @media (max-width: 640px) {
+                        .abbi-demo-container {
+                            padding: 1rem;
+                        }
+            
+                        .demo-header h1 {
+                            font-size: 2rem;
+                        }
+            
+                        .demo-subtitle {
+                            font-size: 1rem;
+                        }
+            
+                        .demo-frame {
+                            width: 100%;
+                            height: 300px;
+                        }
+            
+                        .metrics-row {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+
+                    .demo-stage {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 80px; /* Add space for footer */
+}
+
+.demo-frame {
+    width: 95%; /* Increased from 90% */
+    max-width: 1400px; /* Increased from 1200px */
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    height: 700px; /* Increased from 600px */
+    display: flex;
+    flex-direction: column;
+}
+
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 95%;
+    max-width: 1200px;
+    margin-bottom: 2rem; /* Ensure space before footer */
+    position: relative;
+    z-index: 1;
+}
+
+/* Update media queries */
+@media (max-width: 1200px) {
+    .demo-frame {
+        height: 600px;
+    }
+}
+
+@media (max-width: 900px) {
+    .demo-frame {
+        height: 500px;
+    }
+}
+
+@media (max-width: 640px) {
+    .demo-frame {
+        height: 400px;
+    }
+}
+
+/* Update the container to ensure proper spacing */
+.abbi-demo-container {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-bottom: 120px; /* Increase bottom padding */
+}
+
+.frame-content {
+    flex: 1;
+    position: relative;
+    background: #f8f9fc;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.frame-content iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important; /* Force full width */
+    height: 100% !important; /* Force full height */
+    border: 0;
+    display: block; /* Prevent inline spacing issues */
+    object-fit: contain; /* Ensure content scales properly */
+}
+
+/* Update these styles */
+.demo-header {
+    text-align: center;
+    margin-bottom: 1rem; /* Reduced from 2rem */
+}
+
+.demo-stage {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Reduced from 2rem */
+    position: relative;
+    padding: 0.5rem; /* Reduced padding */
+    margin-bottom: 80px;
+}
+
+.demo-frame {
+    width: 98%; /* Increased from 95% */
+    max-width: 1800px; /* Increased from 1400px */
+    height: 800px; /* Increased from 700px */
+}
+
+.frame-header {
+    height: 32px; /* Reduced from 40px to give more space to video */
+}
+
+/* Update media queries for larger screens */
+@media (max-width: 1400px) {
+    .demo-frame {
+        height: 750px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .demo-frame {
+        height: 650px;
+    }
+}
+
+@media (max-width: 900px) {
+    .demo-frame {
+        height: 550px;
+    }
+}
+
+@media (max-width: 640px) {
+    .demo-frame {
+        height: 450px;
+    }
+}
+                </style>
+            </div>
+
+
+
+   
+
+    <div id="abbi-platforms-slide" class="slide">
+        <div class="abbi-platforms-container">
+            <div class="abbi-platforms-header">
+                <h1>Abbi Everywhere</h1>
+                <p class="abbi-platforms-subtitle">Access Abbi's intelligence through your preferred enterprise platform</p>
+            </div>
+    
+            <div class="abbi-platforms-grid">
+                <!-- Desktop App -->
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="platform-content">
+                        <h3>Desktop App</h3>
+                        <p>Native application with quick access and keyboard shortcuts</p>
+                        <div class="platform-features">
+                            <div class="feature">
+                                <span class="feature-bullet"></span>
+                                Offline capability
+                            </div>
+                            <div class="feature">
+                                <span class="feature-bullet"></span>
+                                System-wide search
+                            </div>
+                            <div class="feature">
+                                <span class="feature-bullet"></span>
+                                Quick access overlay
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+    
+                <!-- MS Teams App -->
+                <div class="platform-card featured">
+                    <div class="platform-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            <path d="M16 10a4 4 0 0 0-8 0"></path>
+                            <line x1="12" y1="10" x2="12" y2="14"></line>
+                        </svg>
+                    </div>
+                    <div class="platform-content">
+                        <h3>MS Teams Integration</h3>
+                        <p>Access Abbi directly within your Teams conversations</p>
+                        <div class="platform-features">
+                            <div class="feature">
+                                <span class="feature-bullet"></span>
+                                Chat integration
+                            </div>
+                            <div class="feature">
+                                <span class="feature-bullet"></span>
+                                Meeting assistance
+                            </div>
+                            <div class="feature">
+                                <span class="feature-bullet"></span>
+                                Document sharing
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+    
+                <!-- SharePoint Integration -->
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="platform-content">
+                        <h3>SharePoint Portal</h3>
+                        <p>Seamless integration with your SharePoint environment</p>
+                        <div class="platform-features">
+                            <div class="feature">
+                                <span class="feature-bullet"></span>
+                                Real-time indexing
+                            </div>
+                            <div class="feature">
+                                <span class="feature-bullet"></span>
+                                Custom web parts
+                            </div>
+                            <div class="feature">
+                                <span class="feature-bullet"></span>
+                                Inline suggestions
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+    
+            <div class="slide1-footer">
+                <div class="slide1-footer-logo">
+                    <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon">
+                </div>
+                <span>Abacus</span>
+                <span>www.goabacus.co</span>
+                <span>@HeyAbacus</span>
+                <span id="pageNumber">5 / 14</span>
+            </div>
+        </div>
+    
+        <style>
+            #abbi-platforms-slide {
+                background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+                height: calc(100vh - 120px);
+                margin-top: 60px;
+                margin-bottom: 60px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                overflow: hidden;
+            }
+    
+            #abbi-platforms-slide .abbi-platforms-container {
+                max-width: 1400px;
+                height: 100%;
+                margin: 0 auto;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+            }
+    
+            #abbi-platforms-slide .abbi-platforms-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+    
+            #abbi-platforms-slide .abbi-platforms-header h1 {
+                font-size: 3rem;
+                font-weight: 700;
+                color: #1d1d1f;
+                margin: 0 0 1rem 0;
+                background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+    
+            #abbi-platforms-slide .abbi-platforms-subtitle {
+                font-size: 1.2rem;
+                color: #86868b;
+                margin: 0 auto;
+                max-width: 600px;
+            }
+    
+            #abbi-platforms-slide .abbi-platforms-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                flex: 1;
+                margin-bottom: 2rem;
+            }
+    
+            #abbi-platforms-slide .platform-card {
+                background: white;
+                border-radius: 24px;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                transition: all 0.3s ease;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+    
+            #abbi-platforms-slide .platform-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            }
+    
+            #abbi-platforms-slide .platform-card.featured {
+                background: linear-gradient(135deg, #635bff08 0%, #8b5cf608 100%);
+                border: 1px solid rgba(99, 91, 255, 0.2);
+            }
+    
+            #abbi-platforms-slide .platform-icon {
+                width: 56px;
+                height: 56px;
+                background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+            }
+    
+            #abbi-platforms-slide .platform-content {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                flex: 1;
+            }
+    
+            #abbi-platforms-slide .platform-content h3 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #1d1d1f;
+                margin: 0;
+            }
+    
+            #abbi-platforms-slide .platform-content p {
+                font-size: 1rem;
+                color: #86868b;
+                line-height: 1.5;
+                margin: 0;
+            }
+    
+            #abbi-platforms-slide .platform-features {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+    
+            #abbi-platforms-slide .feature {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-size: 0.9rem;
+                color: #1d1d1f;
+            }
+    
+            #abbi-platforms-slide .feature-bullet {
+                width: 6px;
+                height: 6px;
+                background: #635bff;
+                border-radius: 50%;
+            }
+    
+            #abbi-platforms-slide .platform-demo {
+                margin-top: auto;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                aspect-ratio: 16/10;
+                background: #f5f5f7;
+            }
+    
+            #abbi-platforms-slide .platform-demo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            #abbi-platforms-slide .slide1-footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.9);
+                backdrop-filter: blur(10px);
+                padding: 1rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 0.8rem;
+                color: #1d1d1f;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+    
+            #abbi-platforms-slide .slide1-footer-logo {
+                width: 30px;
+                height: 30px;
+            }
+    
+            #abbi-platforms-slide .slide1-footer-logo img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+    
+            @media (max-width: 1200px) {
+                #abbi-platforms-slide .abbi-platforms-grid {
+                    gap: 1.5rem;
+                }
+    
+                #abbi-platforms-slide .platform-card {
+                    padding: 1.5rem;
+                }
+            }
+    
+            @media (max-width: 900px) {
+                #abbi-platforms-slide .abbi-platforms-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+    
+                #abbi-platforms-slide .abbi-platforms-header h1 {
+                    font-size: 2.5rem;
+                }
+            }
+    
+            @media (max-width: 640px) {
+                #abbi-platforms-slide .abbi-platforms-grid {
+                    grid-template-columns: 1fr;
+                }
+    
+                #abbi-platforms-slide .abbi-platforms-header h1 {
+                    font-size: 2rem;
+                }
+    
+                #abbi-platforms-slide .abbi-platforms-subtitle {
+                    font-size: 1rem;
+                }
+    
+                #abbi-platforms-slide .platform-card {
+                    padding: 1.5rem;
+                }
+    
+                #abbi-platforms-slide .abbi-platforms-container {
+                    padding: 1rem;
+                }
+            }
+        </style>
+    </div>
+
+
+    
             <div id="slide5" class="slide">
                 <div class="slide5-content-container">
                     <div class="slide5-os-showcase">
@@ -4334,26 +6936,43 @@
         <h1 class="slide8-title">Our Traction (Monthly Revenue)</h1>
         <div class="slide8-chart-container">
             <div class="slide8-chart">
-                <div class="slide8-bar" style="height: 20%;">
+                <div class="slide8-bar" style="height: 10%;">
                     <div class="slide8-bar-label">Jan</div>
+                    <div class="slide8-bar-value">$25K</div>
+                </div>
+                <div class="slide8-bar" style="height: 15%;">
+                    <div class="slide8-bar-label">Feb</div>
+                    <div class="slide8-bar-value">$35K</div>
+                </div>
+                <div class="slide8-bar" style="height: 20%;">
+                    <div class="slide8-bar-label">Mar</div>
+                    <div class="slide8-bar-value">$40K</div>
+                </div>
+                <div class="slide8-bar" style="height: 25%;">
+                    <div class="slide8-bar-label">Apr</div>
                     <div class="slide8-bar-value">$50K</div>
                 </div>
-                <div class="slide8-bar" style="height: 40%;">
-                    <div class="slide8-bar-label">Feb</div>
+                <div class="slide8-bar" style="height: 35%;">
+                    <div class="slide8-bar-label">May</div>
                     <div class="slide8-bar-value">$60K</div>
                 </div>
-                <div class="slide8-bar" style="height: 60%;">
-                    <div class="slide8-bar-label">Mar</div>
-                    <div class="slide8-bar-value">$70K</div>
+                <div class="slide8-bar" style="height: 45%;">
+                    <div class="slide8-bar-label">June</div>
+                    <div class="slide8-bar-value">$73K</div>
                 </div>
-                <div class="slide8-bar" style="height: 80%;">
-                    <div class="slide8-bar-label">Apr</div>
-                    <div class="slide8-bar-value">$80K</div>
+                <div class="slide8-bar" style="height: 55%;">
+                    <div class="slide8-bar-label">July</div>
+                    <div class="slide8-bar-value">$86K</div>
                 </div>
-                <div class="slide8-bar" style="height: 100%;">
-                    <div class="slide8-bar-label">May</div>
-                    <div class="slide8-bar-value">$93K</div>
+                <div class="slide8-bar" style="height: 65%;">
+                    <div class="slide8-bar-label">August</div>
+                    <div class="slide8-bar-value">$96K</div>
                 </div>
+                <div class="slide8-bar" style="height: 85%;">
+                    <div class="slide8-bar-label">September</div>
+                    <div class="slide8-bar-value">$98K</div>
+                </div>
+              
             </div>
         </div>
     
@@ -4537,53 +7156,354 @@
     </div>
 
 
-    <div id="slide12" class="slide">
-        <h1 class="slide12-title">Roadmap to Growth</h1>
-        <div class="slide12-roadmap">
-            <div class="slide12-milestone">
-                <div class="slide12-year">2025</div>
-                <div class="slide12-content">
-                    <div class="slide12-revenue">$1.2M ARR</div>
-                    <div class="slide12-details">Achieve $100K MRR, focus on credit union sector</div>
+    <style>
+    #slide12.slide {
+        background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+        height: calc(100vh - 120px);
+        margin-top: 60px;
+        margin-bottom: 60px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        overflow: hidden;
+   
+    }
+    
+    .roadmap-slide-2024__container {
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    
+    .roadmap-slide-2024__title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0 0 2rem 0;
+        letter-spacing: -0.02em;
+        text-align: center;
+    }
+    
+    .roadmap-slide-2024__timeline {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: flex-start;
+        flex: 1;
+        padding: 2rem 0;
+        gap: 2rem; /* Reduced gap */
+    }
+    
+    .roadmap-slide-2024__timeline::before {
+        content: '';
+        position: absolute;
+        top: 90px; /* Adjusted for smaller cards */
+        left: 8%;
+        right: 8%;
+        height: 3px;
+        background: linear-gradient(to right, rgba(99, 91, 255, 0.2), rgba(99, 91, 255, 0.8));
+        z-index: 1;
+    }
+    
+    .roadmap-slide-2024__milestone {
+        position: relative;
+        z-index: 2;
+        width: 240px; /* Reduced width */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .roadmap-slide-2024__milestone::before {
+        content: '';
+        width: 16px; /* Smaller dot */
+        height: 16px;
+        background: #635bff;
+        border-radius: 50%;
+        position: absolute;
+        top: 82px; /* Adjusted for smaller cards */
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 0 6px rgba(99, 91, 255, 0.1);
+    }
+    
+    .roadmap-slide-2024__year {
+        background: #635bff;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 100px;
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    
+    .roadmap-slide-2024__content {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+        min-height: 140px; /* Reduced height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .roadmap-slide-2024__content:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    }
+    
+    .roadmap-slide-2024__revenue {
+        font-size: 2rem; /* Smaller font */
+        font-weight: 700;
+        color: #635bff;
+        margin-bottom: 0.75rem;
+    }
+    
+    .roadmap-slide-2024__details {
+        color: #86868b;
+        font-size: 0.9rem; /* Smaller font */
+        line-height: 1.4;
+    }
+    
+    .slide1-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #1d1d1f;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+    
+    .slide1-footer-logo {
+        width: 30px;
+        height: 30px;
+    }
+    
+    @media (max-width: 1200px) {
+        .roadmap-slide-2024__timeline {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            overflow-y: auto;
+            padding: 0 1rem;
+            margin-bottom: 4rem;
+        }
+        
+        .roadmap-slide-2024__timeline::before {
+            width: 3px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            background: linear-gradient(to bottom, rgba(99, 91, 255, 0.2), rgba(99, 91, 255, 0.8));
+        }
+        
+        .roadmap-slide-2024__milestone {
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .roadmap-slide-2024__milestone::before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .roadmap-slide-2024__year {
+            margin-bottom: 1.5rem;
+        }
+        
+        .roadmap-slide-2024__title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    @media (max-width: 1200px) {
+    .roadmap-slide-2024__container {
+        height: auto;
+        overflow-y: auto;
+        max-height: calc(100vh - 180px); /* Adjust for margins and footer */
+    }
+    
+    .roadmap-slide-2024__timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 0 1rem 4rem 1rem; /* Added bottom padding */
+    }
+    
+    .roadmap-slide-2024__timeline::before {
+        width: 3px;
+        height: calc(100% - 2rem); /* Adjusted height */
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        background: linear-gradient(to bottom, rgba(99, 91, 255, 0.2), rgba(99, 91, 255, 0.8));
+    }
+    
+    .roadmap-slide-2024__milestone {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .roadmap-slide-2024__milestone::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .roadmap-slide-2024__year {
+        margin-bottom: 1.5rem;
+    }
+    
+    .roadmap-slide-2024__title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        position: sticky;
+        top: 0;
+        background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+        padding: 1rem 0;
+        z-index: 2;
+    }
+}
+
+#slide12.slide {
+    background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+    height: calc(100vh - 120px);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.roadmap-slide-2024__container {
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.roadmap-slide-2024__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 2rem 0;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+/* Previous styles remain the same until media query */
+
+@media (max-width: 1200px) {
+    #slide12.slide {
+        overflow-y: auto;
+    }
+
+    .roadmap-slide-2024__container {
+        min-height: 100%;
+        height: auto;
+    }
+    
+    .roadmap-slide-2024__timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 0 1rem;
+        margin-bottom: 6rem; /* Added space for footer */
+    }
+    
+    .roadmap-slide-2024__timeline::before {
+        width: 3px;
+        height: 100%;
+        left: 50%;
+        top: 50;
+        transform: translateX(-50%);
+        background: linear-gradient(to bottom, rgba(99, 91, 255, 0.2), rgba(99, 91, 255, 0.8));
+    }
+    
+    .roadmap-slide-2024__milestone {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .roadmap-slide-2024__year {
+        margin-bottom: 1.5rem;
+    }
+    
+    .roadmap-slide-2024__title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+}
+    </style>
+   
+        <div id="slide12" class="slide">
+            <div class="roadmap-slide-2024__container">
+                <h1 class="roadmap-slide-2024__title">Roadmap to Growth</h1>
+                
+                <div class="roadmap-slide-2024__timeline">
+                    <div class="roadmap-slide-2024__milestone">
+                        <div class="roadmap-slide-2024__year">2024</div>
+                        <div class="roadmap-slide-2024__content">
+                            <div class="roadmap-slide-2024__revenue">$1.2M ARR</div>
+                            <div class="roadmap-slide-2024__details">Achieve $100K MRR, focus on credit union sector</div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-slide-2024__milestone">
+                        <div class="roadmap-slide-2024__year">2025</div>
+                        <div class="roadmap-slide-2024__content">
+                            <div class="roadmap-slide-2024__revenue">$3M ARR</div>
+                            <div class="roadmap-slide-2024__details">Expand to regional banks, triple client base</div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-slide-2024__milestone">
+                        <div class="roadmap-slide-2024__year">2028</div>
+                        <div class="roadmap-slide-2024__content">
+                            <div class="roadmap-slide-2024__revenue">$10M ARR</div>
+                            <div class="roadmap-slide-2024__details">Enter insurance industry, launch new AI models</div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-slide-2024__milestone">
+                        <div class="roadmap-slide-2024__year">2032</div>
+                        <div class="roadmap-slide-2024__content">
+                            <div class="roadmap-slide-2024__revenue">$100M ARR</div>
+                            <div class="roadmap-slide-2024__details">International expansion, focus on EMEA market</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="slide12-milestone">
-                <div class="slide12-year">2026</div>
-                <div class="slide12-content">
-                    <div class="slide12-revenue">$3M ARR</div>
-                    <div class="slide12-details">Expand to regional banks, triple client base</div>
-                </div>
-            </div>
-            <div class="slide12-milestone">
-                <div class="slide12-year">2028</div>
-                <div class="slide12-content">
-                    <div class="slide12-revenue">$10M ARR</div>
-                    <div class="slide12-details">Enter insurance industry, launch new AI models</div>
-                </div>
-            </div>
-            <div class="slide12-milestone">
-                <div class="slide12-year">2032</div>
-                <div class="slide12-content">
-                    <div class="slide12-revenue">$100M ARR</div>
-                    <div class="slide12-details">International expansion, focus on EMEA market</div>
-                </div>
-            </div>
-            <div class="slide12-milestone">
-                <div class="slide12-year">2028</div>
-                <div class="slide12-content">
-                    <div class="slide12-revenue">$100M ARR</div>
-                    <div class="slide12-details">Global market leadership in regulated AI solutions</div>
+    
+                <div class="slide1-footer">
+                    <div class="slide1-footer-logo">
+                        <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon">
+                    </div>
+                    <span>Abacus</span>
+                    <span>www.goabacus.co</span>
+                    <span>@HeyAbacus</span>
+                    <span id="pageNumber">12 / 14</span>
                 </div>
             </div>
         </div>
-        <div class="slide1-footer">
-            <div class="slide1-footer-logo"></div>
-            <span>Abacus</span>
-            <span>www.goabacus.co</span>
-            <span>@HeyAbacus</span>
-            <span id="pageNumber">1 / 10</span> <!-- Page number span -->
-        </div>
-    </div>
+
 
 
     <div id="slide12" class="slide">        <div class="slide12-content-container">
@@ -4627,17 +7547,17 @@
                 <div class="slide12-team-member">
                     <div class="slide12-member-photo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-xASHjpn7yXSAvE4AVF3MB7yAji8Evs8WCA&s"></div>
                     <div class="slide12-member-name">Shubham Kashik</div>
-                    <div class="slide12-member-title">Offshore Developer</div>
+                    <div class="slide12-member-title">Developer</div>
                 </div>
                 <div class="slide12-team-member">
                     <div class="slide12-member-photo"><img src="https://media.licdn.com/dms/image/v2/D5603AQGCvfT5fA1Saw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721052756443?e=2147483647&v=beta&t=6D6a3rnVLGVYGc6fmuNNfaek2wa3W-TXU6z-6K5kG_I"></div>
                     <div class="slide12-member-name">Dhyey Brundon</div>
-                    <div class="slide12-member-title">Offshore Developer</div>
+                    <div class="slide12-member-title">Developer</div>
                 </div>
                 <div class="slide12-team-member">
                     <div class="slide12-member-photo"><img src="https://media.licdn.com/dms/image/v2/D5603AQFresrhPL2ZhQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725458361824?e=2147483647&v=beta&t=LavD-KQU7-GUT2ySmhaIMpgQU-n1KoGeXxAesYWqIUw"></div>
                     <div class="slide12-member-name">Sai Kappulinik</div>
-                    <div class="slide12-member-title">Offshore Developer</div>
+                    <div class="slide12-member-title">Developer</div>
                 </div>
             </div>
         </div>
@@ -4666,6 +7586,678 @@
             <span id="pageNumber">1 / 10</span> <!-- Page number span -->
         </div>
     </div>
+
+
+<style>
+#appendix-slide {
+    background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+    height: calc(100vh - 120px);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+}
+
+/* Big background "APPENDIX" text */
+.background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25vw;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    color: rgba(0, 0, 0, 0.03);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.appendix-container {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding-bottom: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.appendix-content {
+    text-align: left;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.appendix-header {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.appendix-label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #635bff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.appendix-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.appendix-subtitle {
+    font-size: 1.25rem;
+    color: #86868b;
+    max-width: 600px;
+}
+
+.appendix-sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.section-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.75rem;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.section-number {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #635bff;
+    background: rgba(99, 91, 255, 0.1);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: #1d1d1f;
+    font-weight: 600;
+}
+
+.section-items {
+    margin-top: 1rem;
+    color: #86868b;
+    font-size: 0.95rem;
+    padding-left: 0;
+}
+
+.section-items li {
+    margin-bottom: 0.5rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-items li::before {
+    content: "•";
+    color: #635bff;
+    font-weight: bold;
+}
+
+.slide1-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #1d1d1f;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.slide1-footer-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.slide1-footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 1200px) {
+    .appendix-title {
+        font-size: 3rem;
+    }
+    
+    .appendix-sections {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .background-text {
+        font-size: 40vw;
+    }
+    
+    .appendix-title {
+        font-size: 2.5rem;
+    }
+    
+    .appendix-subtitle {
+        font-size: 1rem;
+    }
+    
+    .appendix-sections {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+    <div id="appendix-slide" class="slide">
+        <!-- Large background text -->
+        <div class="background-text">APPENDIX</div>
+        
+        <div class="appendix-container">
+            <div class="appendix-content">
+                <div class="appendix-header">
+                    <div class="appendix-label">Appendix</div>
+                    <h1 class="appendix-title">Supporting Documentation<br/>& Deep Dives</h1>
+                    <p class="appendix-subtitle">Comprehensive analysis and detailed information for investors</p>
+                </div>
+
+                <div class="appendix-sections">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-number">01</div>
+                            <div class="section-title">Technology Deep Dive</div>
+                        </div>
+                        <ul class="section-items">
+                            <li>Indexing Technology Architecture</li>
+                            <li>Security & Privacy Framework</li>
+                            <li>AI/ML Implementation</li>
+                            <li>Technology Stack Details</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-number">02</div>
+                            <div class="section-title">Market & Business</div>
+                        </div>
+                        <ul class="section-items">
+                            <li>Detailed Market Analysis</li>
+                            <li>Competitor Landscape</li>
+                            <li>Revenue Projections</li>
+                            <li>Go-to-Market Strategy</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-number">03</div>
+                            <div class="section-title">Performance & Metrics</div>
+                        </div>
+                        <ul class="section-items">
+                            <li>Customer Success Stories</li>
+                            <li>Key Performance Metrics</li>
+                            <li>Growth Trajectory</li>
+                            <li>ROI Analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-number">04</div>
+                            <div class="section-title">Team & Advisory</div>
+                        </div>
+                        <ul class="section-items">
+                            <li>Leadership Backgrounds</li>
+                            <li>Advisory Board</li>
+                            <li>Key Hires Roadmap</li>
+                            <li>Organization Structure</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-number">05</div>
+                            <div class="section-title">Financial Details</div>
+                        </div>
+                        <ul class="section-items">
+                            <li>Financial Models</li>
+                            <li>Unit Economics</li>
+                            <li>Funding History</li>
+                            <li>Use of Funds</li>
+                        </ul>
+                    </div>
+
+                    <div class="section-card">
+                        <div class="section-header">
+                            <div class="section-number">06</div>
+                            <div class="section-title">Product Roadmap</div>
+                        </div>
+                        <ul class="section-items">
+                            <li>Feature Pipeline</li>
+                            <li>Integration Plans</li>
+                            <li>Scale Strategy</li>
+                            <li>Future Innovation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide1-footer">
+                <div class="slide1-footer-logo">
+                    <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon">
+                </div>
+                <span>Abacus</span>
+                <span>www.goabacus.co</span>
+                <span>@HeyAbacus</span>
+                <span id="pageNumber">12 / 14</span>
+            </div>
+        </div>
+    </div>
+
+
+
+<style>
+#indexer-slide {
+    background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+    height: calc(100vh - 120px);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+}
+
+.indexer-container {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-bottom: 120px;
+}
+
+.indexer-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.indexer-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 1rem 0;
+}
+
+.indexer-subtitle {
+    font-size: 1.2rem;
+    color: #86868b;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.visualization-stage {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.document-section {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+}
+
+.document-frame {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.document-content {
+    font-size: 0.9rem;
+    color: #1d1d1f;
+    line-height: 1.6;
+}
+
+.highlight-section {
+    background: rgba(99, 91, 255, 0.1);
+    border-left: 3px solid #635bff;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+}
+
+.index-section {
+    flex: 1;
+    max-width: 500px;
+}
+
+.index-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.index-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+}
+
+.index-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.index-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(99, 91, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #635bff;
+    font-size: 1.2rem;
+}
+
+.index-details {
+    flex: 1;
+}
+
+.index-query {
+    font-weight: 500;
+    color: #1d1d1f;
+    margin-bottom: 0.5rem;
+}
+
+.index-location {
+    font-size: 0.9rem;
+    color: #86868b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.location-tag {
+    background: rgba(99, 91, 255, 0.1);
+    color: #635bff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: monospace;
+}
+
+.connector-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, #635bff 0%, #635bff 100%);
+    z-index: -1;
+}
+
+.connector-line::before,
+.connector-line::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #635bff;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.connector-line::before {
+    left: 0;
+}
+
+.connector-line::after {
+    right: 0;
+}
+
+.features-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(99, 91, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    color: #635bff;
+    font-size: 1.5rem;
+}
+
+.feature-title {
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 0.5rem;
+}
+
+.feature-description {
+    font-size: 0.9rem;
+    color: #86868b;
+    line-height: 1.4;
+}
+
+.slide1-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #1d1d1f;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.slide1-footer-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.slide1-footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 1200px) {
+    .visualization-stage {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .document-section,
+    .index-section {
+        max-width: 100%;
+    }
+    
+    .connector-line {
+        display: none;
+    }
+    
+    .indexer-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .indexer-header h1 {
+        font-size: 2rem;
+    }
+    
+    .indexer-subtitle {
+        font-size: 1rem;
+    }
+}
+</style>
+
+    <div id="indexer-slide" class="slide">
+        <div class="indexer-container">
+            <div class="indexer-header">
+                <h1>Intelligent Document Indexing</h1>
+                <p class="indexer-subtitle">Our revolutionary technology maps knowledge locations without storing sensitive content</p>
+            </div>
+
+            <div class="visualization-stage">
+                <div class="document-section">
+                    <div class="document-frame">
+                        <div class="document-content">
+                            <h3>Employee Handbook</h3>
+                            <p>Section 1: Introduction</p>
+                            <p>Welcome to our company...</p>
+                            <div class="highlight-section">
+                                <p>Section 2: PTO Policy</p>
+                                <p>Employees are entitled to 20 days of paid time off annually. This includes vacation days and sick leave. Unused PTO can be carried over to the next year, up to a maximum of 5 days.</p>
+                            </div>
+                            <p>Section 3: Benefits</p>
+                            <p>Our comprehensive benefits package...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="connector-line"></div>
+
+                <div class="index-section">
+                    <div class="index-card">
+                        <div class="index-title">Smart Index Entry</div>
+                        <div class="index-item">
+                            <div class="index-icon">📍</div>
+                            <div class="index-details">
+                                <div class="index-query">"What is the PTO policy?"</div>
+                                <div class="index-location">
+                                    <span class="location-tag">Document: Employee Handbook</span>
+                                    <span class="location-tag">Section: 2</span>
+                                    <span class="location-tag">Lines: 1-9</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-row">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-title">Privacy-First Design</div>
+                    <div class="feature-description">Only stores document locations, never the sensitive content itself</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Lightning Fast</div>
+                    <div class="feature-description">Instant retrieval of information locations</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Precise Mapping</div>
+                    <div class="feature-description">Pinpoint accuracy to specific paragraphs and lines</div>
+                </div>
+            </div>
+
+            <div class="slide1-footer">
+                <div class="slide1-footer-logo">
+                    <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon">
+                </div>
+                <span>Abacus</span>
+                <span>www.goabacus.co</span>
+                <span>@HeyAbacus</span>
+                <span id="pageNumber">5 / 14</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 
 
     <div class="preview-toggle">
@@ -4728,19 +8320,26 @@
 
         const slideTitles = [
     "Meet Abacus",
-    "Company Overview",
-    "Live Demo",
-    "Bot in Action",
-    "AbacusOS",
+    "About Abacus",
+    "Investor Dashboard",
+    "The Platform",
+    "Abacus Indexer",
+    "Case Study",
+    "Abacus Assistant Demo",
+    "Abacus App",
+    "AbacusOS LLM",
     "Abacus Studio",
     "Business Model",
-    "Growth & Traction",
-    "Our Customers",
-    "Competitive Edge",
-    "Go-to-Market",
-    "Future Roadmap",
-    "Our Team",
-    "Contact Us"
+    "Traction",
+    "Customers",
+    "Competitive Advantage",
+    "Go-to-Market Strategy",
+    "Roadmap to Growth", 
+    "Team",
+    "Thank you",
+    "Appendix",
+    "Index Technology"
+
 ];
 
 function initializePreviewPanel() {

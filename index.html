@@ -3985,8 +3985,8 @@
                             <div class="feature-card">
                                 <div class="feature-icon">🔒</div>
                                 <div class="feature-content">
-                                    <h3>Compliance First</h3>
-                                    <p>Built specifically for highly regulated environments with on-premise deployment</p>
+                                    <h3>On-Prem LLM with AbacusOS</h3>
+                                    <p>Built specifically for highly regulated environments with on-premise deployment and our AbacusOS LLM operating system</p>
                                 </div>
                             </div>
                             <div class="feature-card">
@@ -4000,7 +4000,7 @@
                                 <div class="feature-icon">🔄</div>
                                 <div class="feature-content">
                                     <h3>Auto-Updating</h3>
-                                    <p>Continuously syncs with enterprise systems to maintain accuracy</p>
+                                    <p>Continuously syncs with enterprise systems to maintain accuracy, indexing hundreds of data sources.</p>
                                 </div>
                             </div>
                         </div>
@@ -4430,12 +4430,35 @@
                                 <div class="deal-card">
                                     <div class="deal-content">
                                         <div class="deal-header">
-                                            <div class="deal-name">Major Credit Union</div>
-                                            <div class="deal-value">$800K ARR</div>
+                                            <div class="deal-name">Credit Union</div>
+                                            <div class="deal-value">$300K ARR</div>
                                         </div>
                                         <div class="deal-details">
                                             <div class="deal-stage">Late Stage - Security Review</div>
-                                            <div class="deal-probability">90% Probability</div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="deal-card">
+                                    <div class="deal-content">
+                                        <div class="deal-header">
+                                            <div class="deal-name">Credit Union, Regional</div>
+                                            <div class="deal-value">$300K ARR</div>
+                                        </div>
+                                        <div class="deal-details">
+                                            <div class="deal-stage">Mid Stage - Compliance Review</div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="deal-card">
+                                    <div class="deal-content">
+                                        <div class="deal-header">
+                                            <div class="deal-name">Insurance Company</div>
+                                            <div class="deal-value">$400K ARR</div>
+                                        </div>
+                                        <div class="deal-details">
+                                            <div class="deal-stage">Early Stage - POC</div>
                                         </div>
                                     </div>
                                 </div>
@@ -4477,11 +4500,11 @@
                                     <div class="metric-small-value">4 Years</div>
                                 </div>
                                 <div class="metric-small">
-                                    <div class="metric-small-label"></div>
-                                    <div class="metric-small-value"></div>
+                                    <div class="metric-small-label">Average Client Userbase</div>
+                                    <div class="metric-small-value">590</div>
                                 </div>
                                 <div class="metric-small">
-                                    <div class="metric-small-label">Retention</div>
+                                    <div class="metric-small-label">Client Retention</div>
                                     <div class="metric-small-value">100%</div>
                                 </div>
                             </div>
@@ -5171,7 +5194,7 @@
                     <!-- Header Section -->
                     <div class="abbi-demo-header">
                         <h1>Abbi's Universal<br>Data Platform</h1>
-                        <p class="abbi-subtitle">Seamlessly indexes and connects enterprise data across your entire organization</p>
+                        <p class="abbi-subtitle">Seamlessly indexes enterprise data across your organization</p>
                     </div>
             
                     <!-- Main Content Grid -->
@@ -6439,7 +6462,347 @@
             </div>
 
 
-
+         
+            <style>
+            #slide-permissions.slide {
+                background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+                height: calc(100vh - 120px);
+                margin-top: 60px;
+                margin-bottom: 60px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                overflow: hidden;
+          
+            }
+            
+            .permissions-container {
+                max-width: 1400px;
+                height: 100%;
+                margin: 0 auto;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .permissions-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+            
+            .permissions-title {
+                font-size: 2.5rem;
+                font-weight: 700;
+                background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 1rem;
+            }
+            
+            .permissions-subtitle {
+                font-size: 1.2rem;
+                color: #86868b;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+            
+            .comparison-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+            
+            .role-card {
+                background: white;
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .role-header {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .role-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+            }
+            
+            .manager-icon {
+                background: rgba(99, 91, 255, 0.1);
+                color: #635bff;
+            }
+            
+            .employee-icon {
+                background: rgba(48, 209, 88, 0.1);
+                color: #30d158;
+            }
+            
+            .role-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #1d1d1f;
+            }
+            
+            .qa-example {
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .question {
+                background: #f8f9fc;
+                padding: 1rem;
+                border-radius: 12px;
+                color: #1d1d1f;
+                font-weight: 500;
+                margin-bottom: 1rem;
+            }
+            
+            .answer {
+                padding: 0 1rem;
+                color: #424245;
+                line-height: 1.5;
+            }
+            
+            .sources {
+                margin-top: 1rem;
+                padding: 1rem;
+                background: rgba(99, 91, 255, 0.05);
+                border-radius: 12px;
+            }
+            
+            .sources-title {
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: #635bff;
+                margin-bottom: 0.5rem;
+            }
+            
+            .source-list {
+                font-size: 0.9rem;
+                color: #86868b;
+            }
+            
+            .source-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .source-item:last-child {
+                margin-bottom: 0;
+            }
+            
+            .source-icon {
+                width: 16px;
+                height: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #635bff;
+                border-radius: 4px;
+                color: white;
+                font-size: 0.7rem;
+            }
+            
+            .permissions-list {
+                margin-top: 2rem;
+            }
+            
+            .permission-item {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                margin-bottom: 1rem;
+                color: #424245;
+            }
+            
+            .permission-icon {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+            
+            .permission-icon.allowed {
+                background: rgba(48, 209, 88, 0.1);
+                color: #30d158;
+            }
+            
+            .permission-icon.restricted {
+                background: rgba(255, 69, 58, 0.1);
+                color: #ff453a;
+            }
+            
+            .slide1-footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.9);
+                backdrop-filter: blur(10px);
+                padding: 1rem 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 0.8rem;
+                color: #1d1d1f;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+            
+            .slide1-footer-logo {
+                width: 30px;
+                height: 30px;
+            }
+            
+            @media (max-width: 1200px) {
+                .comparison-grid {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .permissions-title {
+                    font-size: 2rem;
+                }
+                
+                .permissions-subtitle {
+                    font-size: 1rem;
+                }
+                
+                .role-card {
+                    padding: 1.5rem;
+                }
+            }
+            </style>
+      
+                <div id="slide-permissions" class="slide">
+                    <div class="permissions-container">
+                        <div class="permissions-header">
+                            <h1 class="permissions-title">Intelligent Role-Based Access</h1>
+                            <p class="permissions-subtitle">Abacus Assistant delivers personalized responses based on user roles and permissions</p>
+                        </div>
+            
+                        <div class="comparison-grid">
+                            <div class="role-card">
+                                <div class="role-header">
+                                    <div class="role-icon manager-icon">👔</div>
+                                    <div class="role-title">Manager View</div>
+                                </div>
+            
+                                <div class="qa-example">
+                                    <div class="question">
+                                        "What is our current PTO policy?"
+                                    </div>
+                                    <div class="answer">
+                                        "Standard employees receive 20 days PTO annually. Managers can approve up to 5 consecutive days. Team utilization is currently at 82%, with $45K accrued liability. Request patterns show Monday/Friday as peak days."
+                                    </div>
+                                    <div class="sources">
+                                        <div class="sources-title">Sources & Permissions</div>
+                                        <div class="source-list">
+                                            <div class="source-item">
+                                                <span class="source-icon">📄</span>
+                                                Employee Handbook v3.2 - Full Access
+                                            </div>
+                                            <div class="source-item">
+                                                <span class="source-icon">📊</span>
+                                                PTO Analytics Dashboard
+                                            </div>
+                                            <div class="source-item">
+                                                <span class="source-icon">💰</span>
+                                                Financial Impact Report
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="permissions-list">
+                                    <div class="permission-item">
+                                        <span class="permission-icon allowed">✓</span>
+                                        Access to financial impact data
+                                    </div>
+                                    <div class="permission-item">
+                                        <span class="permission-icon allowed">✓</span>
+                                        Team utilization metrics
+                                    </div>
+                                    <div class="permission-item">
+                                        <span class="permission-icon allowed">✓</span>
+                                        Approval authority information
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="role-card">
+                                <div class="role-header">
+                                    <div class="role-icon employee-icon">👤</div>
+                                    <div class="role-title">Employee View</div>
+                                </div>
+            
+                                <div class="qa-example">
+                                    <div class="question">
+                                        "What is our current PTO policy?"
+                                    </div>
+                                    <div class="answer">
+                                        "You receive 20 days PTO annually. Requests up to 5 days can be approved by your direct manager. Longer requests require additional approval. Your current balance is visible in the HR portal."
+                                    </div>
+                                    <div class="sources">
+                                        <div class="sources-title">Sources & Permissions</div>
+                                        <div class="source-list">
+                                            <div class="source-item">
+                                                <span class="source-icon">📄</span>
+                                                Employee Handbook v3.2 - Limited Access
+                                            </div>
+                                            <div class="source-item">
+                                                <span class="source-icon">📅</span>
+                                                PTO Request Guidelines
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="permissions-list">
+                                    <div class="permission-item">
+                                        <span class="permission-icon restricted">×</span>
+                                        No access to financial data
+                                    </div>
+                                    <div class="permission-item">
+                                        <span class="permission-icon restricted">×</span>
+                                        No team utilization visibility
+                                    </div>
+                                    <div class="permission-item">
+                                        <span class="permission-icon allowed">✓</span>
+                                        Personal PTO information only
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="slide1-footer">
+                            <div class="slide1-footer-logo">
+                                <img src="https://cd02896ffd7f0a0eec1ed87c51a5922a.cdn.bubble.io/f1730087170816x265746075395469020/Abacus%20Lined%20Round%20Icon%20V2.svg" alt="Abacus Icon">
+                            </div>
+                            <span>Abacus</span>
+                            <span>www.goabacus.co</span>
+                            <span>@HeyAbacus</span>
+                            <span id="pageNumber">8 / 14</span>
+                        </div>
+                    </div>
+                </div>
+          
    
 
     <div id="abbi-platforms-slide" class="slide">
@@ -8326,6 +8689,7 @@
     "Abacus Indexer",
     "Case Study",
     "Abacus Assistant Demo",
+    "Role Based Permissions",
     "Abacus App",
     "AbacusOS LLM",
     "Abacus Studio",

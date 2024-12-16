@@ -14715,6 +14715,380 @@ strong {
                                                 </div>
                                             </div>
                                         </div>
+                                    
+                                    
+                                      <style>
+                                        /* Base styles */
+                                        #detailed-roi-slide {
+                                            background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
+                                            min-height: 100vh;
+                                            width: 100%;
+                                            overflow-y: auto;
+                                            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                                        }
+                                        
+                                        .roi-container {
+                                            max-width: 1400px;
+                                            margin: 0 auto;
+                                            padding: 2rem clamp(1rem, 5vw, 4rem);
+                                            box-sizing: border-box;
+                                        }
+                                        
+                                        /* Header styles */
+                                        .roi-header {
+                                            margin-bottom: 2rem;
+                                            text-align: center;
+                                            margin-top: 500px;
+                                        }
+                                        
+                                        .roi-label {
+                                            color: #635bff;
+                                            font-size: clamp(1rem, 1.125rem, 1.25rem);
+                                            font-weight: 600;
+                                            letter-spacing: 0.1em;
+                                            text-transform: uppercase;
+                                            margin-bottom: 1rem;
+                                        }
+                                        
+                                        .roi-title {
+                                            font-size: clamp(2rem, 5vw, 3.5rem);
+                                            font-weight: 700;
+                                            background: linear-gradient(135deg, #1d1d1f 0%, #434344 100%);
+                                            -webkit-background-clip: text;
+                                            background-clip: text;
+                                            -webkit-text-fill-color: transparent;
+                                            margin-bottom: 1rem;
+                                            line-height: 1.1;
+                                        }
+                                        
+                                        .roi-subtitle {
+                                            font-size: clamp(1rem, 1.25rem, 1.5rem);
+                                            color: #86868b;
+                                            line-height: 1.5;
+                                        }
+                                        
+                                        /* Section styles */
+                                        .roi-section {
+                                            background: white;
+                                            border-radius: 20px;
+                                            padding: 1.5rem;
+                                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                                            border: 1px solid rgba(0, 0, 0, 0.1);
+                                            margin-bottom: 1.5rem;
+                                        }
+                                        
+                                        .section-title {
+                                            font-size: 1.25rem;
+                                            font-weight: 600;
+                                            color: #1d1d1f;
+                                            margin-bottom: 1.5rem;
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 0.75rem;
+                                        }
+                                        
+                                        .section-icon {
+                                            background: rgba(99, 91, 255, 0.1);
+                                            color: #635bff;
+                                            width: 32px;
+                                            height: 32px;
+                                            border-radius: 8px;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            font-size: 1.2rem;
+                                        }
+                                        
+                                        /* Benefit cards */
+                                        .benefit-categories {
+                                            display: grid;
+                                            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+                                            gap: 1.5rem;
+                                        }
+                                        
+                                        .benefit-card {
+                                            background: rgba(99, 91, 255, 0.05);
+                                            border-radius: 12px;
+                                            padding: 1.5rem;
+                                        }
+                                        
+                                        .card-header {
+                                            font-weight: 600;
+                                            color: #1d1d1f;
+                                            margin-bottom: 1rem;
+                                        }
+                                        
+                                        /* Calculation styles */
+                                        .calculation-grid {
+                                            display: grid;
+                                            gap: 0.75rem;
+                                        }
+                                        
+                                        .calc-row {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            padding: 0.5rem 0;
+                                            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                                        }
+                                        
+                                        .calc-row.highlight {
+                                            background: rgba(99, 91, 255, 0.1);
+                                            padding: 1rem;
+                                            border-radius: 8px;
+                                            margin-top: 0.5rem;
+                                            border-bottom: none;
+                                            font-weight: 600;
+                                        }
+                                        
+                                        /* Additional elements */
+                                        .assumption-note {
+                                            margin-top: 1rem;
+                                            font-size: 0.875rem;
+                                            color: #86868b;
+                                            font-style: italic;
+                                        }
+                                        
+                                        .client-citation {
+                                            font-size: 0.875rem;
+                                            color: #4a5568;
+                                            margin-top: 0.75rem;
+                                            padding-top: 0.75rem;
+                                            border-top: 1px dashed rgba(99, 91, 255, 0.2);
+                                        }
+                                        
+                                        .citation-text {
+                                            font-style: italic;
+                                        }
+                                        
+                                        .citation-source {
+                                            font-weight: 500;
+                                            color: #2d3748;
+                                            margin-top: 0.5rem;
+                                        }
+                                        
+                                        /* Highlight box */
+                                        .highlight-box {
+                                            background: linear-gradient(135deg, #635bff 0%, #4b44f9 100%);
+                                            border-radius: 20px;
+                                            padding: 2rem;
+                                            color: white;
+                                            margin: 2rem 0;
+                                        }
+                                        
+                                        .highlight-title {
+                                            font-size: 1.25rem;
+                                            font-weight: 600;
+                                            margin-bottom: 1rem;
+                                        }
+                                        
+                                        .highlight-list {
+                                            line-height: 1.6;
+                                        }
+                                        
+                                        /* Footer */
+                                        .slide-footer {
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 2rem;
+                                            padding: 1rem 0;
+                                            color: #86868b;
+                                            border-top: 1px solid rgba(0, 0, 0, 0.1);
+                                            margin-top: 2rem;
+                                            flex-wrap: wrap;
+                                        }
+                                        
+                                        .footer-logo {
+                                            height: 32px;
+                                            width: auto;
+                                        }
+                                        
+                                        /* Media queries */
+                                        @media (max-width: 768px) {
+                                            .slide-footer {
+                                                justify-content: center;
+                                                text-align: center;
+                                            }
+                                        }
+                                        </style>
+                                        
+                                        <div id="detailed-roi-slide" class="slide">
+                                            <div class="roi-container">
+                                                <div class="roi-header">
+                                                    <div class="roi-label">Total Economic Impact Study</div>
+                                                    <h1 class="roi-title">Digital Transformation ROI Analysis</h1>
+                                                </div>
+                                        
+                                        
+                                                <div class="roi-section">
+                                                    <h3 class="section-title">
+                                                        <span class="section-icon">📊</span>
+                                                        Risk-Adjusted Quantified Benefits
+                                                    </h3>
+                                        
+                                                    <div class="benefit-categories">
+                                                        <div class="benefit-card">
+                                                            <div class="card-header">Knowledge Worker Productivity</div>
+                                                            <div class="calculation-grid">
+                                                                <div class="calc-row">
+                                                                    <span>Daily Time Spent Searching Information</span>
+                                                                    <span>2.5 hours</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Time Reduction with Abbi</span>
+                                                                    <span>35%</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Daily Time Saved</span>
+                                                                    <span>52.5 minutes</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Annual Hours Saved (per employee)</span>
+                                                                    <span>219 hours</span>
+                                                                </div>
+                                                                <div class="calc-row highlight">
+                                                                    <span>Annual Value per Employee ($30/hr)</span>
+                                                                    <span>$6,570</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="assumption-note">
+                                                                Risk adjustment: -15% to account for varying adoption rates
+                                                            </div>
+                                                            <div class="client-citation">
+                                                                <div class="citation-text">"Our employees were spending nearly 2.5 hours daily searching through multiple systems for client information, procedures, and policy details. With Abbi, they can find what they need in seconds."</div>
+                                                                <div class="citation-source">-Managing Director, Big-4 Audit Firm</div>
+                                                            </div>
+                                                        </div>
+                                        
+                                                        <div class="benefit-card">
+                                                            <div class="card-header">Staff Training & Onboarding</div>
+                                                            <div class="calculation-grid">
+                                                                <div class="calc-row">
+                                                                    <span>Average Training Duration (Pre-Abbi)</span>
+                                                                    <span>6 weeks</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Training Time Reduction</span>
+                                                                    <span>40%</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>New Hire Training Cost Savings</span>
+                                                                    <span>$4,800/hire</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Annual New Hires</span>
+                                                                    <span>25</span>
+                                                                </div>
+                                                                <div class="calc-row highlight">
+                                                                    <span>Annual Training Savings</span>
+                                                                    <span>$120,000</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="assumption-note">
+                                                                Risk adjustment: -20% for varied training requirements
+                                                            </div>
+                                                            <div class="client-citation">
+                                                                <div class="citation-text">"New employees now reach proficiency in 3.5 weeks instead of 6, with Abbi guiding them through procedures and compliance requirements."</div>
+                                                                <div class="citation-source">- HR Director, $2B Credit Union</div>
+                                                            </div>
+                                                        </div>
+                                        
+                                                        <div class="benefit-card">
+                                                            <div class="card-header">Workforce Optimization</div>
+                                                            <div class="calculation-grid">
+                                                                <div class="calc-row">
+                                                                    <span>Contact Center Staff (Pre-Abbi)</span>
+                                                                    <span>50 FTEs</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Natural Attrition Rate</span>
+                                                                    <span>15%</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Positions Naturally Not Backfilled</span>
+                                                                    <span>7 FTEs</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Average Fully-Loaded Cost per FTE</span>
+                                                                    <span>$65,000</span>
+                                                                </div>
+                                                                <div class="calc-row highlight">
+                                                                    <span>Annual Labor Cost Avoidance</span>
+                                                                    <span>$455,000</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="assumption-note">
+                                                                Risk adjustment: -20% for varying organizational structures
+                                                            </div>
+                                                            <div class="client-citation">
+                                                                <div class="citation-text">"Through natural attrition, we've been able to reduce our contact center staff by 14% while handling higher call volumes. Existing staff are more efficient and satisfied with Abbi's support."</div>
+                                                                <div class="citation-source">-Director Learning & Development, $1B Credit Union </div>
+                                                            </div>
+                                                        </div>
+                                        
+                                                        <div class="benefit-card">
+                                                            <div class="card-header">Call Deflection & Self-Service</div>
+                                                            <div class="calculation-grid">
+                                                                <div class="calc-row">
+                                                                    <span>Monthly Call Volume</span>
+                                                                    <span>15,000</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Self-Service Resolution Rate</span>
+                                                                    <span>22%</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Average Call Handle Time</span>
+                                                                    <span>8.5 min</span>
+                                                                </div>
+                                                                <div class="calc-row">
+                                                                    <span>Cost per Call ($18/hr)</span>
+                                                                    <span>$2.55</span>
+                                                                </div>
+                                                                <div class="calc-row highlight">
+                                                                    <span>Annual Cost Savings</span>
+                                                                    <span>$285,000</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="assumption-note">
+                                                                Risk adjustment: -15% for varying call complexity
+                                                            </div>
+                                                            <div class="client-citation">
+                                                                <div class="citation-text">"Our customers love being able to self-serve 24/7. We've seen consistent 20-25% call deflection rates while maintaining high CSAT scores."</div>
+                                                                <div class="citation-source">-Experience Director, Insurance Company</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        
+                                                <div class="highlight-box">
+                                                    <div class="highlight-title">Key Strategic Workforce Outcomes</div>
+                                                    <div class="highlight-list">
+                                                        • Reduce information search time by 35%, saving 219 hours annually per employee
+                                                        • Cut new hire training time from 6 weeks to 3.5 weeks while improving quality
+                                                        • Achieve 14-15% workforce optimization through natural attrition
+                                                        • Enable remaining staff to handle 30% more customer inquiries
+                                                        • Improve employee satisfaction by reducing repetitive tasks
+                                                    </div>
+                                                </div>
+                                        
+                                                <div class="slide-footer">
+                                                    <span>Total Economic Impact™ Study</span>
+                                                         </div>
+                                            </div>
+                                        </div>
+                                     
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                     <style>
                                         #llm-comp-slide {
                                             background: linear-gradient(150deg, #f8f9fc 0%, #ffffff 100%);
@@ -15348,6 +15722,7 @@ strong {
     "Target Market Size",
     "Total Market Opportunity",
     "AI Adoption & Implementation",
+    "ROI Analysis",
     "Competitive Analysis",
     "Team & Hiring"
 
